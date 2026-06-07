@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monaco Predictions | Henry AI F1</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: #fff; }
+        h1 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+        .race-date {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        .pred-card {
+            background: #111118;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s;
+        }
+        .pred-card:hover { border-color: #444; }
+        .pred-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .pred-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .pred-date { color: #888; font-size: 0.85rem; }
+        .pred-count { color: #60a5fa; font-size: 0.85rem; }
+        .standings-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+        }
+        .standings-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .standings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+        .standing-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: #111118;
+            border-radius: 4px;
+        }
+        .standing-item .pos {
+            color: #60a5fa;
+            font-weight: bold;
+            min-width: 1.5rem;
+        }
+        .standing-item .name { flex: 1; }
+        .standing-item .team { color: #888; font-size: 0.85rem; }
+        .standing-item .pts { color: #6ee7b7; font-size: 0.85rem; }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">&larr; Back to all races</a>
+        <h1>Monaco</h1>
+        <p class="race-date">2026-06-07</p>
+        
+        <div class="predictions-grid">
+        <div class="pred-card">
+            <a href="2026-06-07_early.html" class="pred-card-link">
+                <h3>Early Prediction</h3>
+                <p class="pred-date">Generated: 2026-06-07 12:00 </p>
+                <p class="pred-count">10 drivers predicted</p>
+            </a>
+        </div>
+
+        </div>
+        
+
+        <section class="standings-section">
+            <h2>Current Championship Standings</h2>
+            <div class="standings-grid">
+                <div class="standing-item">
+                    <span class="pos">1</span>
+                    <span class="name">Kimi Antonelli</span>
+                    <span class="team">Mercedes</span>
+                    <span class="pts">131pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">2</span>
+                    <span class="name">George Russell</span>
+                    <span class="team">Mercedes</span>
+                    <span class="pts">88pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">3</span>
+                    <span class="name">Charles Leclerc</span>
+                    <span class="team">Ferrari</span>
+                    <span class="pts">75pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">4</span>
+                    <span class="name">Lewis Hamilton</span>
+                    <span class="team">Ferrari</span>
+                    <span class="pts">72pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">5</span>
+                    <span class="name">Lando Norris</span>
+                    <span class="team">Mclaren</span>
+                    <span class="pts">58pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">6</span>
+                    <span class="name">Oscar Piastri</span>
+                    <span class="team">Mclaren</span>
+                    <span class="pts">48pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">7</span>
+                    <span class="name">Max Verstappen</span>
+                    <span class="team">Red Bull</span>
+                    <span class="pts">43pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">8</span>
+                    <span class="name">Pierre Gasly</span>
+                    <span class="team">Alpine</span>
+                    <span class="pts">20pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">9</span>
+                    <span class="name">Oliver Bearman</span>
+                    <span class="team">Haas</span>
+                    <span class="pts">18pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">10</span>
+                    <span class="name">Liam Lawson</span>
+                    <span class="team">Racing Bulls</span>
+                    <span class="pts">16pts</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Generated by Henry AI &middot; Powered by data from F1DB &amp; BBC Sport</p>
+        </footer>
+    </div>
+</body>
+</html>
