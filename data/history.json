@@ -79,6 +79,82 @@
             }
           ],
           "race_name": "Monaco"
+        },
+        "pre-qualifying": {
+          "generated_at": "2026-06-07 12:54 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form, fastest in P3"
+            },
+            {
+              "position": 2,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Fastest in P1, Ferrari setup excels at Monaco"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P2 fastest, consistent top 3 race finishes"
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Strong P3 pace, Mercedes car dominance continues"
+            },
+            {
+              "position": 5,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Solid practice pace, Red Bull lacks recent race wins"
+            },
+            {
+              "position": 6,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P3 sixth, consistent points scorer this season"
+            },
+            {
+              "position": 7,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Strong championship form, McLaren pace reliable"
+            },
+            {
+              "position": 8,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Consistent top 10 finishes, reliable practice times"
+            },
+            {
+              "position": 9,
+              "driver": "Gabriel Bortoleto",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "P3 seventh, Audi car shows strong street circuit pace"
+            },
+            {
+              "position": 10,
+              "driver": "Oliver Bearman",
+              "team": "Haas",
+              "confidence": "low",
+              "reasoning": "Consistent points scorer, Haas strong in recent races"
+            }
+          ],
+          "race_name": "Monaco"
         }
       },
       "standings": [
@@ -154,7 +230,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-qualifying"
       ]
     }
   ]
