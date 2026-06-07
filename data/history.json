@@ -155,6 +155,82 @@
             }
           ],
           "race_name": "Monaco"
+        },
+        "post-qualifying": {
+          "generated_at": "2026-06-07 13:04 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant form, P1 start, perfect for Monaco's low-overtaking nature."
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "P2 start, strong pace, Red Bull adapting well to 2026 dynamics."
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P3 grid, Ferrari street strength, consistent top-4 finishes."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P4 start, Monaco specialist, Ferrari pace matches Mercedes."
+            },
+            {
+              "position": 5,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P5 start, strong recent points, Red Bull second driver excelling."
+            },
+            {
+              "position": 6,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "P6 start, Mercedes reliability, consistent podium threat."
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P7 start, strong recent results, McLaren tire management solid."
+            },
+            {
+              "position": 8,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P8 start, aggressive drive, likely battles Piastri for P7."
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "P9 start, Alpine's midfield strength, consistent points scorer."
+            },
+            {
+              "position": 10,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "P10 start, solid recent form, Racing Bulls reliable on streets."
+            }
+          ],
+          "race_name": "Monaco"
         }
       },
       "standings": [
@@ -231,7 +307,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-qualifying"
+        "pre-qualifying",
+        "post-qualifying"
       ]
     }
   ]
