@@ -37,16 +37,40 @@
         .pred-card {
             background: #111118;
             border: 1px solid #222;
+            border-left: 3px solid;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1rem;
-            transition: border-color 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .pred-card:hover { border-color: #444; }
+        .pred-card:hover {
+            border-color: #444;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .pred-card-early { border-left-color: #93c5fd; }
+        .pred-card-early:hover { border-color: #93c5fd; }
+        .pred-card-preq { border-left-color: #c4b5fd; }
+        .pred-card-preq:hover { border-color: #c4b5fd; }
+        .pred-card-postq { border-left-color: #6ee7b7; }
+        .pred-card-postq:hover { border-color: #6ee7b7; }
         .pred-card h3 {
             color: #fff;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .badge-early { background: #1e3a5f; color: #93c5fd; }
+        .badge-preq { background: #3b1f5e; color: #c4b5fd; }
+        .badge-postq { background: #1a3a2a; color: #6ee7b7; }
         .pred-card-link {
             text-decoration: none;
             color: inherit;
@@ -100,23 +124,23 @@
         <p class="race-date">2026-06-07</p>
         
         <div class="predictions-grid">
-        <div class="pred-card">
+        <div class="pred-card pred-card-early">
             <a href="2026-06-07_early.html" class="pred-card-link">
-                <h3>Early Prediction</h3>
+                <h3><span class="badge badge-early">Early</span> Early Prediction</h3>
                 <p class="pred-date">Generated: 2026-06-07 12:00 </p>
                 <p class="pred-count">10 drivers predicted</p>
             </a>
         </div>
-        <div class="pred-card">
+        <div class="pred-card pred-card-preq">
             <a href="2026-06-07_pre-qualifying.html" class="pred-card-link">
-                <h3>Pre-Qualifying Prediction</h3>
+                <h3><span class="badge badge-preq">Pre-Qualifying</span> Pre-Qualifying Prediction</h3>
                 <p class="pred-date">Generated: 2026-06-07 12:54 </p>
                 <p class="pred-count">10 drivers predicted</p>
             </a>
         </div>
-        <div class="pred-card">
+        <div class="pred-card pred-card-postq">
             <a href="2026-06-07_post-qualifying.html" class="pred-card-link">
-                <h3>Post-Qualifying Prediction</h3>
+                <h3><span class="badge badge-postq">Post-Qualifying</span> Post-Qualifying Prediction</h3>
                 <p class="pred-date">Generated: 2026-06-07 13:04 </p>
                 <p class="pred-count">10 drivers predicted</p>
             </a>
