@@ -25,10 +25,24 @@
             font-size: 0.9rem;
         }
         .back-link:hover { color: #fff; }
-        h1 {
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            gap: 1rem;
+        }
+        .page-header h1 {
             font-size: 2rem;
             color: #fff;
-            margin-bottom: 0.25rem;
+            margin: 0;
+        }
+        .page-circuit {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: brightness(0.8);
         }
         .race-date {
             color: #888;
@@ -120,7 +134,10 @@
 <body>
     <div class="container">
         <a href="../index.html" class="back-link">&larr; Back to all races</a>
-        <h1>Monaco</h1>
+        <div class="page-header">
+            <h1>Monaco</h1>
+            <img src="https://raw.githubusercontent.com/f1db/f1db/main/src/assets/circuits/white/monaco-1.svg" alt="Monaco circuit" class="page-circuit">
+        </div>
         <p class="race-date">2026-06-07</p>
         
         <div class="predictions-grid">
