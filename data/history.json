@@ -2,7 +2,7 @@
   "weekends": [
     {
       "date": "2026-06-14",
-      "race_name": "Barcelona-Catalunya",
+      "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026",
       "predictions": {
         "early": {
           "generated_at": "2026-06-08 03:07 ",
@@ -78,7 +78,7 @@
               "reasoning": "Steady top-10 contender; Alpine development keeps him in scoring zone."
             }
           ],
-          "race_name": "Barcelona-Catalunya"
+          "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
         }
       },
       "standings": [
@@ -155,7 +155,8 @@
       ],
       "prediction_types": [
         "early"
-      ]
+      ],
+      "circuit_id": "catalunya"
     },
     {
       "date": "2026-06-07",
@@ -466,7 +467,8 @@
         "early",
         "pre-qualifying",
         "post-qualifying"
-      ]
+      ],
+      "circuit_id": "monaco"
     }
   ]
 }

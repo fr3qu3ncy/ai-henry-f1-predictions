@@ -44,7 +44,9 @@
             margin-bottom: 1.5rem;
         }
         .type-early { background: #1e3a5f; color: #93c5fd; }
-        .type-pre-qualifying { background: #3b1f5e; color: #c4b5fd; }
+        .type-pre-sprint-qualifying { background: #4a1942; color: #f0abfc; }
+        .type-post-sprint-qualifying { background: #3b1f5e; color: #c4b5fd; }
+        .type-pre-qualifying { background: #1f3b5e; color: #93c5fd; }
         .type-post-qualifying { background: #1a3a2a; color: #6ee7b7; }
         table {
             width: 100%;
@@ -63,9 +65,6 @@
         td {
             padding: 0.75rem 1rem;
         }
-        tr.pred-row td {
-            border-bottom: 1px solid #222;
-        }
         tr:hover { background: #111118; }
         .driver-team {
             color: #888;
@@ -73,6 +72,7 @@
         }
         .reasoning-row {
             background: #0d0d12;
+            border-bottom: 1px solid #222;
         }
         .reasoning-row:hover {
             background: #0d0d12;
@@ -120,7 +120,7 @@
             </thead>
             <tbody>
         <tr class="pred-row">
-            <td style="color: #ffd700; font-weight: bold; font-size: 1.2rem;">1</td>
+            <td rowspan="2" style="color: #ffd700; font-weight: bold; font-size: 1.2rem;">1</td>
             <td><strong>Kimi Antonelli</strong><br><span class="driver-team">Mercedes</span></td>
             <td><span style="color: #6ee7b7;">High</span></td>
         </tr>
@@ -128,7 +128,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">Dominant season form, fastest in P3</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #c0c0c0; font-weight: bold; font-size: 1.2rem;">2</td>
+            <td rowspan="2" style="color: #c0c0c0; font-weight: bold; font-size: 1.2rem;">2</td>
             <td><strong>Charles Leclerc</strong><br><span class="driver-team">Ferrari</span></td>
             <td><span style="color: #6ee7b7;">High</span></td>
         </tr>
@@ -136,7 +136,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">Fastest in P1, Ferrari setup excels at Monaco</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #cd7f32; font-weight: bold; font-size: 1.2rem;">3</td>
+            <td rowspan="2" style="color: #cd7f32; font-weight: bold; font-size: 1.2rem;">3</td>
             <td><strong>Lewis Hamilton</strong><br><span class="driver-team">Ferrari</span></td>
             <td><span style="color: #6ee7b7;">High</span></td>
         </tr>
@@ -144,7 +144,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">P2 fastest, consistent top 3 race finishes</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">4</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">4</td>
             <td><strong>George Russell</strong><br><span class="driver-team">Mercedes</span></td>
             <td><span style="color: #6ee7b7;">High</span></td>
         </tr>
@@ -152,7 +152,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">Strong P3 pace, Mercedes car dominance continues</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">5</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">5</td>
             <td><strong>Max Verstappen</strong><br><span class="driver-team">Red Bull</span></td>
             <td><span style="color: #fbbf24;">Medium</span></td>
         </tr>
@@ -160,7 +160,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">Solid practice pace, Red Bull lacks recent race wins</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">6</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">6</td>
             <td><strong>Oscar Piastri</strong><br><span class="driver-team">Mclaren</span></td>
             <td><span style="color: #fbbf24;">Medium</span></td>
         </tr>
@@ -168,7 +168,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">P3 sixth, consistent points scorer this season</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">7</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">7</td>
             <td><strong>Lando Norris</strong><br><span class="driver-team">Mclaren</span></td>
             <td><span style="color: #fbbf24;">Medium</span></td>
         </tr>
@@ -176,7 +176,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">Strong championship form, McLaren pace reliable</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">8</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">8</td>
             <td><strong>Pierre Gasly</strong><br><span class="driver-team">Alpine</span></td>
             <td><span style="color: #fbbf24;">Medium</span></td>
         </tr>
@@ -184,7 +184,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">Consistent top 10 finishes, reliable practice times</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">9</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">9</td>
             <td><strong>Gabriel Bortoleto</strong><br><span class="driver-team">Audi</span></td>
             <td><span style="color: #f87171;">Low</span></td>
         </tr>
@@ -192,7 +192,7 @@
             <td colspan="3" style="color: #888; font-size: 0.9rem; padding-top: 0.25rem; padding-bottom: 1rem;">P3 seventh, Audi car shows strong street circuit pace</td>
         </tr>
         <tr class="pred-row">
-            <td style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">10</td>
+            <td rowspan="2" style="color: #60a5fa; font-weight: bold; font-size: 1.2rem;">10</td>
             <td><strong>Oliver Bearman</strong><br><span class="driver-team">Haas</span></td>
             <td><span style="color: #f87171;">Low</span></td>
         </tr>
