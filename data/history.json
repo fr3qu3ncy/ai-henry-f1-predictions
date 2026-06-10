@@ -3,79 +3,80 @@
     {
       "date": "2026-06-14",
       "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026",
+      "circuit_id": "catalunya",
       "predictions": {
         "early": {
-          "generated_at": "2026-06-08 03:07 ",
+          "generated_at": "2026-06-10 09:12 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant form with 5 wins; Mercedes aero efficiency suits Catalunya perfectly."
+              "reasoning": "5 wins this season, dominant pace & championship leader"
             },
             {
               "position": 2,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "high",
-              "reasoning": "Consistent podium threat; strong race pace and tire management all season."
-            },
-            {
-              "position": 3,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Championship leader pace; Ferrari's mechanical grip aids high-speed corners."
+              "reasoning": "2nd in standings, consistent P2/P3 finishes & strong race craft"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Won Round 1, consistently top 4 & matches Antonelli pace"
             },
             {
               "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Regular top-4 finisher; Ferrari package matches circuit characteristics."
+              "confidence": "high",
+              "reasoning": "Regular podium threat, 4th in standings & excellent consistency"
             },
             {
               "position": 5,
               "driver": "Oscar Piastri",
-              "team": "Mclaren",
+              "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Strong recent results; Mclaren balance fits medium-high speed sweepers."
+              "reasoning": "P2 in Japan, P4 in Monaco, climbing standings rapidly"
             },
             {
               "position": 6,
               "driver": "Lando Norris",
-              "team": "Mclaren",
+              "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Matches teammate pace; capable of overtaking on main straight."
+              "reasoning": "P2 in Miami, strong qualifying & race pace in top 6"
             },
             {
               "position": 7,
-              "driver": "Max Verstappen",
+              "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Veteran racecraft; Red Bull improving but trails top three teams."
+              "reasoning": "Surging form: P3 Monaco, P5 Canada, outscoring teammate"
             },
             {
               "position": 8,
-              "driver": "Isack Hadjar",
-              "team": "Red Bull",
-              "confidence": "low",
-              "reasoning": "Recent podium form; traditional circuit pace still developing."
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Consistent points scorer, P5 in Monaco & reliable race mgmt"
             },
             {
               "position": 9,
-              "driver": "Liam Lawson",
-              "team": "Racing Bulls",
+              "driver": "Franco Colapinto",
+              "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Consistent points scorer; street-circuit specialist may lose ground here."
+              "reasoning": "Two P6 finishes recently, excellent tire management"
             },
             {
               "position": 10,
               "driver": "Pierre Gasly",
               "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Steady top-10 contender; Alpine development keeps him in scoring zone."
+              "reasoning": "Steady top 10 performer, P6/P7/P8 across recent rounds"
             }
           ],
           "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
@@ -155,8 +156,7 @@
       ],
       "prediction_types": [
         "early"
-      ],
-      "circuit_id": "catalunya"
+      ]
     },
     {
       "date": "2026-06-07",
