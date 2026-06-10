@@ -79,7 +79,9 @@
               "reasoning": "Steady top 10 performer, P6/P7/P8 across recent rounds"
             }
           ],
-          "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
+          "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026",
+          "type": "early",
+          "date": "2026-06-14"
         }
       },
       "standings": [
@@ -236,7 +238,9 @@
               "reasoning": "Consistent points finishes; race craft & RB pace suit Monaco's nature."
             }
           ],
-          "race_name": "Monaco"
+          "race_name": "Monaco",
+          "type": "early",
+          "date": "2026-06-07"
         },
         "pre-qualifying": {
           "generated_at": "2026-06-07 12:54 ",
@@ -312,7 +316,9 @@
               "reasoning": "Consistent points scorer, Haas strong in recent races"
             }
           ],
-          "race_name": "Monaco"
+          "race_name": "Monaco",
+          "type": "pre-qualifying",
+          "date": "2026-06-07"
         },
         "post-qualifying": {
           "generated_at": "2026-06-07 13:04 ",
@@ -388,7 +394,9 @@
               "reasoning": "P10 start, solid recent form, Racing Bulls reliable on streets."
             }
           ],
-          "race_name": "Monaco"
+          "race_name": "Monaco",
+          "type": "post-qualifying",
+          "date": "2026-06-07"
         }
       },
       "standings": [
