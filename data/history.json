@@ -238,6 +238,84 @@
             }
           ],
           "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-06-14",
+          "generated_at": "2026-06-13 18:05 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form with 5 wins, Mercedes pace suits Catalunya"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Pole position, fastest FP3, strong racecraft and tire management"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P2 grid, consistent top-3 finishes, Ferrari race pace strong"
+            },
+            {
+              "position": 4,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P4 grid, Mclaren FP3 pace strong, good overtaking capability"
+            },
+            {
+              "position": 5,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P7 grid, Mclaren strong race pace, likely to gain positions"
+            },
+            {
+              "position": 6,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Q10 but consistent podium form, Ferrari race pace excellent"
+            },
+            {
+              "position": 7,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P5 grid, Red Bull competitive, veteran Catalunya experience"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P6 grid, consistent points scorer, strong recent race form"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "P8 grid, solid midfield runner, good qualifying and race pace"
+            },
+            {
+              "position": 10,
+              "driver": "Nico H\u00fclkenberg",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "P9 grid, Audi showing strong FP3 pace, veteran consistency"
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
         }
       },
       "standings": [
@@ -315,7 +393,8 @@
       "prediction_types": [
         "early",
         "pre-practice",
-        "pre-qualifying"
+        "pre-qualifying",
+        "post-qualifying"
       ]
     },
     {
