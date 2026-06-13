@@ -160,6 +160,84 @@
             }
           ],
           "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-06-14",
+          "generated_at": "2026-06-13 13:15 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Unbeaten in 5 races, championship leader, dominant pace."
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Strong P1/P2 pace, consistent top 4 finishes this season."
+            },
+            {
+              "position": 3,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Fastest in P1, won Japan, McLaren suits high-speed layout."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Consistent podium contender, strong race pace in P2."
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Fastest in P2, improving form, likely top 5 finish."
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Solid practice times, consistent points scorer, experienced."
+            },
+            {
+              "position": 7,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "P3 in Monaco, strong midfield pace, reliable points finisher."
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Multiple points finishes, strong P1 showing, race craft."
+            },
+            {
+              "position": 9,
+              "driver": "Franco Colapinto",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Climbing form, P6 in Canada, consistent top 10 pace."
+            },
+            {
+              "position": 10,
+              "driver": "Oliver Bearman",
+              "team": "Haas",
+              "confidence": "low",
+              "reasoning": "Strong start to season, Haas competitive, potential upset."
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026"
         }
       },
       "standings": [
@@ -236,7 +314,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "pre-qualifying"
       ]
     },
     {
