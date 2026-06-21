@@ -558,8 +558,8 @@
       ],
       "scores": {
         "post-qualifying": {
-          "total_score": 2,
-          "position_score": 2,
+          "total_score": 4,
+          "position_score": 4,
           "podium_score": 0,
           "position_details": [
             {
@@ -593,9 +593,9 @@
             {
               "position": 5,
               "predicted": "Oscar Piastri",
-              "actual": "N/A",
-              "correct": false,
-              "points": 0
+              "actual": 5,
+              "correct": true,
+              "points": 2
             },
             {
               "position": 6,
@@ -644,7 +644,7 @@
             "Lando Norris"
           ],
           "podium_correct": false,
-          "scored_at": "2026-06-21 15:00 "
+          "scored_at": "2026-06-21 16:30 "
         }
       }
     },
@@ -1016,7 +1016,7 @@
             {
               "position": 7,
               "predicted": "Oscar Piastri",
-              "actual": "N/A",
+              "actual": 5,
               "correct": false,
               "points": 0
             },
@@ -1053,7 +1053,7 @@
             "Pierre Gasly"
           ],
           "podium_correct": false,
-          "scored_at": "2026-06-21 15:11 "
+          "scored_at": "2026-06-21 16:31 "
         }
       }
     }
