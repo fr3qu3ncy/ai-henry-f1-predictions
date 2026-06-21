@@ -37,6 +37,13 @@
             color: #fff;
             margin: 0;
         }
+        .race-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 0.15rem;
+            margin-bottom: 0;
+        }
         .page-circuit {
             flex-shrink: 0;
             width: 80px;
@@ -73,6 +80,23 @@
         .pred-card-preq:hover { border-color: #93c5fd; }
         .pred-card-postq { border-left-color: #6ee7b7; }
         .pred-card-postq:hover { border-color: #6ee7b7; }
+        .pred-card-result {
+            border-left-color: #ffd700;
+            border-width: 3px;
+            background: linear-gradient(135deg, #1a1508 0%, #111118 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
+        }
+        .pred-card-result:hover {
+            border-color: #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+        }
+        .badge-result { background: #3a3000; color: #ffd700; }
+        .score-display {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffd700;
+            margin: 0.5rem 0;
+        }
         .pred-card h3 {
             color: #fff;
             margin-bottom: 0.5rem;
@@ -143,8 +167,11 @@
     <div class="container">
         <a href="../index.html" class="back-link">&larr; Back to all races</a>
         <div class="page-header">
-            <h1>Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026</h1>
-            <img src="https://raw.githubusercontent.com/f1db/f1db/main/src/assets/circuits/white/catalunya-1.svg" alt="Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026 circuit" class="page-circuit">
+            <div>
+                <h1>Barcelona</h1>
+                <p class="race-subtitle">Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026</p>
+            </div>
+            <img src="https://raw.githubusercontent.com/f1db/f1db/main/src/assets/circuits/white/catalunya-1.svg" alt="Barcelona circuit" class="page-circuit">
         </div>
         <p class="race-date">2026-06-14</p>
         
@@ -175,6 +202,14 @@
                 <h3><span class="badge badge-postq">Post-Qualifying</span> Prediction</h3>
                 <p class="pred-date">Generated: 2026-06-13 18:05 </p>
                 <p class="pred-count">10 drivers predicted</p>
+            </a>
+        </div>
+
+        <div class="pred-card pred-card-result">
+            <a href="2026-06-14_score_post-qualifying.html" class="pred-card-link">
+                <h3><span class="badge badge-result">Post-Race</span> Prediction Results</h3>
+                <p class="pred-date">Score for Post-Qualifying prediction</p>
+                <div class="score-display">2 / 25</div>
             </a>
         </div>
 

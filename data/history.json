@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-06-28",
+      "race_name": "Formula 1 Lenovo Austrian Grand Prix 2026",
+      "circuit_id": "spielberg",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-06-28",
+          "generated_at": "2026-06-21 15:50 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form with 6 wins, perfectly suited to Austria's high-speed layout."
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Consistent podium contender, won Spain, Ferrari pace strong at flowing circuits."
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Mercedes strength on high-speed tracks, consistent top-4 finishes this season."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari pace remains top-four, strong qualifying pace should secure podium."
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "McLaren consistently fighting for top-five, reliable race pace and tire management."
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Home track advantage, Red Bull car improving, capable of strong result."
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Jack Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Rising form with multiple podiums, McLaren strategy usually optimizes finishes."
+            },
+            {
+              "position": 8,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Alpine's best points scorer recently, Monaco podium shows peak performance potential."
+            },
+            {
+              "position": 9,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "low",
+              "reasoning": "Red Bull rookie showing rapid improvement, home circuit boost expected."
+            },
+            {
+              "position": 10,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Consistent race craft and tire management keep him in the points reliably."
+            }
+          ],
+          "race_name": "Formula 1 Lenovo Austrian Grand Prix 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 156
+        },
+        {
+          "position": 2,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 115
+        },
+        {
+          "position": 3,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 106
+        },
+        {
+          "position": 4,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 75
+        },
+        {
+          "position": 5,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 73
+        },
+        {
+          "position": 6,
+          "name": "Oscar Jack Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 68
+        },
+        {
+          "position": 7,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 55
+        },
+        {
+          "position": 8,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 41
+        },
+        {
+          "position": 9,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 34
+        },
+        {
+          "position": 10,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 28
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-06-14",
       "race_name": "Formula 1 MSC Cruises Gran Premio de Barcelona-Catalunya 2026",
       "circuit_id": "catalunya",
@@ -395,7 +555,365 @@
         "pre-practice",
         "pre-qualifying",
         "post-qualifying"
-      ]
+      ],
+      "scores": {
+        "post-qualifying": {
+          "total_score": 2,
+          "position_score": 2,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 16,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 2,
+              "predicted": "George Russell",
+              "actual": 2,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 3,
+              "predicted": "Lewis Hamilton",
+              "actual": 1,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Lando Norris",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Oscar Piastri",
+              "actual": "N/A",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Charles Leclerc",
+              "actual": 15,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 7,
+              "predicted": "Max Verstappen",
+              "actual": 4,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Isack Hadjar",
+              "actual": 6,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 9,
+              "predicted": "Liam Lawson",
+              "actual": 8,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Nico H\u00fclkenberg",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "George Russell",
+            "Lewis Hamilton"
+          ],
+          "actual_podium": [
+            "Lewis Hamilton",
+            "George Russell",
+            "Lando Norris"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-06-21 15:00 "
+        },
+        "pre-qualifying": {
+          "total_score": 6,
+          "position_score": 6,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 16,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 2,
+              "predicted": "George Russell",
+              "actual": 2,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 3,
+              "predicted": "Oscar Piastri",
+              "actual": "N/A",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Charles Leclerc",
+              "actual": 15,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Lando Norris",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Lewis Hamilton",
+              "actual": 1,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 7,
+              "predicted": "Pierre Gasly",
+              "actual": 7,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 8,
+              "predicted": "Liam Lawson",
+              "actual": 8,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 9,
+              "predicted": "Franco Colapinto",
+              "actual": 10,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Oliver Bearman",
+              "actual": 17,
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "George Russell",
+            "Oscar Piastri"
+          ],
+          "actual_podium": [
+            "Lewis Hamilton",
+            "George Russell",
+            "Lando Norris"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-06-21 15:02 "
+        },
+        "early": {
+          "total_score": 2,
+          "position_score": 2,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 16,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 2,
+              "predicted": "Lewis Hamilton",
+              "actual": 1,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 3,
+              "predicted": "George Russell",
+              "actual": 2,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Charles Leclerc",
+              "actual": 15,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Oscar Piastri",
+              "actual": "N/A",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Lando Norris",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 7,
+              "predicted": "Isack Hadjar",
+              "actual": 6,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Liam Lawson",
+              "actual": 8,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 9,
+              "predicted": "Franco Colapinto",
+              "actual": 10,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Pierre Gasly",
+              "actual": 7,
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "Lewis Hamilton",
+            "George Russell"
+          ],
+          "actual_podium": [
+            "Lewis Hamilton",
+            "George Russell",
+            "Lando Norris"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-06-21 15:03 "
+        },
+        "pre-practice": {
+          "total_score": 2,
+          "position_score": 2,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 16,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 2,
+              "predicted": "George Russell",
+              "actual": 2,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 3,
+              "predicted": "Lewis Hamilton",
+              "actual": 1,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Charles Leclerc",
+              "actual": 15,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Oscar Piastri",
+              "actual": "N/A",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Lando Norris",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 7,
+              "predicted": "Max Verstappen",
+              "actual": 4,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Isack Hadjar",
+              "actual": 6,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 9,
+              "predicted": "Liam Lawson",
+              "actual": 8,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Pierre Gasly",
+              "actual": 7,
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "George Russell",
+            "Lewis Hamilton"
+          ],
+          "actual_podium": [
+            "Lewis Hamilton",
+            "George Russell",
+            "Lando Norris"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-06-21 15:03 "
+        }
+      }
     },
     {
       "date": "2026-06-07",
@@ -713,7 +1231,98 @@
         "pre-qualifying",
         "post-qualifying"
       ],
-      "circuit_id": "monaco"
+      "circuit_id": "monaco",
+      "scores": {
+        "post-qualifying": {
+          "total_score": 2,
+          "position_score": 2,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 1,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 2,
+              "predicted": "Max Verstappen",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 3,
+              "predicted": "Lewis Hamilton",
+              "actual": 2,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Charles Leclerc",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Isack Hadjar",
+              "actual": 4,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "George Russell",
+              "actual": 12,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 7,
+              "predicted": "Oscar Piastri",
+              "actual": "N/A",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Lando Norris",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 9,
+              "predicted": "Pierre Gasly",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Liam Lawson",
+              "actual": 6,
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "Max Verstappen",
+            "Lewis Hamilton"
+          ],
+          "actual_podium": [
+            "Kimi Antonelli",
+            "Lewis Hamilton",
+            "Pierre Gasly"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-06-21 15:11 "
+        }
+      }
     }
   ]
 }
