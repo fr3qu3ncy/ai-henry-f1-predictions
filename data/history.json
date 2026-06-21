@@ -8,77 +8,77 @@
         "early": {
           "type": "early",
           "date": "2026-06-28",
-          "generated_at": "2026-06-21 15:50 ",
+          "generated_at": "2026-06-21 16:46 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant season form with 6 wins, perfectly suited to Austria's high-speed layout."
+              "reasoning": "Unbeaten streak, dominant car setup, clear favorite at high-speed circuits."
             },
             {
               "position": 2,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Consistent podium contender, won Spain, Ferrari pace strong at flowing circuits."
-            },
-            {
-              "position": 3,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Mercedes strength on high-speed tracks, consistent top-4 finishes this season."
+              "reasoning": "Consistent podium contender, Mercedes pace excellent on flowing tracks."
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Peak form after Barcelona win, Ferrari strong in straight-line speed."
             },
             {
               "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Ferrari pace remains top-four, strong qualifying pace should secure podium."
+              "confidence": "high",
+              "reasoning": "Steady top-4 pace, Ferrari chassis development paying off."
             },
             {
               "position": 5,
               "driver": "Lando Norris",
-              "team": "McLaren",
+              "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "McLaren consistently fighting for top-five, reliable race pace and tire management."
+              "reasoning": "High-speed setup suits Austria, consistent top-5 finishes."
             },
             {
               "position": 6,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
+              "driver": "Oscar Jack Piastri",
+              "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Home track advantage, Red Bull car improving, capable of strong result."
+              "reasoning": "Strong race craft, team reliability keeps him in top-6."
             },
             {
               "position": 7,
-              "driver": "Oscar Jack Piastri",
-              "team": "McLaren",
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Rising form with multiple podiums, McLaren strategy usually optimizes finishes."
+              "reasoning": "Ongoing upgrades, strong historical pace at Red Bull Ring."
             },
             {
               "position": 8,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Alpine's best points scorer recently, Monaco podium shows peak performance potential."
+              "reasoning": "Breakthrough form, recent P4/P5 shows second car pace."
             },
             {
               "position": 9,
-              "driver": "Isack Hadjar",
-              "team": "Red Bull",
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Red Bull rookie showing rapid improvement, home circuit boost expected."
+              "reasoning": "Alpine consistency, reliable points finisher across circuits."
             },
             {
               "position": 10,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "low",
-              "reasoning": "Consistent race craft and tire management keep him in the points reliably."
+              "reasoning": "Solid midfield pace, regular top-10 scorer this season."
             }
           ],
           "race_name": "Formula 1 Lenovo Austrian Grand Prix 2026"
