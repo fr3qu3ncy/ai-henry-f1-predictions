@@ -107,18 +107,17 @@
             background: #111118;
             border: 1px solid #222;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
             margin-bottom: 2rem;
         }
         .score-summary-header {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.25rem;
+            gap: 1rem;
         }
         .score-summary-ring {
-            width: 80px;
-            height: 80px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             border: 3px solid #fbbf24;
             display: flex;
@@ -128,24 +127,58 @@
             flex-shrink: 0;
         }
         .score-summary-num {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: #fbbf24;
             line-height: 1;
         }
         .score-summary-max {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #888;
-            margin-top: 0.15rem;
+            margin-top: 0.1rem;
         }
         .score-summary-stats {
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.15rem;
+            flex: 1;
         }
         .score-stat {
             color: #aaa;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+        .score-toggle-btn {
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #aaa;
+            font-size: 0.8rem;
+            padding: 0.35rem 0.75rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+        .score-toggle-btn:hover {
+            background: #1a1a2e;
+            border-color: #555;
+            color: #fff;
+        }
+        .score-rows-container {
+            overflow: hidden;
+            max-height: 500px;
+            transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+            max-height: 500px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+        .score-rows-container.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            overflow: hidden;
         }
         .score-row {
             display: flex;
@@ -186,8 +219,17 @@
         }
         @media (max-width: 640px) {
             .score-summary-header {
-                flex-direction: column;
-                text-align: center;
+                gap: 0.75rem;
+            }
+            .score-summary-ring {
+                width: 52px;
+                height: 52px;
+            }
+            .score-summary-num {
+                font-size: 1.25rem;
+            }
+            .score-toggle-btn .label {
+                display: none;
             }
             .score-row {
                 flex-wrap: wrap;
@@ -224,24 +266,28 @@
                     <span class="score-stat">2 races scored</span>
                     <span class="score-stat">12% average</span>
                 </div>
+                <button class="score-toggle-btn" onclick="this.parentElement.parentElement.querySelector('.score-rows-container').classList.toggle('collapsed'); this.querySelector('.icon').textContent = this.parentElement.parentElement.querySelector('.score-rows-container').classList.contains('collapsed') ? '▼' : '▲';">
+                    <span class="label">Details</span><span class="icon">▼</span>
+                </button>
             </div>
-        <div class="score-row">
-            <span class="score-row-date">2026-06-14</span>
-            <span class="score-row-name">Barcelona</span>
-            <div class="score-row-bar">
-                <div class="score-row-fill" style="width: 16.0%"></div>
+            <div class="score-rows-container collapsed">
+            <div class="score-row">
+                <span class="score-row-date">2026-06-14</span>
+                <span class="score-row-name">Barcelona</span>
+                <div class="score-row-bar">
+                    <div class="score-row-fill" style="width: 16.0%"></div>
+                </div>
+                <span class="score-row-val">4/25</span>
             </div>
-            <span class="score-row-val">4/25</span>
-        </div>
-        <div class="score-row">
-            <span class="score-row-date">2026-06-07</span>
-            <span class="score-row-name">Monaco</span>
-            <div class="score-row-bar">
-                <div class="score-row-fill" style="width: 8.0%"></div>
+            <div class="score-row">
+                <span class="score-row-date">2026-06-07</span>
+                <span class="score-row-name">Monaco</span>
+                <div class="score-row-bar">
+                    <div class="score-row-fill" style="width: 8.0%"></div>
+                </div>
+                <span class="score-row-val">2/25</span>
             </div>
-            <span class="score-row-val">2/25</span>
-        </div>
-
+            </div>
         </div>
     <a href="weekends/2026-06-28.html" class="race-card">
         <div class="race-card-left">
@@ -282,7 +328,7 @@
 
         <footer>
             <p>Generated by Henry AI &middot; Powered by data from F1DB &amp; BBC Sport</p>
-            <p>Last updated: 2026-06-21 16:46 </p>
+            <p>Last updated: 2026-06-21 17:13 </p>
         </footer>
     </div>
 </body>
