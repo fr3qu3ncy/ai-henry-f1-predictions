@@ -8,77 +8,77 @@
         "early": {
           "type": "early",
           "date": "2026-06-28",
-          "generated_at": "2026-06-21 16:46 ",
+          "generated_at": "2026-06-22 03:04 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Unbeaten streak, dominant car setup, clear favorite at high-speed circuits."
+              "reasoning": "Unbeaten in 6 races, dominant championship leader."
             },
             {
               "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Consistent podium contender, Mercedes pace excellent on flowing tracks."
+              "reasoning": "Consistent runner-up, excels at high-speed power circuits."
             },
             {
               "position": 3,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Peak form after Barcelona win, Ferrari strong in straight-line speed."
+              "reasoning": "Race winner in Spain, strong qualifying and race pace."
             },
             {
               "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Steady top-4 pace, Ferrari chassis development paying off."
+              "reasoning": "Regular top 4 finisher, excellent race consistency."
             },
             {
               "position": 5,
               "driver": "Lando Norris",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "High-speed setup suits Austria, consistent top-5 finishes."
+              "reasoning": "Strong straight-line speed, podium threat in Miami."
             },
             {
               "position": 6,
               "driver": "Oscar Jack Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Strong race craft, team reliability keeps him in top-6."
+              "reasoning": "Consistent top 6, good tire management for long races."
             },
             {
               "position": 7,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Ongoing upgrades, strong historical pace at Red Bull Ring."
+              "reasoning": "Home track advantage, car suits high-speed layout."
             },
             {
               "position": 8,
-              "driver": "Isack Hadjar",
-              "team": "Red Bull",
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
               "confidence": "medium",
-              "reasoning": "Breakthrough form, recent P4/P5 shows second car pace."
+              "reasoning": "Monaco podium shows peak form, regular points scorer."
             },
             {
               "position": 9,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
-              "confidence": "low",
-              "reasoning": "Alpine consistency, reliable points finisher across circuits."
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Recent P4/P5 finishes, benefits from power-heavy track."
             },
             {
               "position": 10,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
-              "confidence": "low",
-              "reasoning": "Solid midfield pace, regular top-10 scorer this season."
+              "confidence": "medium",
+              "reasoning": "Highly consistent top 10 finisher across all circuits."
             }
           ],
           "race_name": "Formula 1 Lenovo Austrian Grand Prix 2026"
