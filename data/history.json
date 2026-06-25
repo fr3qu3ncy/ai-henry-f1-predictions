@@ -82,6 +82,84 @@
             }
           ],
           "race_name": "Formula 1 Lenovo Austrian Grand Prix 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-06-28",
+          "generated_at": "2026-06-25 12:34 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Unbeatable season form with 5 wins, dominant championship leader."
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Won last race, consistently top 3, excellent recent pace."
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Regular podium finisher, Mercedes strong at high-speed circuits."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Solid P4 in standings, Ferrari pace ensures top 5 finish."
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Strong Miami/Spain form, McLaren competitive but slightly behind leaders."
+            },
+            {
+              "position": 6,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Consistent top 5 results, reliable points scorer this season."
+            },
+            {
+              "position": 7,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull improving, Austria traditionally suits them, recent P3/P4."
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Surprisingly consistent top 10, outperforming teammate recently."
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Regular points finisher, Alpine midfield pace stable."
+            },
+            {
+              "position": 10,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Consistent P7-9 finishes, strong race craft in midfield battles."
+            }
+          ],
+          "race_name": "Formula 1 Lenovo Austrian Grand Prix 2026"
         }
       },
       "standings": [
@@ -157,7 +235,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
