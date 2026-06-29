@@ -395,7 +395,98 @@
         "pre-practice",
         "pre-qualifying",
         "post-qualifying"
-      ]
+      ],
+      "scores": {
+        "post-qualifying": {
+          "total_score": 2,
+          "position_score": 2,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 2,
+              "predicted": "George Russell",
+              "actual": 1,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 3,
+              "predicted": "Lewis Hamilton",
+              "actual": 5,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Oscar Jack Piastri",
+              "actual": 4,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 5,
+              "predicted": "Lando Norris",
+              "actual": 7,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Charles Leclerc",
+              "actual": 8,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 7,
+              "predicted": "Max Verstappen",
+              "actual": 2,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Isack Hadjar",
+              "actual": 6,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 9,
+              "predicted": "Pierre Gasly",
+              "actual": 13,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Liam Lawson",
+              "actual": 9,
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "George Russell",
+            "Lewis Hamilton"
+          ],
+          "actual_podium": [
+            "George Russell",
+            "Max Verstappen",
+            "Kimi Antonelli"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-06-29 14:02 "
+        }
+      }
     },
     {
       "date": "2026-06-14",

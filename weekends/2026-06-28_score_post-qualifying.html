@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score: Post-Qualifying Prediction | Formula 1 Lenovo Austrian Grand Prix 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: #fff; }
+        h1 {
+            font-size: 1.75rem;
+            color: #fff;
+            margin-bottom: 0.15rem;
+        }
+        .race-subtitle {
+            color: #666;
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .meta {
+            color: #888;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .score-header {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: #111118;
+            border: 1px solid #222;
+            border-radius: 12px;
+        }
+        .score-ring {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid #f87171;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 30px rgba(#f87, 0.2);
+        }
+        .score-ring .score-num {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f87171;
+            line-height: 1;
+        }
+        .score-ring .score-max {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.25rem;
+        }
+        .score-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .score-line {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .score-line .label {
+            color: #aaa;
+            font-size: 0.95rem;
+            min-width: 120px;
+        }
+        .score-line .bar-bg {
+            flex: 1;
+            height: 8px;
+            background: #1a1a2e;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .score-line .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: #f87171;
+        }
+        .score-line .value {
+            color: #fff;
+            font-weight: 600;
+            min-width: 50px;
+            text-align: right;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            background: #1a1a2e;
+            color: #aaa;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        td {
+            padding: 0.75rem 1rem;
+        }
+        .pos-cell {
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 50px;
+        }
+        .pred-driver {
+            color: #93c5fd;
+        }
+        .actual-driver {
+            color: #6ee7b7;
+        }
+        .vs-cell {
+            color: #555;
+            font-size: 0.8rem;
+            text-align: center;
+            width: 40px;
+        }
+        .status-cell {
+            text-align: right;
+            font-weight: 600;
+            width: 80px;
+        }
+        .score-row-correct {
+            background: #0d1a0d;
+        }
+        .score-row-wrong {
+            background: #0d0d12;
+        }
+        tr:hover {
+            background: #111118 !important;
+        }
+        .podium-section {
+            background: #111118;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .podium-section-correct {
+            border-color: #6ee7b7;
+        }
+        .podium-section-wrong {
+            border-color: #f87171;
+        }
+        .podium-section h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .podium-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        .podium-row .label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .podium-row .drivers {
+            color: #fff;
+            font-weight: 500;
+        }
+        .section-label {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: #1a1a2e;
+            color: #aaa;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 2rem;
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem 0.5rem;
+            }
+            h1 {
+                font-size: 1.35rem;
+            }
+            .score-header {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.25rem;
+                padding: 1.25rem;
+            }
+            .score-ring {
+                width: 110px;
+                height: 110px;
+            }
+            .score-ring .score-num {
+                font-size: 2.25rem;
+            }
+            .score-line .label {
+                min-width: 0;
+                font-size: 0.85rem;
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .pred-driver, .actual-driver {
+                word-break: break-word;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="2026-06-28.html" class="back-link">&larr; Back to Austria</a>
+        <h1>Prediction Score — Austria</h1>
+        <p class="race-subtitle">Formula 1 Lenovo Austrian Grand Prix 2026</p>
+        <p class="meta">Post-Qualifying Prediction &middot; Generated: 2026-06-27 18:06  &middot; Scored: 2026-06-29 14:02 </p>
+
+        <div class="score-header">
+            <div class="score-ring">
+                <span class="score-num">2</span>
+                <span class="score-max">out of 25</span>
+            </div>
+            <div class="score-breakdown">
+                <div class="score-line">
+                    <span class="label">Positions (1-10)</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 10.0%"></div></div>
+                    <span class="value">2/20</span>
+                </div>
+                <div class="score-line">
+                    <span class="label">Podium (top 3)</span>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 0.0%"></div></div>
+                    <span class="value">0/5</span>
+                </div>
+            </div>
+        </div>
+
+        <span class="section-label">POSITION-BY-POSITION BREAKDOWN</span>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Predicted</th>
+                    <th></th>
+                    <th>Actual</th>
+                    <th style="text-align: right;">Points</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #ffd700;">1</td>
+            <td class="pred-driver">Kimi Antonelli</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">3</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #c0c0c0;">2</td>
+            <td class="pred-driver">George Russell</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">1</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #cd7f32;">3</td>
+            <td class="pred-driver">Lewis Hamilton</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">5</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-correct">
+            <td class="pos-cell" style="color: #60a5fa;">4</td>
+            <td class="pred-driver">Oscar Jack Piastri</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">4</td>
+            <td class="status-cell" style="color: #6ee7b7;">&#10003; 2/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #60a5fa;">5</td>
+            <td class="pred-driver">Lando Norris</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">7</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #60a5fa;">6</td>
+            <td class="pred-driver">Charles Leclerc</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">8</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #60a5fa;">7</td>
+            <td class="pred-driver">Max Verstappen</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">2</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #60a5fa;">8</td>
+            <td class="pred-driver">Isack Hadjar</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">6</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #60a5fa;">9</td>
+            <td class="pred-driver">Pierre Gasly</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">13</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+        <tr class="score-row-wrong">
+            <td class="pos-cell" style="color: #60a5fa;">10</td>
+            <td class="pred-driver">Liam Lawson</td>
+            <td class="vs-cell">vs</td>
+            <td class="actual-driver">9</td>
+            <td class="status-cell" style="color: #f87171;">&#10007; 0/2</td>
+        </tr>
+
+            </tbody>
+        </table>
+
+        <span class="section-label">PODIUM CHECK</span>
+        <div class="podium-section podium-section-wrong">
+            <h3 style="color: #f87171;">&#10007; Podium Result</h3>
+            <div class="podium-row">
+                <span class="label">Predicted podium:</span>
+                <span class="drivers">Kimi Antonelli, George Russell, Lewis Hamilton</span>
+            </div>
+            <div class="podium-row">
+                <span class="label">Actual podium:</span>
+                <span class="drivers">George Russell, Max Verstappen, Kimi Antonelli</span>
+            </div>
+            <div class="podium-row">
+                <span class="label">Score:</span>
+                <span class="drivers" style="color: #f87171;">0/5 points</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>Generated by Henry AI &middot; Powered by data from F1DB &amp; BBC Sport</p>
+        </footer>
+    </div>
+</body>
+</html>
