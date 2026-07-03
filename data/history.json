@@ -164,77 +164,77 @@
         "pre-sprint-qualifying": {
           "type": "pre-sprint-qualifying",
           "date": "2026-07-03",
-          "generated_at": "2026-07-03 12:51 ",
+          "generated_at": "2026-07-03 13:38 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Unbeaten form with 6 wins, dominant car pace across all circuits."
+              "reasoning": "Dominant season form, 6 wins, likely extends streak."
             },
             {
               "position": 2,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Historic Silverstone mastery combined with recent Spanish victory."
-            },
-            {
-              "position": 3,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "high",
-              "reasoning": "Consistent podium contender with excellent Mercedes race pace."
-            },
-            {
-              "position": 4,
               "driver": "Lando Norris",
               "team": "Mclaren",
               "confidence": "high",
-              "reasoning": "Home advantage, McLaren's strong Silverstone heritage and pace."
+              "reasoning": "Home advantage, strong historical record, pace."
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Strong Silverstone history, consistent form."
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Mercedes strong here, consistent top 4 finishes."
             },
             {
               "position": 5,
               "driver": "Oscar Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Strong recent form, benefits from McLaren's circuit-specific setup."
+              "reasoning": "McLaren competitive, good Silverstone record."
             },
             {
               "position": 6,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Austrian win proves pace, historically strong at high-speed tracks."
-            },
-            {
-              "position": 7,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Consistent points scorer, Ferrari's race pace remains competitive."
+              "reasoning": "Ferrari reliable, consistent points scorer."
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull midfield pace, consistent top 8."
             },
             {
               "position": 8,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Monaco winner, delivers steady top-8 race pace every weekend."
+              "reasoning": "Silverstone specialist, strong historical data."
             },
             {
               "position": 9,
-              "driver": "Liam Lawson",
-              "team": "Racing Bulls",
-              "confidence": "medium",
-              "reasoning": "Reliable points finisher with excellent race craft and consistency."
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Alpine consistent, recent top 10 finishes."
             },
             {
               "position": 10,
-              "driver": "Isack Hadjar",
-              "team": "Red Bull",
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
               "confidence": "low",
-              "reasoning": "Two recent podiums, Red Bull car improving rapidly in race trim."
+              "reasoning": "Racing Bulls strong midfield, points scorer."
             }
           ],
           "race_name": "Formula 1 Pirelli British Grand Prix 2026"
