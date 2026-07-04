@@ -316,6 +316,84 @@
             }
           ],
           "race_name": "Formula 1 Pirelli British Grand Prix 2026"
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-07-03",
+          "generated_at": "2026-07-04 15:06 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form, fastest car, consistent race pace"
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Silverstone specialist, strong weekend, recent win in Spain"
+            },
+            {
+              "position": 3,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Home track advantage, excellent historical data, strong car"
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Consistent podium contender, strong Austrian GP performance"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Strong Ferrari pace, consistent top-5 finishes recently"
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Good recent form, historical Silverstone strength"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Solid Mclaren pace, consistent points scorer this season"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Emerging talent, consistent top-8 finishes recently"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Strong sprint race, good recent form, starts on pole"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Consistent points finisher, strong midfield pace"
+            }
+          ],
+          "race_name": "Formula 1 Pirelli British Grand Prix 2026"
         }
       },
       "standings": [
@@ -394,7 +472,8 @@
         "early",
         "pre-practice",
         "pre-sprint-qualifying",
-        "post-sprint-qualifying"
+        "post-sprint-qualifying",
+        "pre-qualifying"
       ],
       "scores": {
         "post-sprint-qualifying": {
