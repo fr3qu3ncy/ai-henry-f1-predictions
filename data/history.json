@@ -238,6 +238,84 @@
             }
           ],
           "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-07-19",
+          "generated_at": "2026-07-18 19:12 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form, polesitter, Mercedes pace unmatched."
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Strong Spa history, P2 grid, Red Bull high-speed pace."
+            },
+            {
+              "position": 3,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "P3 grid, consistent podium form, McLaren development strong."
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "P4 grid, teammate pace, proven race craft at Spa."
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P5 grid, Ferrari strong, good historical Spa results."
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P6 grid, recent podiums, Ferrari race pace reliable."
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Excellent Spa record, P7 grid, McLaren upgrade package."
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P10 grid, strong recent form, Red Bull power advantage."
+            },
+            {
+              "position": 9,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "P8 grid, consistent points, Bulls improving pace."
+            },
+            {
+              "position": 10,
+              "driver": "Gabriel Bortoleto",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "P9 grid, Audi showing pace, Spa suits aero efficiency."
+            }
+          ],
+          "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
         }
       },
       "standings": [
@@ -315,7 +393,8 @@
       "prediction_types": [
         "early",
         "pre-practice",
-        "pre-qualifying"
+        "pre-qualifying",
+        "post-qualifying"
       ]
     },
     {
