@@ -164,77 +164,77 @@
         "pre-qualifying": {
           "type": "pre-qualifying",
           "date": "2026-07-19",
-          "generated_at": "2026-07-18 02:13 ",
+          "generated_at": "2026-07-18 14:19 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant season leader, fastest in P2, Mercedes suits Spa"
+              "reasoning": "Dominant season pace, fastest in P2/P3, championship leader."
             },
             {
               "position": 2,
-              "driver": "George Russell",
-              "team": "Mercedes",
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Consistent top-3 form, strong race pace, Mercedes advantage"
+              "reasoning": "Spa specialist, strong P1 pace, consistent podium form."
             },
             {
               "position": 3,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "P1 fastest, historical Spa winner, Red Bull development"
+              "reasoning": "P1 fastest, historical Spa winner, sharp P2/P3 times."
             },
             {
               "position": 4,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
+              "driver": "George Russell",
+              "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Recent wins, P2 4th, proven Spa pace and racecraft"
+              "reasoning": "Mercedes pace excellent, 3 wins this year, P3 4th."
             },
             {
               "position": 5,
-              "driver": "Oscar Piastri",
+              "driver": "Lando Norris",
               "team": "Mclaren",
               "confidence": "high",
-              "reasoning": "Historical Spa avg P1.5, strong P2, Mclaren form"
+              "reasoning": "McLaren pace sharp, 2nd in P2/P3, regular top 5."
             },
             {
               "position": 6,
-              "driver": "Lando Norris",
+              "driver": "Oscar Piastri",
               "team": "Mclaren",
-              "confidence": "medium",
-              "reasoning": "Fast P2, strong Mclaren pace, historical Spa success"
+              "confidence": "high",
+              "reasoning": "Best historical Spa record, solid P3 time, consistent."
             },
             {
               "position": 7,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Ferrari pace, historical Spa podiums, P1 strong"
+              "reasoning": "Ferrari strong, recent win, P1 pace competitive."
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Consistent points, strong P1/P2, Red Bull #2 advantage"
+              "reasoning": "Breakout season, consistent top 6, strong P1/P2."
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Regular points scorer, solid practice pace, Spa history"
+              "reasoning": "Recent top 6 finishes, good Spa history, RB pace."
             },
             {
               "position": 10,
-              "driver": "Franco Colapinto",
-              "team": "Alpine",
-              "confidence": "low",
-              "reasoning": "P2 7th, consistent lower points, Alpine development"
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Consistent points scorer, strong P1, RB reliability."
             }
           ],
           "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
