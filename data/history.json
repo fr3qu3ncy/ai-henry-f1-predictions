@@ -242,77 +242,77 @@
         "post-qualifying": {
           "type": "post-qualifying",
           "date": "2026-07-19",
-          "generated_at": "2026-07-18 19:12 ",
+          "generated_at": "2026-07-19 13:49 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant season form, polesitter, Mercedes pace unmatched."
+              "reasoning": "Pole sitter with dominant 2026 form and strongest FP/Q pace at Spa."
             },
             {
               "position": 2,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "Strong Spa history, P2 grid, Red Bull high-speed pace."
+              "reasoning": "P2 on grid, excellent Spa history, and consistent race pace."
             },
             {
               "position": 3,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
-              "confidence": "high",
-              "reasoning": "P3 grid, consistent podium form, McLaren development strong."
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P6 grid, strong recent win, Ferrari car thriving here."
             },
             {
               "position": 4,
-              "driver": "George Russell",
-              "team": "Mercedes",
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
               "confidence": "high",
-              "reasoning": "P4 grid, teammate pace, proven race craft at Spa."
+              "reasoning": "P7 grid, exceptional Spa record (avg 1.5), strong race pace."
             },
             {
               "position": 5,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "P5 grid, Ferrari strong, good historical Spa results."
+              "confidence": "medium",
+              "reasoning": "P5 grid, recent Silverstone win, good circuit history."
             },
             {
               "position": 6,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "P6 grid, recent podiums, Ferrari race pace reliable."
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "10-place penalty drops grid, but strong race pace & Spa history."
             },
             {
               "position": 7,
-              "driver": "Oscar Piastri",
-              "team": "Mclaren",
-              "confidence": "medium",
-              "reasoning": "Excellent Spa record, P7 grid, McLaren upgrade package."
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "low",
+              "reasoning": "P4 grid but straight-line issues hurt Spa pace, likely to drop."
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "P10 grid, strong recent form, Red Bull power advantage."
+              "reasoning": "P10 grid, highly consistent points finisher recently."
             },
             {
               "position": 9,
               "driver": "Arvid Lindblad",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "P8 grid, consistent points, Bulls improving pace."
+              "reasoning": "P8 grid, solid consistency in midfield battles this season."
             },
             {
               "position": 10,
-              "driver": "Gabriel Bortoleto",
-              "team": "Audi",
-              "confidence": "low",
-              "reasoning": "P9 grid, Audi showing pace, Spa suits aero efficiency."
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "P11 grid, reliable race pace, strong recent top-10 finishes."
             }
           ],
           "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
