@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-07-26",
+      "race_name": "Formula 1 AWS Hungarian Grand Prix 2026",
+      "circuit_id": "hungaroring",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-07-26",
+          "generated_at": "2026-07-20 07:10 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form with 4 wins, leading championship by 45pts. Mercedes pace strong."
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Fast Mercedes car, 2 wins this year. Bouncing back from Spa crash."
+            },
+            {
+              "position": 3,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Historical dominance at Hungary (avg P1.7). Consistent top 5 form this season."
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Strong recent form with Spain win. Ferrari car competitive, good race craft."
+            },
+            {
+              "position": 5,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Excellent historical record here. Consistent points scorer, car suits circuit."
+            },
+            {
+              "position": 6,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "British GP winner, consistent top 5 finishes. Ferrari pace matches top teams."
+            },
+            {
+              "position": 7,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Historical avg P5 here. Experience and car upgrades could yield top 7."
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "6th in standings, highly consistent. Red Bull race pace improving steadily."
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "10th in standings, remarkable consistency. Excels in race management."
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "9th in standings, Monaco winner. Alpine car competitive but tight midfield fight."
+            }
+          ],
+          "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 204
+        },
+        {
+          "position": 2,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 159
+        },
+        {
+          "position": 3,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 154
+        },
+        {
+          "position": 4,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 126
+        },
+        {
+          "position": 5,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 103
+        },
+        {
+          "position": 6,
+          "name": "Oscar Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 92
+        },
+        {
+          "position": 7,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 91
+        },
+        {
+          "position": 8,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 60
+        },
+        {
+          "position": 9,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 42
+        },
+        {
+          "position": 10,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 39
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-07-19",
       "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026",
       "circuit_id": "spa-francorchamps",
