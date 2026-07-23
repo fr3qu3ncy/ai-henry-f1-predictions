@@ -82,6 +82,84 @@
             }
           ],
           "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-07-26",
+          "generated_at": "2026-07-23 12:41 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant 2026 form with 6 wins, leading championship by a large margin."
+            },
+            {
+              "position": 2,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Historical Hungary dominance (avg 1.7), strong recent pace and consistency."
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Consistent top 5 finishes, Spain win boosts confidence and form."
+            },
+            {
+              "position": 4,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Proven Hungary pace (avg 2.7), reliable top 6 finishes this season."
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Strong 2026 form, Britain winner, historical top 5 average here."
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Historical top 5 pace, Red Bull car showing improved race performance."
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Excellent recent form, consistently finishing in top 6 over last 4 races."
+            },
+            {
+              "position": 8,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "low",
+              "reasoning": "Mercedes car pace remains strong, expected bounce-back after Spa crash."
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Reliable points finisher, strong recent consistency in top 8-9."
+            },
+            {
+              "position": 10,
+              "driver": "Gabriel Bortoleto",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "Historical Hungary strength, recent top 8 finishes show upward trajectory."
+            }
+          ],
+          "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
         }
       },
       "standings": [
@@ -157,7 +235,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
