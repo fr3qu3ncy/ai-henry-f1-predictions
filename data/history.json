@@ -160,6 +160,84 @@
             }
           ],
           "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-07-26",
+          "generated_at": "2026-07-25 13:46 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Fastest in FP3, historically dominant at Hungary (avg P1.7), strong recent form."
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "2nd fastest in FP3, won last race, Ferrari showing excellent pace."
+            },
+            {
+              "position": 3,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader with 7 wins, 3rd fastest in FP3, consistent podiums."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "4th fastest in FP3, consistent top 4 finishes, strong Ferrari setup."
+            },
+            {
+              "position": 5,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "5th fastest in FP3, historically excellent at Hungary (avg P2.7)."
+            },
+            {
+              "position": 6,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "6th fastest in FP3, 2 wins this year but reliability concerns noted."
+            },
+            {
+              "position": 7,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "7th fastest in FP3, historically decent here but inconsistent this season."
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "8th fastest in FP3, surprisingly consistent points scorer for Red Bull."
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "9th fastest in FP3, reliable top 10 finisher with strong practice pace."
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Monaco winner recently, consistent points finisher despite lower FP3 time."
+            }
+          ],
+          "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
         }
       },
       "standings": [
@@ -236,7 +314,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "pre-qualifying"
       ]
     },
     {
