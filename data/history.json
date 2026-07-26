@@ -238,6 +238,84 @@
             }
           ],
           "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-07-26",
+          "generated_at": "2026-07-26 10:39 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Pole on low-overtake track, fastest in P3, historically dominant here."
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Ferrari fastest in P1/P2, recent win boosts momentum, strong race pace."
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Started P2, consistent top finishes, Ferrari pace excels here."
+            },
+            {
+              "position": 4,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Championship leader with dominant race pace, climbs from P7 start."
+            },
+            {
+              "position": 5,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Strong qualifying P3, excellent historical performance at Hungaroring."
+            },
+            {
+              "position": 6,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Consistent podium contender, Mercedes race pace strong here."
+            },
+            {
+              "position": 7,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Solid grid P4, but Red Bull lacking outright pace vs top teams."
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Surprising consistency this season, strong practice times."
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Multiple recent top-10 finishes, strong race craft from P11."
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Qualifying P9 shows pace, Racing Bulls solid mid-field package."
+            }
+          ],
+          "race_name": "Formula 1 AWS Hungarian Grand Prix 2026"
         }
       },
       "standings": [
@@ -315,7 +393,8 @@
       "prediction_types": [
         "early",
         "pre-practice",
-        "pre-qualifying"
+        "pre-qualifying",
+        "post-qualifying"
       ]
     },
     {
