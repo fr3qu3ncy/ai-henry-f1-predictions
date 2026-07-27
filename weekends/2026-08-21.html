@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 Heineken Dutch Grand Prix 2026 Predictions | Henry AI F1</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: #fff; }
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            gap: 1rem;
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            color: #fff;
+            margin: 0;
+        }
+        .race-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 0.15rem;
+            margin-bottom: 0;
+        }
+        .page-circuit {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: brightness(0.8);
+        }
+        .race-date {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        .pred-card {
+            background: #111118;
+            border: 1px solid #222;
+            border-left: 3px solid;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .pred-card:hover {
+            border-color: #444;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .pred-card-early { border-left-color: #93c5fd; }
+        .pred-card-early:hover { border-color: #93c5fd; }
+        .pred-card-prepr { border-left-color: #6ee7b7; }
+        .pred-card-prepr:hover { border-color: #6ee7b7; }
+        .pred-card-presq { border-left-color: #f0abfc; }
+        .pred-card-presq:hover { border-color: #f0abfc; }
+        .pred-card-postsq { border-left-color: #c4b5fd; }
+        .pred-card-postsq:hover { border-color: #c4b5fd; }
+        .pred-card-preq { border-left-color: #93c5fd; }
+        .pred-card-preq:hover { border-color: #93c5fd; }
+        .pred-card-postq { border-left-color: #6ee7b7; }
+        .pred-card-postq:hover { border-color: #6ee7b7; }
+        .pred-card-result {
+            border-left-color: #ffd700;
+            border-width: 3px;
+            background: linear-gradient(135deg, #1a1508 0%, #111118 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
+        }
+        .pred-card-result:hover {
+            border-color: #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+        }
+        .badge-result { background: #3a3000; color: #ffd700; }
+        .pred-card-sprint {
+            border-color: #1e3a5f;
+        }
+        .pred-card-sprint:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+        }
+        .badge-sprint { background: #1e3a5f; color: #60a5fa; }
+        .score-display {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffd700;
+            margin: 0.5rem 0;
+        }
+        .pred-card h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .badge-early { background: #1e3a5f; color: #93c5fd; }
+        .badge-presq { background: #4a1942; color: #f0abfc; }
+        .badge-postsq { background: #3b1f5e; color: #c4b5fd; }
+        .badge-preq { background: #1f3b5e; color: #93c5fd; }
+        .badge-postq { background: #1a3a2a; color: #6ee7b7; }
+        .pred-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .pred-date { color: #888; font-size: 0.85rem; }
+        .pred-count { color: #60a5fa; font-size: 0.85rem; }
+        .standings-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+        }
+        .standings-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .standings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+        .standing-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: #111118;
+            border-radius: 4px;
+        }
+        .standing-item .pos {
+            color: #60a5fa;
+            font-weight: bold;
+            min-width: 1.5rem;
+        }
+        .standing-item .name { flex: 1; }
+        .standing-item .team { color: #888; font-size: 0.85rem; }
+        .standing-item .pts { color: #6ee7b7; font-size: 0.85rem; }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">&larr; Back to all races</a>
+        <div class="page-header">
+            <div>
+                <h1>Netherlands</h1>
+                <p class="race-subtitle">Formula 1 Heineken Dutch Grand Prix 2026</p>
+            </div>
+            <img src="https://raw.githubusercontent.com/f1db/f1db/main/src/assets/circuits/white/zandvoort-1.svg" alt="Netherlands circuit" class="page-circuit">
+        </div>
+        <p class="race-date">2026-08-21</p>
+        
+        <div class="predictions-grid">
+        <div class="pred-card pred-card-early">
+            <a href="2026-08-21_early.html" class="pred-card-link">
+                <h3><span class="badge badge-early">Early</span> Prediction</h3>
+                <p class="pred-date">Generated: 2026-07-27 07:13 </p>
+                <p class="pred-count">10 drivers predicted</p>
+            </a>
+        </div>
+
+
+
+        </div>
+        
+
+        <section class="standings-section">
+            <h2>Current Championship Standings</h2>
+            <div class="standings-grid">
+                <div class="standing-item">
+                    <span class="pos">1</span>
+                    <span class="name">Kimi Antonelli</span>
+                    <span class="team">Mercedes</span>
+                    <span class="pts">219pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">2</span>
+                    <span class="name">Lewis Hamilton</span>
+                    <span class="team">Ferrari</span>
+                    <span class="pts">169pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">3</span>
+                    <span class="name">George Russell</span>
+                    <span class="team">Mercedes</span>
+                    <span class="pts">160pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">4</span>
+                    <span class="name">Charles Leclerc</span>
+                    <span class="team">Ferrari</span>
+                    <span class="pts">138pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">5</span>
+                    <span class="name">Lando Norris</span>
+                    <span class="team">Mclaren</span>
+                    <span class="pts">128pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">6</span>
+                    <span class="name">Max Verstappen</span>
+                    <span class="team">Red Bull</span>
+                    <span class="pts">109pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">7</span>
+                    <span class="name">Oscar Piastri</span>
+                    <span class="team">Mclaren</span>
+                    <span class="pts">92pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">8</span>
+                    <span class="name">Isack Hadjar</span>
+                    <span class="team">Red Bull</span>
+                    <span class="pts">68pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">9</span>
+                    <span class="name">Liam Lawson</span>
+                    <span class="team">Racing Bulls</span>
+                    <span class="pts">43pts</span>
+                </div>
+                <div class="standing-item">
+                    <span class="pos">10</span>
+                    <span class="name">Pierre Gasly</span>
+                    <span class="team">Alpine</span>
+                    <span class="pts">42pts</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Generated by Henry AI &middot; Powered by data from F1DB &amp; BBC Sport</p>
+        </footer>
+    </div>
+</body>
+</html>

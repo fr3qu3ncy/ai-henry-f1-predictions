@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-08-21",
+      "race_name": "Formula 1 Heineken Dutch Grand Prix 2026",
+      "circuit_id": "zandvoort",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-08-21",
+          "generated_at": "2026-07-27 07:13 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season form, championship leader, consistent podiums"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Home race advantage, historical Zandvoort dominance, strong recent pace"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Excellent recent form, Ferrari pace strong, good circuit history"
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Strong Mercedes package, consistent top finishes, slight Hungary dip"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Momentum from Hungary win, McLaren development peaking"
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Consistent top 5 results, reliable Ferrari performance"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Strong Zandvoort history, McLaren form, consistent points"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Remarkable consistency this season, excellent circuit average"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Steady points scorer, good car development, lower tier team"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Capable of strong results, inconsistent but competitive in top 10"
+            }
+          ],
+          "race_name": "Formula 1 Heineken Dutch Grand Prix 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 219
+        },
+        {
+          "position": 2,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 169
+        },
+        {
+          "position": 3,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 160
+        },
+        {
+          "position": 4,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 138
+        },
+        {
+          "position": 5,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 128
+        },
+        {
+          "position": 6,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 109
+        },
+        {
+          "position": 7,
+          "name": "Oscar Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 92
+        },
+        {
+          "position": 8,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 68
+        },
+        {
+          "position": 9,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 43
+        },
+        {
+          "position": 10,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 42
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-07-26",
       "race_name": "Formula 1 AWS Hungarian Grand Prix 2026",
       "circuit_id": "hungaroring",
