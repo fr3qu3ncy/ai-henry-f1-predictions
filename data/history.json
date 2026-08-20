@@ -82,6 +82,84 @@
             }
           ],
           "race_name": "Formula 1 Heineken Dutch Grand Prix 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-08-21",
+          "generated_at": "2026-08-20 11:58 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Zandvoort specialist, home advantage, recent top 2 form"
+            },
+            {
+              "position": 2,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, multiple wins, strong Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Very consistent, Ferrari strong, recent race winner"
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Strong Mercedes pace, podium form, reliability risk"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Recent winner, Ferrari competitive, Zandvoort best P3"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Hungarian winner, McLaren strong, circuit best P1"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Strong Zandvoort history, recent podiums, McLaren"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Consistent points scorer, Racing Bulls in form"
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Zandvoort best P3, Monaco podium, points form"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Consistent top 10, Racing Bulls depth"
+            }
+          ],
+          "race_name": "Formula 1 Heineken Dutch Grand Prix 2026"
         }
       },
       "standings": [
@@ -157,7 +235,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
