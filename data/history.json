@@ -160,6 +160,84 @@
             }
           ],
           "race_name": "Formula 1 Heineken Dutch Grand Prix 2026"
+        },
+        "post-sprint-qualifying": {
+          "type": "post-sprint-qualifying",
+          "date": "2026-08-21",
+          "generated_at": "2026-08-21 21:34 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, six wins, fastest practice, strong Mercedes pace"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Sprint pole, consistent top two, Mercedes reliability and speed"
+            },
+            {
+              "position": 3,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Sprint P2, recent winner, McLaren strong in race pace"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Sprint P3, good Zandvoort history, Ferrari competitive"
+            },
+            {
+              "position": 5,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Sprint P4, solid season, can convert McLaren pace into podium"
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Historical Zandvoort specialist, recent form improving"
+            },
+            {
+              "position": 7,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Sprint P7, Ferrari car strong, consistent top-five form"
+            },
+            {
+              "position": 8,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Sprint P8, frequent points scorer, Alpine race pace"
+            },
+            {
+              "position": 9,
+              "driver": "Gabriel Bortoleto",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "Sprint P9, recent top-10 finishes, points potential"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Sprint P10, consistent points, Racing Bulls race pace"
+            }
+          ],
+          "race_name": "Formula 1 Heineken Dutch Grand Prix 2026"
         }
       },
       "standings": [
@@ -236,7 +314,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "post-sprint-qualifying"
       ]
     },
     {
