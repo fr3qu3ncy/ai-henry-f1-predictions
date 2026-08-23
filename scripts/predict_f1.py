@@ -37,9 +37,11 @@ SCHEDULE_SCRIPT = os.path.expanduser("~/.hermes/skills/motorsport-schedule/scrip
 
 # LLM configuration
 LLM_HOST = "http://ml01.dmz:1234"
-LLM_MODEL = "qwen/qwen3.6-27b"  # 27B model (already loaded, no reload overhead)
-LLM_CONTEXT_WINDOW = 64000  # Full context window (GPU supports it)
-LLM_MAX_TOKENS = 8192  # Enough for reasoning + 10-prediction JSON output
+LLM_MODEL = "qwen/qwen3.8-27b"  # 27B model (matches Hermes config model.default)
+LLM_CONTEXT_WINDOW = 94000  # Matches Hermes config model.context_length
+LLM_MAX_TOKENS = 32768  # Qwen3 thinking mode spends most of the budget on reasoning_content;
+                        # 8192 was exhausted by reasoning leaving content empty (finish_reason=length).
+                        # Raised to 32768 for headroom; model stops naturally at finish_reason=stop.
 
 # Session end times (BST) used to auto-detect prediction window
 PRACTICE3_END_BST = "14:00"
@@ -409,6 +411,169 @@ def fetch_news():
     
     return headlines[:25]  # Enough to capture penalty/news items deeper in the feed
 
+# ── FIA Document fetching ─────────────────────────────────────────────────
+
+FIA_DOCS_BASE = "https://www.fia.com/documents/championships/fia-formula-one-world-championship-14/season/season-2026-2072"
+FIA_PDF_BASE = "https://www.fia.com/system/files/decision-document/"
+FIA_GRID_CACHE = os.path.expanduser("~/.hermes/data/f1_fia_grid_cache.json")
+FIA_GRID_CACHE_TTL = 6 * 3600  # 6 hours — grid doesn't change much after qualifying
+
+def fetch_fia_starting_grid(race_name):
+    """Fetch the Provisional/Final Starting Grid PDF from FIA docs page, extract text via PyMuPDF.
+    Returns dict with 'grid' (list of {position, driver, car_number, time}) and 'penalties' (list of strings).
+    Uses cache to avoid re-downloading within a race weekend."""
+    
+    # Check cache first
+    if os.path.exists(FIA_GRID_CACHE):
+        try:
+            mtime = os.path.getmtime(FIA_GRID_CACHE)
+            if time.time() - mtime < FIA_GRID_CACHE_TTL:
+                with open(FIA_GRID_CACHE) as f:
+                    cache = json.load(f)
+                if cache.get('race_name', '').lower() in race_name.lower() or race_name.lower() in cache.get('race_name', '').lower():
+                    return cache.get('data')
+        except Exception:
+            pass
+    
+    # Scrape FIA docs page for PDF links
+    try:
+        req = Request(FIA_DOCS_BASE, headers={"User-Agent": "Henry-F1-Predictions/1.0"})
+        with urlopen(req, timeout=30) as resp:
+            html = resp.read().decode("utf-8")
+    except Exception as e:
+        print(f"  Warning: Failed to fetch FIA docs page: {e}", file=sys.stderr)
+        return None
+    
+    # Extract PDF hrefs
+    pdf_hrefs = re.findall(r'href="(/system/files/decision-document/[^"]+\.pdf)"', html)
+    if not pdf_hrefs:
+        print("  Warning: No PDF links found on FIA docs page", file=sys.stderr)
+        return None
+    
+    # Find the starting grid PDF — look for "starting_grid" in filename
+    grid_pdf = None
+    race_lower = race_name.lower()
+    # Normalize race name for matching (e.g. "Belgian Grand Prix" -> "belgian_grand_prix")
+    race_slug = re.sub(r'[^a-z0-9]+', '_', race_lower).strip('_')
+    
+    for href in pdf_hrefs:
+        filename = href.split('/')[-1].lower()
+        # Check if this PDF is for the current race
+        if race_slug in filename or any(word in filename for word in ['belgian', 'british', 'monaco', 'italian', 'spanish', 'french', 'hungarian', 'dutch', 'belgian', 'swiss', 'azerbaijan', 'singapore', 'japanese', 'qatari', 'american', 'mexican', 'brazilian', 'las_vegas', 'abu_dhabi', 'chinese', 'australian', 'saudi', 'emilia_romagna', 'miami', 'canadian', 'turkish']):
+            if 'starting_grid' in filename:
+                grid_pdf = FIA_PDF_BASE + href.split('/')[-1]
+                break
+    
+    if not grid_pdf:
+        print(f"  Warning: No starting grid PDF found for {race_name}", file=sys.stderr)
+        return None
+    
+    # Download and extract PDF text via PyMuPDF
+    try:
+        import fitz
+        req = Request(grid_pdf, headers={"User-Agent": "Henry-F1-Predictions/1.0"})
+        with urlopen(req, timeout=30) as resp:
+            pdf_data = resp.read()
+        
+        doc = fitz.open(stream=pdf_data, filetype="pdf")
+        text = ""
+        for page in doc:
+            text += page.get_text()
+        doc.close()
+    except Exception as e:
+        print(f"  Warning: Failed to extract FIA starting grid PDF: {e}", file=sys.stderr)
+        return None
+    
+    # Parse the extracted text
+    result = parse_starting_grid(text)
+    
+    # Cache the result
+    cache = {
+        'race_name': race_name,
+        'timestamp': time.time(),
+        'data': result
+    }
+    try:
+        with open(FIA_GRID_CACHE, 'w') as f:
+            json.dump(cache, f)
+    except Exception:
+        pass
+    
+    return result
+
+
+def parse_starting_grid(text):
+    """Parse FIA starting grid PDF text into structured data.
+    The PDF has a two-column layout with multi-line entries:
+      POSITION
+      CAR_NUMBER DRIVER_NAME
+      TEAM_NAME
+      (lap time — skipped, available from F1DB)
+    Returns dict with 'grid' (list of {position, driver, car_number}) and 'penalties' (list of strings)."""
+
+    grid = []
+    penalties = []
+
+    lines = text.strip().split('\n')
+
+    # Parse grid entries — the PDF uses format:
+    # Line 1: POSITION (standalone number 1-22)
+    # Line 2: CAR_NUMBER DRIVER_NAME
+    # Line 3: TEAM_NAME (skipped)
+    pos_pattern = re.compile(r'^(2[0-2]|1?[0-9])$')  # position 1-22
+    car_driver_pattern = re.compile(r'^(\d+)\s+(.+)')  # car_number + driver_name
+
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+
+        # Check if this line is a standalone position number (1-22)
+        pos_match = pos_pattern.match(line)
+        if pos_match:
+            pos = int(pos_match.group(1))
+
+            # Next line should be car number + driver name
+            i += 1
+            if i < len(lines):
+                cd_match = car_driver_pattern.match(lines[i].strip())
+                if cd_match:
+                    car_num = cd_match.group(1)
+                    driver = cd_match.group(2).strip()
+
+                    # Next line is team name — skip it
+                    i += 1
+
+                    # Clean up driver name (remove trailing asterisk for penalties)
+                    driver = driver.replace('*', '').strip()
+
+                    grid.append({
+                        'position': pos,
+                        'car_number': car_num,
+                        'driver': driver
+                    })
+        i += 1
+
+    # Parse penalty notes — lines starting with "* PENALTIES", "Car X" or "Cars X"
+    in_penalties = False
+    for line in lines:
+        line = line.strip()
+        if line.upper().startswith('* PENALTIES'):
+            in_penalties = True
+            continue
+        if in_penalties and (line.startswith('Car ') or line.startswith('Cars ')):
+            penalties.append(line)
+        elif in_penalties and not line.startswith('Car') and not line.startswith('*'):
+            # End of penalty section
+            break
+
+    # Sort grid by position
+    grid.sort(key=lambda x: x['position'])
+
+    return {
+        'grid': grid,
+        'penalties': penalties
+    }
+
 SCHEDULE_CACHE = os.path.expanduser("~/.hermes/data/f1_schedule_cache.json")
 SCHEDULE_CACHE_TTL = 12 * 3600  # 12 hours — cache is valid within a race weekend
 HISTORICAL_CACHE = os.path.expanduser("~/.hermes/data/f1_historical_cache.json")
@@ -638,15 +803,15 @@ def detect_prediction_type():
 
 # ── Prediction generation ─────────────────────────────────────────────────
 
-def build_prediction_prompt(prediction_type, standings, races, news, session_data=None, race_info=None, historical_data=None):
+def build_prediction_prompt(prediction_type, standings, races, news, session_data=None, race_info=None, historical_data=None, fia_grid=None):
     """Build the LLM prompt for prediction."""
-    
+
     standings_text = ""
     if standings:
         standings_text = "## Current Driver Standings (2026 Season)\n"
         for d in standings[:22]:
             standings_text += f"{d['position']}. {d['name']} ({d['team']}) - {d['points']} pts\n"
-    
+
     races_text = ""
     if races:
         races_text = "## Recent Race Results (2026 Season)\n"
@@ -657,13 +822,34 @@ def build_prediction_prompt(prediction_type, standings, races, news, session_dat
                 for r in race['results'][:10]:
                     retired = f" (retired: {r['reasonRetired']})" if r.get('reasonRetired') else ""
                     races_text += f"- {r['position']}. {r['name']} ({r['team']}) - {r['points']}pts{retired}\n"
-    
+
     news_text = ""
     if news:
         news_text = "## Recent F1 News\n"
         for h in news:
             news_text += f"- {h}\n"
-    
+
+    # FIA starting grid section — official grid with penalties applied
+    fia_grid_text = ""
+    if fia_grid:
+        fia_grid_text = "## Official FIA Starting Grid\n"
+        fia_grid_text += "**IMPORTANT: The grid positions below are the FINAL starting order after all penalties have been applied.**\n"
+        fia_grid_text += "A driver's grid position may differ significantly from their qualifying position due to engine penalties.\n\n"
+        grid_entries = fia_grid.get('grid', [])
+        if grid_entries:
+            for entry in grid_entries:
+                driver = entry.get('driver', 'Unknown')
+                pos = entry.get('position', '?')
+                car_num = entry.get('car_number', '')
+                fia_grid_text += f"P{pos}: #{car_num} {driver}\n"
+
+        penalty_notes = fia_grid.get('penalties', [])
+        if penalty_notes:
+            fia_grid_text += "\n**Grid Penalties Applied:**\n"
+            for pn in penalty_notes:
+                fia_grid_text += f"- {pn}\n"
+            fia_grid_text += "\n⚠️ USE THE GRID POSITIONS ABOVE (penalties already applied) for your predictions. Do NOT use qualifying order - a driver who qualified on pole but received a 10-place penalty starts 11th on the grid.\n"
+
     session_text = ""
     if session_data:
         session_text = f"## Current Weekend Session Data ({prediction_type.upper()})\n"
@@ -742,6 +928,8 @@ PREDICTION TYPE: {prediction_type.upper()}
 
 {historical_text}
 
+{fia_grid_text}
+
 {session_text}
 
 ## Your Task
@@ -752,7 +940,7 @@ Predict the top 10 drivers who will finish the race, considering:
 3. Team performance and car development
 4. Circuit characteristics (provided above if available)
 5. Recent news, driver form, and team developments
-6. Qualifying position (if available) - grid position influences race result, especially on street/low-overtaking circuits
+6. Starting grid position (if available) - **CRITICAL: Use the official FIA starting grid with penalties applied, NOT raw qualifying positions**. Grid position influences race result, especially on street/low-overtaking circuits
 7. Weather conditions and reliability factors
 
 ## Output Format
@@ -793,7 +981,7 @@ def call_llm(prompt):
                 "-H", "Content-Type: application/json",
                 "-d", json.dumps(payload)
             ],
-            capture_output=True, text=True, timeout=600
+            capture_output=True, text=True, timeout=1200
         )
         
         if result.returncode != 0:
@@ -802,12 +990,21 @@ def call_llm(prompt):
             
         response = json.loads(result.stdout)
         if "choices" in response:
-            return response["choices"][0]["message"]["content"]
+            choice = response["choices"][0]
+            content = choice.get("message", {}).get("content") or ""
+            if not content.strip():
+                # Empty content: usually Qwen3 reasoning exhausted the max_tokens budget.
+                fr = choice.get("finish_reason")
+                usage = response.get("usage", {})
+                print(f"  LLM returned EMPTY content (finish_reason={fr}, usage={usage}).", file=sys.stderr)
+                print(f"  Likely cause: reasoning_content consumed the max_tokens budget before any content was produced.", file=sys.stderr)
+                return None
+            return content
         else:
             print(f"  LLM response error: {result.stdout[:200]}", file=sys.stderr)
             return None
     except subprocess.TimeoutExpired:
-        print("  LLM call timed out after 180s", file=sys.stderr)
+        print("  LLM call timed out after 1200s", file=sys.stderr)
     except json.JSONDecodeError as e:
         print(f"  JSON parse error: {e}", file=sys.stderr)
     except Exception as e:
@@ -3284,9 +3481,23 @@ def main():
         grand_prix_id = race_info.get("grandPrixId")
         if grand_prix_id:
             historical_data = get_historical_circuit_data(grand_prix_id, years=3)
-    
+
+    # Fetch official FIA starting grid (with penalties) for post-qualifying predictions
+    fia_grid = None
+    if prediction_type == "post-qualifying" and race_info:
+        race_name = race_info.get("officialName", race_info.get("name", ""))
+        if race_name:
+            print("\nFetching official FIA starting grid (with penalties)...")
+            fia_grid = fetch_fia_starting_grid(race_name)
+            if fia_grid:
+                grid_count = len(fia_grid.get('grid', []))
+                penalty_count = len(fia_grid.get('penalties', []))
+                print(f"  Fetched grid: {grid_count} drivers, {penalty_count} penalty notes")
+            else:
+                print("  Warning: Could not fetch FIA starting grid", file=sys.stderr)
+
     # Build prompt
-    prompt = build_prediction_prompt(prediction_type, standings, races, news, session_data, race_info, historical_data)
+    prompt = build_prediction_prompt(prediction_type, standings, races, news, session_data, race_info, historical_data, fia_grid)
     
     # Call LLM
     print("\nGenerating prediction (this may take a moment)...")
