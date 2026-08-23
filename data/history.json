@@ -474,7 +474,99 @@
         "post-sprint-qualifying",
         "pre-qualifying",
         "post-qualifying"
-      ]
+      ],
+      "scores": {
+        "post-sprint-qualifying": {
+          "sprint_score": 7,
+          "position_score": 7,
+          "podium_score": 0,
+          "max_score": 15,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Kimi Antonelli",
+              "actual": 4,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 2,
+              "predicted": "George Russell",
+              "actual": 1,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 3,
+              "predicted": "Lando Norris",
+              "actual": 3,
+              "correct": true,
+              "points": 1
+            },
+            {
+              "position": 4,
+              "predicted": "Charles Leclerc",
+              "actual": 2,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Oscar Piastri",
+              "actual": 5,
+              "correct": true,
+              "points": 1
+            },
+            {
+              "position": 6,
+              "predicted": "Max Verstappen",
+              "actual": 6,
+              "correct": true,
+              "points": 1
+            },
+            {
+              "position": 7,
+              "predicted": "Lewis Hamilton",
+              "actual": 7,
+              "correct": true,
+              "points": 1
+            },
+            {
+              "position": 8,
+              "predicted": "Pierre Gasly",
+              "actual": 8,
+              "correct": true,
+              "points": 1
+            },
+            {
+              "position": 9,
+              "predicted": "Gabriel Bortoleto",
+              "actual": 9,
+              "correct": true,
+              "points": 1
+            },
+            {
+              "position": 10,
+              "predicted": "Arvid Lindblad",
+              "actual": 10,
+              "correct": true,
+              "points": 1
+            }
+          ],
+          "podium_correct": false,
+          "predicted_podium": [
+            "Kimi Antonelli",
+            "George Russell",
+            "Lando Norris"
+          ],
+          "actual_podium": [
+            "George Russell",
+            "Charles Leclerc",
+            "Lando Norris"
+          ],
+          "scored_at": "2026-08-23T10:10:59Z"
+        }
+      }
     },
     {
       "date": "2026-07-26",
