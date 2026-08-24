@@ -725,6 +725,95 @@
             "Lando Norris"
           ],
           "scored_at": "2026-08-23T10:10:59Z"
+        },
+        "post-qualifying": {
+          "total_score": 13,
+          "position_score": 8,
+          "podium_score": 5,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "Lando Norris",
+              "actual": 1,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 2,
+              "predicted": "Kimi Antonelli",
+              "actual": 2,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 3,
+              "predicted": "George Russell",
+              "actual": 3,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 4,
+              "predicted": "Charles Leclerc",
+              "actual": 5,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Max Verstappen",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Oscar Piastri",
+              "actual": 6,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 7,
+              "predicted": "Lewis Hamilton",
+              "actual": 4,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Liam Lawson",
+              "actual": 7,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 9,
+              "predicted": "Pierre Gasly",
+              "actual": 10,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Arvid Lindblad",
+              "actual": 12,
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "Lando Norris",
+            "Kimi Antonelli",
+            "George Russell"
+          ],
+          "actual_podium": [
+            "Lando Norris",
+            "Kimi Antonelli",
+            "George Russell"
+          ],
+          "podium_correct": true,
+          "scored_at": "2026-08-24 11:12 "
         }
       }
     },
