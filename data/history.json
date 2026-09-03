@@ -82,6 +82,84 @@
             }
           ],
           "race_name": "Formula 1 Pirelli Gran Premio d'Italia 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-09-06",
+          "generated_at": "2026-09-03 12:32 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season, 7 wins and strong Mercedes package"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Consistent top-3, strong Mercedes car and points"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Home Monza, strong Ferrari and recent podiums"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari consistency, good Monza history, top-5 form"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Back-to-back wins, McLaren strong, Monza P2 history"
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Best Monza history, recent top-2, Red Bull pace"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Solid McLaren pace, recent top-5 and Monza podiums"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Consistent top-10 and points, good current form"
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Points leader in midfield, recent Monaco podium form"
+            },
+            {
+              "position": 10,
+              "driver": "Gabriel Bortoleto",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "Audi emerging, recent P8s and decent Monza history"
+            }
+          ],
+          "race_name": "Formula 1 Pirelli Gran Premio d'Italia 2026"
         }
       },
       "standings": [
@@ -157,7 +235,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {

@@ -36,9 +36,9 @@ BBC_F1_NEWS = "https://www.bbc.co.uk/sport/formula1"
 SCHEDULE_SCRIPT = os.path.expanduser("~/.hermes/skills/motorsport-schedule/scripts/get_schedule.py")
 
 # LLM configuration
-LLM_HOST = "http://ml01.dmz:1234"
+LLM_HOST = "http://ml02.dmz:9931"
 LLM_MODEL = "qwen/qwen3.8-27b"  # 27B model (matches Hermes config model.default)
-LLM_CONTEXT_WINDOW = 94000  # Matches Hermes config model.context_length
+LLM_CONTEXT_WINDOW = 262000  # Matches Hermes config model.context_length
 LLM_MAX_TOKENS = 32768  # Qwen3 thinking mode spends most of the budget on reasoning_content;
                         # 8192 was exhausted by reasoning leaving content empty (finish_reason=length).
                         # Raised to 32768 for headroom; model stops naturally at finish_reason=stop.
@@ -302,6 +302,7 @@ _RACE_ALIASES = {
     "netherlands": "netherlands",
     "italian": "italy",
     "italy": "italy",
+    "italia": "italy",
     "mexican": "mexico",
     "mexico": "mexico",
     "qatari": "qatar",
@@ -3008,10 +3009,13 @@ def main():
         pred_type = args.type
         repo_path = args.repo
 
-        # Load history and find the most recent unscored prediction of this type
+        # Load history and find an unscored prediction of this type.
+        # History is newest-first, so scan from the END: pick the OLDEST unscored
+        # candidate. A future race (no results published yet) must not block
+        # scoring of a past race that is overdue.
         history = load_history(repo_path)
         weekend_entry = None
-        for w in history["weekends"]:
+        for w in reversed(history["weekends"]):
             has_prediction = pred_type in w.get("predictions", {})
             has_score = pred_type in w.get("scores", {})
             if has_prediction and not has_score:
@@ -3186,10 +3190,12 @@ def main():
     if args.score_sprint:
         repo_path = args.repo
 
-        # Load history and find the most recent unscored post-sprint-qualifying prediction
+        # Load history and find an unscored post-sprint-qualifying prediction.
+        # History is newest-first, so scan from the END: pick the OLDEST unscored
+        # candidate (a future sprint with no results must not block past ones).
         history = load_history(repo_path)
         weekend_entry = None
-        for w in history["weekends"]:
+        for w in reversed(history["weekends"]):
             has_prediction = "post-sprint-qualifying" in w.get("predictions", {})
             has_score = "post-sprint-qualifying" in w.get("scores", {})
             if has_prediction and not has_score:
