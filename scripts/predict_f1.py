@@ -307,6 +307,11 @@ _RACE_ALIASES = {
     "mexico": "mexico",
     "qatari": "qatar",
     "qatar": "qatar",
+    "spain": "spain",
+    "espana": "spain",
+    "españa": "spain",
+    "español": "spain",
+    "gran premio de espana": "spain",
 }
 
 def _normalize_location(name):
