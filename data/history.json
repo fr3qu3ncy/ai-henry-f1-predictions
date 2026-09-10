@@ -86,77 +86,77 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-09-13",
-          "generated_at": "2026-09-10 12:49 ",
+          "generated_at": "2026-09-10 23:04 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant 2026 form, multiple wins, Mercedes strong on streets"
+              "reasoning": "Championship leader, dominant season and strongest car form."
             },
             {
               "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Mercedes pace, strong recent results, favorable circuit history"
+              "reasoning": "Very consistent, strong Mercedes car and good circuit history."
             },
             {
               "position": 3,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Ferrari form, best historical finish P2, consistent top six"
+              "confidence": "high",
+              "reasoning": "Strong form, best Spanish circuit historical average with teammate."
             },
             {
               "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Ferrari car, recent podiums, solid historical circuit record"
+              "reasoning": "Strong Ferrari, recent podiums, slightly less consistent than Hamilton."
             },
             {
               "position": 5,
               "driver": "Lando Norris",
               "team": "Mclaren",
-              "confidence": "high",
-              "reasoning": "McLaren momentum, recent wins, good street and circuit record"
+              "confidence": "medium",
+              "reasoning": "Recent winner, good McLaren pace and solid circuit history."
             },
             {
               "position": 6,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull form, historical best P1, strong on low-downforce street"
+              "reasoning": "Historical best P1 here, improving Red Bull and recent top finishes."
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "McLaren consistency, recent top five, historical best P1"
+              "reasoning": "McLaren pace and recent top-5s, less consistent than Norris."
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull points, strong street results, decent circuit average"
+              "reasoning": "Strong Red Bull, consistent top-10 and good street circuit form."
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "low",
-              "reasoning": "Racing Bulls points, recent top ten, street Monaco fifth"
+              "reasoning": "Consistent top-10 and RB pace, but weaker historical circuit form."
             },
             {
               "position": 10,
               "driver": "Pierre Gasly",
               "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Alpine form, recent top tens, historical street average P9"
+              "reasoning": "Consistent top-10 and good historical Spanish circuit average."
             }
           ],
           "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
