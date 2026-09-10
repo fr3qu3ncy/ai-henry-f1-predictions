@@ -82,6 +82,84 @@
             }
           ],
           "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-09-13",
+          "generated_at": "2026-09-10 12:49 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant 2026 form, multiple wins, Mercedes strong on streets"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Mercedes pace, strong recent results, favorable circuit history"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari form, best historical finish P2, consistent top six"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari car, recent podiums, solid historical circuit record"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "McLaren momentum, recent wins, good street and circuit record"
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull form, historical best P1, strong on low-downforce street"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "McLaren consistency, recent top five, historical best P1"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull points, strong street results, decent circuit average"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Racing Bulls points, recent top ten, street Monaco fifth"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Alpine form, recent top tens, historical street average P9"
+            }
+          ],
+          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
         }
       },
       "standings": [
@@ -157,7 +235,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
