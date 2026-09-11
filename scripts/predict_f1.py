@@ -580,6 +580,206 @@ def parse_starting_grid(text):
         'penalties': penalties
     }
 
+
+# ── FIA Entry List (authoritative "who is racing" data) ───────────────────
+# Mid-season driver changes (injury, promotion, reserve call-ups) mean the
+# standings/recent-results data in the prompt can be STALE. The entry list
+# is the single source of truth for which 22 drivers are actually racing.
+# Primary source: FIA "Entry List" PDF (same docs page as the starting grid).
+# Fallback: F1DB entrants.yml (per-driver `rounds` ranges — see pitfall:
+# ranges only extend to the last COMPLETED round, so "covers current round"
+# matching fails exactly when a swap has just happened; use highest range
+# end as the tiebreak instead).
+
+FIA_ENTRYLIST_CACHE = os.path.expanduser("~/.hermes/data/f1_fia_entrylist_cache.json")
+FIA_ENTRYLIST_CACHE_TTL = 6 * 3600  # 6 hours — entry list is static per weekend
+
+def fetch_fia_entrylist(race_name):
+    """Fetch the FIA Entry List PDF, extract text via PyMuPDF.
+    Returns list of {car_number, driver, team} (22 entries) or None."""
+
+    # Check cache first
+    if os.path.exists(FIA_ENTRYLIST_CACHE):
+        try:
+            mtime = os.path.getmtime(FIA_ENTRYLIST_CACHE)
+            if time.time() - mtime < FIA_ENTRYLIST_CACHE_TTL:
+                with open(FIA_ENTRYLIST_CACHE) as f:
+                    cache = json.load(f)
+                if cache.get('race_name', '').lower() in race_name.lower() or race_name.lower() in cache.get('race_name', '').lower():
+                    return cache.get('data')
+        except Exception:
+            pass
+
+    # Scrape FIA docs page for PDF links
+    try:
+        req = Request(FIA_DOCS_BASE, headers={"User-Agent": "Henry-F1-Predictions/1.0"})
+        with urlopen(req, timeout=30) as resp:
+            html = resp.read().decode("utf-8")
+    except Exception as e:
+        print(f"  Warning: Failed to fetch FIA docs page for entry list: {e}", file=sys.stderr)
+        return None
+
+    pdf_hrefs = re.findall(r'href="(/system/files/decision-document/[^"]+\.pdf)"', html)
+    if not pdf_hrefs:
+        print("  Warning: No PDF links found on FIA docs page (entry list)", file=sys.stderr)
+        return None
+
+    race_slug = re.sub(r'[^a-z0-9]+', '_', race_name.lower()).strip('_')
+    gp_keywords = ['spanish', 'belgian', 'british', 'monaco', 'italian', 'french',
+                   'hungarian', 'dutch', 'swiss', 'azerbaijan', 'singapore',
+                   'japanese', 'qatari', 'american', 'mexican', 'brazilian',
+                   'las_vegas', 'abu_dhabi', 'chinese', 'australian', 'saudi',
+                   'emilia_romagna', 'miami', 'canadian', 'turkish']
+
+    entrylist_pdf = None
+    for href in pdf_hrefs:
+        filename = href.split('/')[-1].lower()
+        if 'entry_list' not in filename:
+            continue
+        if race_slug in filename or any(word in filename for word in gp_keywords):
+            entrylist_pdf = FIA_PDF_BASE + href.split('/')[-1]
+            break
+
+    if not entrylist_pdf:
+        print(f"  Warning: No entry list PDF found for {race_name}", file=sys.stderr)
+        return None
+
+    # Download and extract PDF text via PyMuPDF
+    try:
+        import fitz
+        req = Request(entrylist_pdf, headers={"User-Agent": "Henry-F1-Predictions/1.0"})
+        with urlopen(req, timeout=30) as resp:
+            pdf_data = resp.read()
+        doc = fitz.open(stream=pdf_data, filetype="pdf")
+        text = ""
+        for page in doc:
+            text += page.get_text()
+        doc.close()
+    except Exception as e:
+        print(f"  Warning: Failed to extract FIA entry list PDF: {e}", file=sys.stderr)
+        return None
+
+    result = parse_entrylist(text)
+    if not result:
+        print("  Warning: FIA entry list PDF parsed to zero entries", file=sys.stderr)
+        return None
+
+    cache = {'race_name': race_name, 'timestamp': time.time(), 'data': result}
+    try:
+        with open(FIA_ENTRYLIST_CACHE, 'w') as f:
+            json.dump(cache, f)
+    except Exception:
+        pass
+
+    return result
+
+
+def parse_entrylist(text):
+    """Parse FIA Entry List PDF text. Each entry is 6 consecutive lines:
+       No. (1-3 digits) / TLA (3 uppercase) / Driver name / Nat (3 uppercase) /
+       Team name / Constructor name.
+    Returns list of {car_number, driver, team} or None if nothing parsed."""
+    lines = [l.strip() for l in text.split('\n')]
+    entries = []
+    i = 0
+    while i < len(lines) - 5:
+        if (re.fullmatch(r'\d{1,3}', lines[i]) and re.fullmatch(r'[A-Z]{3}', lines[i + 1])
+                and re.fullmatch(r'[A-Z]{3}', lines[i + 3]) and lines[i + 2]
+                and lines[i + 4]):
+            entries.append({
+                'car_number': lines[i],
+                'driver': lines[i + 2],
+                'team': lines[i + 4],
+            })
+            i += 6
+        else:
+            i += 1
+    if len(entries) < 20:
+        return None
+    # Dedupe by driver name (keep first), preserve PDF order
+    seen = set()
+    unique = []
+    for e in entries:
+        key = e['driver'].lower()
+        if key not in seen:
+            seen.add(key)
+            unique.append(e)
+    return unique
+
+
+def get_entrylist_from_f1db(round_num=None):
+    """Fallback entry list from F1DB entrants.yml: per entrant, pick the 2
+    non-test drivers whose round ranges end latest. PITFALL: F1DB only extends
+    `rounds` to the last COMPLETED round (e.g. Lawson '12-13' for round 14), so
+    a "does the range cover the current round" check fails exactly when a swap
+    just happened. Highest range end = most recent assignment, and that is
+    correct in both the fresh-swap case and the normal case."""
+    entrants = _get_entrants()
+    if not entrants:
+        return None
+    drivers = []
+    for entrant in entrants:
+        team = entrant.get("constructorId", "").replace("-", " ").title()
+        cands = []
+        for drv in entrant.get("drivers", []):
+            if drv.get("testDriver"):
+                continue
+            rounds = drv.get("rounds")
+            if not rounds:
+                continue
+            parts = [p for p in str(rounds).split("-") if p.strip().isdigit()]
+            if not parts:
+                continue
+            start = int(parts[0])
+            end = int(parts[-1]) if len(parts) > 1 else int(parts[0])
+            cands.append((start, end, drv.get("driverId")))
+        if not cands:
+            continue
+        # Prefer drivers whose range covers the current round, if any exist
+        pool = cands
+        if round_num:
+            covering = [c for c in cands if c[0] <= round_num <= c[1]]
+            if len(covering) >= 2:
+                pool = covering
+        # Latest range end first (ties: latest start first)
+        pool.sort(key=lambda c: (c[1], c[0]), reverse=True)
+        for start, end, driver_id in pool[:2]:
+            drivers.append({
+                'car_number': None,
+                'driver': _get_driver_name(driver_id),
+                'team': team,
+            })
+    if len(drivers) >= 20:
+        return drivers
+    return None
+
+
+def _driver_name_parts(name):
+    """Lowercase name, strip Jr./Sr., drop non-alphabetic, word list."""
+    n = str(name).lower()
+    n = re.sub(r'\b(jr\.?|sr\.?)\b', '', n)
+    n = re.sub(r'[^a-z\s]', '', n)
+    return [w for w in n.split() if w]
+
+
+def driver_in_entrylist(pred_name, entrylist):
+    """True if pred_name matches any entry-list driver.
+    Lenient: exact match, or surname match + first-name prefix (handles
+    middle names like 'Oscar Jack Piastri' vs 'Oscar Piastri')."""
+    p = _driver_name_parts(pred_name)
+    if not p:
+        return False
+    for e in entrylist:
+        c = _driver_name_parts(e['driver'])
+        if not c:
+            continue
+        if p == c:
+            return True
+        if len(p) >= 2 and len(c) >= 2 and p[-1] == c[-1] \
+                and (p[0].startswith(c[0]) or c[0].startswith(p[0])):
+            return True
+    return False
+
 SCHEDULE_CACHE = os.path.expanduser("~/.hermes/data/f1_schedule_cache.json")
 SCHEDULE_CACHE_TTL = 12 * 3600  # 12 hours — cache is valid within a race weekend
 HISTORICAL_CACHE = os.path.expanduser("~/.hermes/data/f1_historical_cache.json")
@@ -809,8 +1009,21 @@ def detect_prediction_type():
 
 # ── Prediction generation ─────────────────────────────────────────────────
 
-def build_prediction_prompt(prediction_type, standings, races, news, session_data=None, race_info=None, historical_data=None, fia_grid=None):
+def build_prediction_prompt(prediction_type, standings, races, news, session_data=None, race_info=None, historical_data=None, fia_grid=None, entrylist=None):
     """Build the LLM prompt for prediction."""
+
+    # Entry list is the AUTHORITATIVE driver roster for this race — placed
+    # before standings/recent results, which may be stale after mid-season
+    # driver changes (injury, promotion, reserve call-ups).
+    entrylist_text = ""
+    if entrylist:
+        entrylist_text = "## Official Entry List (AUTHORITATIVE - who is actually racing this race)\n"
+        entrylist_text += "**CRITICAL: These are the ONLY drivers competing in this race. Predict ONLY from this list.**\n"
+        entrylist_text += "Mid-season driver changes mean the standings and recent race results below may list drivers who are NOT in this race, or show drivers under their old team. This entry list OVERRIDES all other data.\n\n"
+        for e in entrylist:
+            car = f"#{e['car_number']} " if e.get('car_number') else ""
+            entrylist_text += f"- {car}{e['driver']} ({e['team']})\n"
+        entrylist_text += "\nIf a driver appears in the standings or recent results but is NOT on this list, they are NOT racing this race. Do NOT predict them.\n"
 
     standings_text = ""
     if standings:
@@ -924,6 +1137,7 @@ def build_prediction_prompt(prediction_type, standings, races, news, session_dat
 PREDICTION TYPE: {prediction_type.upper()}
 {'=' * 50}
 
+{entrylist_text}
 {standings_text}
 
 {races_text}
@@ -941,13 +1155,14 @@ PREDICTION TYPE: {prediction_type.upper()}
 ## Your Task
 
 Predict the top 10 drivers who will finish the race, considering:
-1. Current championship form and points
-2. Recent race results and consistency
-3. Team performance and car development
-4. Circuit characteristics (provided above if available)
-5. Recent news, driver form, and team developments
-6. Starting grid position (if available) - **CRITICAL: Use the official FIA starting grid with penalties applied, NOT raw qualifying positions**. Grid position influences race result, especially on street/low-overtaking circuits
-7. Weather conditions and reliability factors
+1. **The official entry list (if provided) - you MUST only predict drivers who are on it. A driver in the standings/recent results who is absent from the entry list is NOT in this race and must be excluded**
+2. Current championship form and points
+3. Recent race results and consistency
+4. Team performance and car development
+5. Circuit characteristics (provided above if available)
+6. Recent news, driver form, and team developments
+7. Starting grid position (if available) - **CRITICAL: Use the official FIA starting grid with penalties applied, NOT raw qualifying positions**. Grid position influences race result, especially on street/low-overtaking circuits
+8. Weather conditions and reliability factors
 
 ## Output Format
 
@@ -3507,8 +3722,24 @@ def main():
             else:
                 print("  Warning: Could not fetch FIA starting grid", file=sys.stderr)
 
+    # Fetch the entry list for ALL prediction types — authoritative "who is
+    # racing" data that guards against mid-season driver changes (injury,
+    # promotion, reserve call-ups). FIA PDF primary, F1DB entrants.yml fallback.
+    entrylist = None
+    if race_name:
+        print("\nFetching entry list (authoritative driver roster)...")
+        entrylist = fetch_fia_entrylist(race_name)
+        if entrylist:
+            print(f"  Fetched entry list: {len(entrylist)} drivers (FIA)")
+        else:
+            entrylist = get_entrylist_from_f1db(round_num=race_info.get("round"))
+            if entrylist:
+                print(f"  Fetched entry list: {len(entrylist)} drivers (F1DB fallback)")
+            else:
+                print("  Warning: Could not fetch entry list from FIA or F1DB", file=sys.stderr)
+
     # Build prompt
-    prompt = build_prediction_prompt(prediction_type, standings, races, news, session_data, race_info, historical_data, fia_grid)
+    prompt = build_prediction_prompt(prediction_type, standings, races, news, session_data, race_info, historical_data, fia_grid, entrylist)
     
     # Call LLM
     print("\nGenerating prediction (this may take a moment)...")
@@ -3524,6 +3755,33 @@ def main():
         print("Error: Could not parse prediction from LLM output", file=sys.stderr)
         print(f"LLM output: {llm_output[:500]}", file=sys.stderr)
         sys.exit(1)
+    
+    # Validate predictions against the entry list. A prediction naming a driver
+    # who is NOT on the grid (e.g. a driver displaced by a mid-season swap) is
+    # never published. One retry with a correction note; hard-fail after that.
+    if entrylist:
+        invalid = [p.get("driver") for p in predictions if not driver_in_entrylist(str(p.get("driver", "")), entrylist)]
+        if invalid:
+            print(f"  Warning: {len(invalid)} predicted driver(s) not on entry list: {invalid}", file=sys.stderr)
+            correction = ("\n\nENTRY LIST VIOLATION: The drivers above are NOT on the official entry list and "
+                          "cannot race. Remove them and replace each with a driver from the official entry list "
+                          "who fits that position. Return the full corrected JSON array of exactly 10 entries.")
+            retry_prompt = prompt + correction
+            llm_output = call_llm(retry_prompt)
+            if llm_output:
+                retry_predictions = parse_prediction(llm_output)
+                if retry_predictions:
+                    invalid_retry = [p.get("driver") for p in retry_predictions if not driver_in_entrylist(str(p.get("driver", "")), entrylist)]
+                    if not invalid_retry:
+                        predictions = retry_predictions
+                    else:
+                        print(f"  Retry still invalid: {invalid_retry}", file=sys.stderr)
+                else:
+                    print("  Retry: could not parse LLM output", file=sys.stderr)
+        if entrylist and any(not driver_in_entrylist(str(p.get("driver", "")), entrylist) for p in predictions):
+            print("Error: Prediction contains drivers not on the official entry list — refusing to publish. "
+                  "The next cron run will retry.", file=sys.stderr)
+            sys.exit(1)
     
     print(f"  Generated {len(predictions)} predictions")
     
