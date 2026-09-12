@@ -160,6 +160,84 @@
             }
           ],
           "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-09-13",
+          "generated_at": "2026-09-13 00:02 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Pole on low-overtaking street; news highlights win chance"
+            },
+            {
+              "position": 2,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant season, P2 grid, strong Mercedes race pace"
+            },
+            {
+              "position": 3,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P3 grid, Red Bull form, recent podiums"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P4 grid, Ferrari form, strong circuit history"
+            },
+            {
+              "position": 5,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Mercedes race pace and recent form; P6 grid may cost"
+            },
+            {
+              "position": 6,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P5 grid, Ferrari points form, front-row threat"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "P7 grid, McLaren consistency, recent top 5s"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P8 grid, consistent points, Red Bull upgrade"
+            },
+            {
+              "position": 9,
+              "driver": "Franco Colapinto",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "P9 grid, Alpine points form, likely top 10"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "P10 grid, points form, but crash risk"
+            }
+          ],
+          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
         }
       },
       "standings": [
@@ -236,7 +314,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "post-qualifying"
       ]
     },
     {
