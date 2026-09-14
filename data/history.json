@@ -319,7 +319,13 @@
               "reasoning": "Consistent top-10 but practice crash flags Madrid risk"
             }
           ],
-          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
+          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026",
+          "podcast": {
+            "path": "podcasts/2026-09-13_pre-practice.mp3",
+            "duration": 230,
+            "episode_title": "Madrid's New Twist",
+            "generated_at": "2026-09-14 20:42"
+          }
         },
         "post-qualifying": {
           "type": "post-qualifying",

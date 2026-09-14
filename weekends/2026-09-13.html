@@ -99,6 +99,32 @@
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
         }
         .badge-sprint { background: #1e3a5f; color: #60a5fa; }
+        .pred-card-podcast {
+            border-left-color: #e879f9;
+            background: linear-gradient(135deg, #1a0f1a 0%, #111118 100%);
+            box-shadow: 0 0 20px rgba(232, 121, 249, 0.06);
+        }
+        .pred-card-podcast:hover {
+            border-color: #e879f9;
+            box-shadow: 0 0 30px rgba(232, 121, 249, 0.14);
+        }
+        .badge-podcast { background: #3b1f42; color: #f0abfc; }
+        .podcast-ep-title {
+            color: #f0abfc;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0.25rem 0 0.1rem 0;
+        }
+        .podcast-ep-meta {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+        .podcast-player {
+            width: 100%;
+            border-radius: 6px;
+            background: #0d0d12;
+        }
         .score-display {
             font-size: 2rem;
             font-weight: 800;
@@ -197,6 +223,14 @@
                 <p class="pred-date">Generated: 2026-09-11 19:28 </p>
                 <p class="pred-count">10 drivers predicted</p>
             </a>
+        </div>
+        <div class="pred-card pred-card-podcast">
+            <h3><span class="badge badge-podcast">&#127908; Podcast</span> The Race Weekend Podcast</h3>
+            <p class="podcast-ep-title">Madrid&#x27;s New Twist</p>
+            <p class="podcast-ep-meta">Paul &amp; Vera break down the pre-practice prediction &middot; 3:50 min</p>
+            <audio class="podcast-player" controls preload="metadata" src="../podcasts/2026-09-13_pre-practice.mp3">
+                Your browser does not support the audio element.
+            </audio>
         </div>
         <div class="pred-card pred-card-postq">
             <a href="2026-09-13_post-qualifying.html" class="pred-card-link">

@@ -48,6 +48,24 @@ PRACTICE3_END_BST = "14:00"
 QUALIFYING_END_BST = "14:00"
 RACE_START_BST = "14:00"
 
+# ── Podcast (Race Weekend Podcast) ────────────────────────────────────────
+# Two-host commentary episodes for the prediction types that get scored.
+# Voices: Paul (host, intro/outro) & Vera (co-host, news + deep-dive) — user
+# preference (2026-09-14). Engine: Pocket TTS (kyutai), temp 1.1, NO
+# quantize (user prefs 2026-09-13), 24kHz mono WAV -> 96kbps MP3.
+PODCAST_TTS_BIN = os.path.expanduser("~/pocket-tts-venv/bin/pocket-tts")
+PODCAST_HOST_VOICE = "paul"
+PODCAST_COHOST_VOICE = "vera"
+PODCAST_TEMPERATURE = "1.1"
+PODCAST_GAP_SECONDS = 0.8
+PODCAST_MP3_BITRATE = "96k"
+PODCAST_SCRIPT_MIN_CHARS = 3300   # ~3 min spoken (paul/vera speak ~19 chars/sec)
+PODCAST_SCRIPT_MAX_CHARS = 4300   # ~3.5-4 min spoken
+PODCAST_AUDIO_MIN_SECONDS = 150
+PODCAST_AUDIO_MAX_SECONDS = 330
+PODCAST_SEGMENT_MAX_CHARS = 600
+PODCAST_TYPES = ["pre-practice", "post-qualifying"]
+
 # ── F1DB Data fetching ────────────────────────────────────────────────────
 
 # Global cache for driver names (persists across function calls in same run)
@@ -1955,6 +1973,23 @@ def generate_weekend_html(weekend_data):
             </a>
         </div>
 """
+            # Insert podcast card directly after its prediction card (pre-practice /
+            # post-qualifying only). Inline audio player, no download button.
+            podcast_meta = predictions[ptype].get("podcast")
+            if podcast_meta and podcast_meta.get("path"):
+                ep_title = _html.escape(str(podcast_meta.get("episode_title", "Race Weekend Podcast")))
+                mp3_url = _html.escape("../" + podcast_meta["path"])
+                dur = podcast_meta.get("duration")
+                dur_txt = f"{dur // 60}:{dur % 60:02d} min" if isinstance(dur, int) else ""
+                pred_links += f"""        <div class="pred-card pred-card-podcast">
+            <h3><span class="badge badge-podcast">&#127908; Podcast</span> The Race Weekend Podcast</h3>
+            <p class="podcast-ep-title">{ep_title}</p>
+            <p class="podcast-ep-meta">Paul &amp; Vera break down the {badge_label.lower()} prediction{" &middot; " + dur_txt if dur_txt else ""}</p>
+            <audio class="podcast-player" controls preload="metadata" src="{mp3_url}">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+"""
             # Insert sprint score card after post-sprint-qualifying prediction
             if ptype == "post-sprint-qualifying" and sprint_score_card:
                 pred_links += sprint_score_card
@@ -2083,6 +2118,32 @@ def generate_weekend_html(weekend_data):
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
         }}
         .badge-sprint {{ background: #1e3a5f; color: #60a5fa; }}
+        .pred-card-podcast {{
+            border-left-color: #e879f9;
+            background: linear-gradient(135deg, #1a0f1a 0%, #111118 100%);
+            box-shadow: 0 0 20px rgba(232, 121, 249, 0.06);
+        }}
+        .pred-card-podcast:hover {{
+            border-color: #e879f9;
+            box-shadow: 0 0 30px rgba(232, 121, 249, 0.14);
+        }}
+        .badge-podcast {{ background: #3b1f42; color: #f0abfc; }}
+        .podcast-ep-title {{
+            color: #f0abfc;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0.25rem 0 0.1rem 0;
+        }}
+        .podcast-ep-meta {{
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }}
+        .podcast-player {{
+            width: 100%;
+            border-radius: 6px;
+            background: #0d0d12;
+        }}
         .score-display {{
             font-size: 2rem;
             font-weight: 800;
@@ -3078,6 +3139,364 @@ def save_history(repo_path, history):
     with open(history_file, 'w') as f:
         json.dump(history, f, indent=2)
 
+# ── Race Weekend Podcast ──────────────────────────────────────────────────
+# Generates a two-host (Paul & Vera) commentary episode for the scored
+# prediction types. Best-effort: any failure is logged and swallowed so it
+# never blocks a prediction from publishing.
+#
+# Pipeline:  prediction data + news  ->  LLM script (JSON dialogue)
+#            ->  Pocket TTS per segment (WAV)  ->  ffmpeg stitch -> MP3.
+
+import tempfile
+import html as _html
+
+PODCAST_VOICES = {
+    "paul": PODCAST_HOST_VOICE,
+    "vera": PODCAST_COHOST_VOICE,
+}
+
+def _podcast_split_text(text, max_chars):
+    """Split long spoken text at sentence boundaries (no mid-sentence cuts)."""
+    text = (text or "").strip()
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    chunks, cur = [], ''
+    for s in sentences:
+        s = s.strip()
+        if not s:
+            continue
+        if len(cur) + len(s) + 1 > max_chars and cur:
+            chunks.append(cur)
+            cur = s
+        else:
+            cur = (cur + ' ' + s) if cur else s
+    if cur:
+        chunks.append(cur)
+    return chunks
+
+def _podcast_speakable(text):
+    """Light TTS-friendly cleanup: drop em/en dashes and markdown artifacts."""
+    if not text:
+        return ""
+    t = text.replace("\u2014", ", ").replace("\u2013", ", ").replace("–", ", ")
+    t = t.replace("**", "").replace("*", "").replace("`", "")
+    t = re.sub(r'\s+', ' ', t).strip()
+    return t
+
+def _podcast_driver_hist(historical_data, driver):
+    """Return (avg, best, podiums, races) for a driver at this circuit, or None."""
+    if not historical_data:
+        return None
+    results = historical_data.get(driver)
+    if not results:
+        return None
+    positions = [r.get('position') for r in results if r.get('position')]
+    if not positions:
+        return None
+    avg = sum(positions) / len(positions)
+    best = min(positions)
+    podiums = sum(1 for p in positions if p <= 3)
+    return (avg, best, podiums, len(positions))
+
+def _build_podcast_prompt(prediction_type, predictions, news, race_name,
+                          short_name, race_date, session_data=None,
+                          fia_grid=None, historical_data=None):
+    """Build the LLM prompt for the Paul & Vera episode script."""
+    top = predictions[:10]
+    top3 = predictions[:3]
+
+    picks_lines = []
+    for p in top:
+        picks_lines.append(
+            f"- P{p.get('position','?')}: {p.get('driver','?')} ({p.get('team','')}) "
+            f"[confidence: {p.get('confidence','?')}] — {p.get('reasoning','')}"
+        )
+    picks_block = "\n".join(picks_lines)
+
+    # Top-3 deep-dive context (reasoning + circuit history)
+    top3_blocks = []
+    for p in top3:
+        d = p.get('driver', '?')
+        h = _podcast_driver_hist(historical_data, d)
+        hist_txt = ""
+        if h:
+            avg, best, podiums, races = h
+            hist_txt = (f" History at this circuit: average P{avg:.1f}, "
+                        f"best P{best}, {podiums} podium(s) over {races} race(s).")
+        top3_blocks.append(
+            f"{d} ({p.get('team','')}) — {p.get('reasoning','')}.{hist_txt}"
+        )
+    top3_block = "\n".join(top3_blocks)
+
+    # News: pass the freshest headlines, cap to a usable amount.
+    news_lines = []
+    detail_count = 0
+    for h in news:
+        if h.startswith("[detail]"):
+            if detail_count >= 2:
+                continue
+            detail_count += 1
+            news_lines.append("- (detail) " + h[len("[detail]"):].strip())
+        else:
+            if len([x for x in news_lines if not x.startswith("- (detail)")]) >= 8:
+                continue
+            news_lines.append("- " + h.strip())
+    news_block = "\n".join(news_lines) if news_lines else "- (no fresh news available — do not invent any)"
+
+    # Grid penalties (post-qualifying only)
+    grid_block = ""
+    if fia_grid and fia_grid.get('penalties'):
+        pen_lines = [f"- {p}" for p in fia_grid['penalties'][:6]]
+        grid_block = "\n## Official Grid Penalties (mention the ones that matter)\n" + "\n".join(pen_lines)
+
+    type_blurb = {
+        "pre-practice": ("the first real look at this weekend — no free practice has "
+                         "run yet, so lean on season form, news and this circuit's "
+                         "history"),
+        "post-qualifying": ("qualifying is DONE — the starting grid is set, so talk "
+                            "about who starts where, any grid penalties, and who the "
+                            "grid hands an advantage"),
+    }.get(prediction_type, "the weekend build-up")
+
+    min_c = PODCAST_SCRIPT_MIN_CHARS
+    max_c = PODCAST_SCRIPT_MAX_CHARS
+
+    prompt = f"""You are writing the script for "The Race Weekend Podcast", a short, UPBEAT and EXCITING two-host F1 commentary show.
+
+The two hosts:
+- PAUL — the main host. Energetic, warm, sets the tone, does the intro and the final wrap.
+- VERA — the co-host. Sharp, funny, drives the news round-up and the deep-dive.
+
+They banter naturally like a real radio show. Keep it lively, confident and fun — this is a preview people look forward to. No dry reading of a table.
+
+=== THE RACE ===
+{race_name}
+Short name: {short_name}
+Race date: {race_date}
+Prediction type: {prediction_type.upper()} — {type_blurb}
+
+=== OUR TOP-10 PREDICTION (with the reasoning behind each pick) ===
+{picks_block}
+
+=== THE TOP 3 (go deep on these — this is the heart of the episode) ===
+{top3_block}
+
+=== FRESH F1 NEWS (only use what is listed below — DO NOT invent news) ===
+{news_block}
+{grid_block}
+
+=== HOW TO STRUCTURE THE EPISODE ===
+1. PAUL opens with a punchy one-line welcome and teases why this race is interesting.
+2. VERA does a quick, snappy round-up of the 3-5 most relevant news items above (weave them in, don't read a list).
+3. They debate the TOP 3 — one driver per host at a time. Give the real reason each made the top 3 (use the reasoning + history above). Let them disagree or riff a little.
+4. A "deep cut" moment: one surprising pick, a low-confidence gamble, a penalty, or a circuit-history quirk that's genuinely interesting.
+5. PAUL does the wrap: a one-breath run-through of the full top 10 (name all ten in order), then a short upbeat sign-off.
+
+=== RULES ===
+- Ground everything in the data above. Do NOT invent drivers, results, news, or stats.
+- Only talk about drivers in our top 10.
+- Write for the EAR: no em-dashes, no markdown, no asterisks, no URLs, no "P1" abbreviations — say "pole position", "second", "third" and so on. Spell out numbers in words where it reads better ("twenty three points", not "23").
+- Keep each line a natural single speaker turn — usually one to three short sentences.
+- Total spoken word count should be roughly between {min_c} and {max_c} characters across all segments (about 3 to 4 minutes when read aloud).
+- Give the episode a catchy title (one short phrase, max 6 words). The title MUST be factually accurate about where the race is held. If the news or data shows the race is at a NEW or different venue (e.g. "first time in Madrid"), use that location — a fresh venue is exactly the kind of hook a good title wants.
+
+=== OUTPUT FORMAT ===
+Return ONLY a JSON object (no markdown, no code fences) with exactly this shape:
+{{
+  "episode_title": "<catchy title>",
+  "segments": [
+    {{"speaker": "paul", "text": "<line>"}},
+    {{"speaker": "vera", "text": "<line>"}},
+    {{"speaker": "paul", "text": "<line>"}}
+  ]
+}}
+Use 16 to 22 segments. Alternate the hosts so it feels like a conversation."""
+    return prompt
+
+def generate_podcast_script(prediction_type, predictions, news, race_name,
+                            short_name, race_date, session_data=None,
+                            fia_grid=None, historical_data=None):
+    """Call the LLM for the episode script. Returns (episode_title, segments) or (None, None)."""
+    prompt = _build_podcast_prompt(
+        prediction_type, predictions, news, race_name, short_name, race_date,
+        session_data, fia_grid, historical_data)
+    content = call_llm(prompt)
+    if not content:
+        print("  Podcast: LLM returned no script", file=sys.stderr)
+        return None, None
+    return _parse_podcast_script(content)
+
+def _parse_podcast_script(llm_output):
+    """Parse + validate the LLM script. Returns (episode_title, segments) or (None, None)."""
+    obj = None
+    m = re.search(r'\{[\s\S]*\}', llm_output)
+    if m:
+        try:
+            obj = json.loads(m.group())
+        except json.JSONDecodeError:
+            pass
+    if not isinstance(obj, dict):
+        return None, None
+    title = str(obj.get("episode_title", "")).strip()
+    segs_raw = obj.get("segments")
+    if not isinstance(segs_raw, list):
+        return None, None
+    segments = []
+    for s in segs_raw:
+        if not isinstance(s, dict):
+            continue
+        speaker = str(s.get("speaker", "")).strip().lower()
+        text = _podcast_speakable(str(s.get("text", "")))
+        if speaker in PODCAST_VOICES and text:
+            segments.append({"speaker": speaker, "text": text})
+    if not segments:
+        return None, None
+    if not title:
+        title = "Race Weekend Podcast"
+    return title, segments
+
+def _podcast_check_grounding(segments, predictions):
+    """Soft grounding check: the top-3 surnames should each be referenced. Returns bool."""
+    combined = " ".join(s["text"] for s in segments).lower()
+    for p in predictions[:3]:
+        name = str(p.get("driver", "")).strip()
+        surname = name.split()[-1].lower() if name else ""
+        if surname and surname not in combined:
+            return False
+    return True
+
+def render_podcast_audio(segments, out_mp3):
+    """TTS each segment to WAV, stitch with 800ms gaps, write MP3. Returns duration (s) or None."""
+    if not shutil.which("ffmpeg") or not Path(PODCAST_TTS_BIN).exists():
+        print("  Podcast: ffmpeg or pocket-tts binary not found", file=sys.stderr)
+        return None
+
+    workdir = tempfile.mkdtemp(prefix="f1pod_")
+    try:
+        # 800ms silence gap at 24kHz (Pocket TTS sample rate)
+        gap_wav = Path(workdir) / "gap.wav"
+        subprocess.run(
+            ["ffmpeg", "-y", "-f", "lavfi", "-i",
+             f"anullsrc=r=24000:cl=mono", "-t", str(PODCAST_GAP_SECONDS),
+             "-codec:a", "pcm_s16le", str(gap_wav)],
+            capture_output=True, check=True)
+
+        wavs = []
+        idx = 0
+        for seg in segments:
+            voice = PODCAST_VOICES[seg["speaker"]]
+            # Split oversized segments at sentence boundaries for clean prosody.
+            parts = _podcast_split_text(seg["text"], PODCAST_SEGMENT_MAX_CHARS)
+            for part in parts:
+                wav = Path(workdir) / f"seg_{idx:02d}.wav"
+                idx += 1
+                r = subprocess.run(
+                    [PODCAST_TTS_BIN, "generate", "--text", part,
+                     "--voice", voice, "--language", "english",
+                     "--temperature", PODCAST_TEMPERATURE,
+                     "--output-path", str(wav), "-q"],
+                    capture_output=True, timeout=300)
+                if r.returncode != 0 or not wav.exists():
+                    print(f"  Podcast: TTS failed on segment {idx}: {r.stderr.decode('utf-8','ignore')[:200]}",
+                          file=sys.stderr)
+                    return None
+                wavs.append(wav)
+
+        # Build concat list: wav, gap, wav, gap, ... (no gap after the last)
+        list_file = Path(workdir) / "concat.txt"
+        lines = []
+        for i, w in enumerate(wavs):
+            lines.append(f"file '{w}'")
+            if i < len(wavs) - 1:
+                lines.append(f"file '{gap_wav}'")
+        list_file.write_text("\n".join(lines))
+
+        Path(out_mp3).parent.mkdir(parents=True, exist_ok=True)
+        r = subprocess.run(
+            ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(list_file),
+             "-ar", "24000", "-ac", "1", "-codec:a", "libmp3lame",
+             "-b:a", PODCAST_MP3_BITRATE, str(out_mp3)],
+            capture_output=True)
+        if r.returncode != 0 or not Path(out_mp3).exists():
+            print(f"  Podcast: ffmpeg stitch failed: {r.stderr.decode('utf-8','ignore')[:200]}",
+                  file=sys.stderr)
+            return None
+
+        dur = _ffprobe_duration(out_mp3)
+        if dur is None:
+            return None
+        # Reject audio that's wildly off-length (bad TTS / truncation).
+        if dur < 90 or dur > 420:
+            print(f"  Podcast: audio length {dur:.0f}s outside sane range", file=sys.stderr)
+            return None
+        return dur
+    except subprocess.TimeoutExpired:
+        print("  Podcast: TTS timed out", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(f"  Podcast: render error: {e}", file=sys.stderr)
+        return None
+
+def _ffprobe_duration(mp3_path):
+    try:
+        r = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "default=noprint_wrappers=1:nokey=1", str(mp3_path)],
+            capture_output=True, text=True, timeout=30)
+        return float(r.stdout.strip())
+    except (ValueError, subprocess.TimeoutExpired):
+        return None
+
+def make_podcast(prediction_type, predictions, news, race_name, race_date,
+                 repo_path, session_data=None, fia_grid=None, historical_data=None,
+                 circuit_id=""):
+    """Full podcast pipeline. Returns metadata dict or None (never raises)."""
+    if prediction_type not in PODCAST_TYPES:
+        return None
+    short_name = _get_short_name(circuit_id, race_name)
+
+    print(f"\nGenerating podcast ({prediction_type})...")
+    episode_title, segments = generate_podcast_script(
+        prediction_type, predictions, news, race_name, short_name, race_date,
+        session_data, fia_grid, historical_data)
+    if not segments:
+        print("  Podcast: no valid script produced — skipping", file=sys.stderr)
+        return None
+
+    # Grounding check with one retry.
+    if not _podcast_check_grounding(segments, predictions):
+        print("  Podcast: script missing a top-3 driver — retrying once", file=sys.stderr)
+        episode_title, segments = generate_podcast_script(
+            prediction_type, predictions, news, race_name, short_name, race_date,
+            session_data, fia_grid, historical_data)
+        if not segments:
+            return None
+
+    total_chars = sum(len(s["text"]) for s in segments)
+    print(f"  Podcast: {len(segments)} segments, ~{total_chars} chars, "
+          f"'{episode_title}'")
+
+    mp3_rel = f"podcasts/{race_date}_{prediction_type}.mp3"
+    mp3_path = Path(repo_path) / mp3_rel
+    # Save the script next to the MP3 (debugging + transcript source).
+    script_path = mp3_path.with_suffix(".json")
+    try:
+        script_path.write_text(json.dumps(
+            {"episode_title": episode_title, "race": race_name,
+             "date": race_date, "type": prediction_type, "segments": segments},
+            indent=2))
+    except OSError:
+        pass
+    dur = render_podcast_audio(segments, mp3_path)
+    if dur is None:
+        return None
+    print(f"  Podcast: rendered {mp3_rel} ({dur:.0f}s)")
+    return {
+        "path": mp3_rel,
+        "duration": int(round(dur)),
+        "episode_title": episode_title,
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+    }
+
 # ── Main workflow ─────────────────────────────────────────────────────────
 
 def main():
@@ -3096,7 +3515,61 @@ def main():
                         help="Score a prediction against actual race results (run 24h after race)")
     parser.add_argument("--score-sprint", action="store_true",
                         help="Score post-sprint-qualifying prediction against sprint race results (1pt per position, max 15)")
+    parser.add_argument("--podcast", action="store_true",
+                        help="Regenerate the podcast for an EXISTING prediction (requires --type; uses current news) and rebuild the site")
     args = parser.parse_args()
+
+    # --podcast: backfill a podcast for an existing weekend+type, then rebuild site
+    if args.podcast:
+        if not args.type:
+            print("Error: --podcast requires --type", file=sys.stderr)
+            sys.exit(1)
+        if args.type not in PODCAST_TYPES:
+            print(f"Error: podcast only supported for: {', '.join(PODCAST_TYPES)}", file=sys.stderr)
+            sys.exit(1)
+        repo_path = args.repo
+        history = load_history(repo_path)
+        target = None
+        for w in history["weekends"]:
+            if args.type in w.get("predictions", {}):
+                target = w
+                break
+        if not target:
+            print(f"Error: no {args.type} prediction found in history", file=sys.stderr)
+            sys.exit(1)
+        pdata = target["predictions"][args.type]
+        print(f"Regenerating podcast for {target['race_name']} ({target['date']}) [{args.type}]")
+        news = fetch_news()
+        historical_data = None
+        try:
+            ri = get_race_info(find_race_slug(target["race_name"]))
+            if ri and ri.get("grandPrixId"):
+                historical_data = get_historical_circuit_data(ri["grandPrixId"], years=3)
+        except Exception:
+            pass
+        meta = make_podcast(
+            args.type, pdata["predictions"], news, target["race_name"], target["date"],
+            repo_path, historical_data=historical_data,
+            circuit_id=target.get("circuit_id", ""))
+        if not meta:
+            print("Podcast backfill FAILED — no changes made", file=sys.stderr)
+            sys.exit(1)
+        pdata["podcast"] = meta
+        save_history(repo_path, history)
+        print(f"Podcast saved: {meta['path']} ({meta['duration']}s) — '{meta['episode_title']}'")
+        # Rebuild site
+        index_html = generate_index_html(history["weekends"])
+        with open(Path(repo_path) / "index.html", 'w') as f:
+            f.write(index_html)
+        weekends_dir = Path(repo_path) / "weekends"
+        weekends_dir.mkdir(parents=True, exist_ok=True)
+        for weekend in history["weekends"]:
+            with open(weekends_dir / f"{weekend['date']}.html", 'w') as f:
+                f.write(generate_weekend_html(weekend))
+        print("Site rebuilt")
+        if args.publish:
+            publish_to_github(repo_path, target["race_name"])
+        return
 
     # --check-session: pre-flight check for required session data
     if args.check_session:
@@ -3830,6 +4303,22 @@ def main():
         "predictions": predictions,
         "race_name": race_name
     }
+    
+    # Race Weekend Podcast (best-effort, pre-practice + post-qualifying only).
+    # Runs BEFORE save_history so the metadata lands in history.json and the
+    # weekend page renders the card in the same pass. Any failure is logged
+    # and swallowed — the prediction always publishes.
+    if prediction_type in PODCAST_TYPES:
+        try:
+            podcast_meta = make_podcast(
+                prediction_type, predictions, news, race_name, race_date,
+                repo_path, session_data=session_data, fia_grid=fia_grid,
+                historical_data=historical_data,
+                circuit_id=weekend_entry.get("circuit_id", ""))
+            if podcast_meta:
+                weekend_entry["predictions"][prediction_type]["podcast"] = podcast_meta
+        except Exception as e:
+            print(f"  Podcast generation failed (prediction still published): {e}", file=sys.stderr)
     
     save_history(repo_path, history)
     print(f"\nSaved prediction for {race_name}")
