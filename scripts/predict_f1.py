@@ -51,12 +51,13 @@ RACE_START_BST = "14:00"
 # ── Podcast (Race Weekend Podcast) ────────────────────────────────────────
 # Two-host commentary episodes for the prediction types that get scored.
 # Voices: Paul (host, intro/outro) & Michael (co-host, news + deep-dive) — user
-# preference (2026-09-14). Engine: Pocket TTS (kyutai), temp 1.2, NO
+# preference (2026-09-14). Engine: Pocket TTS (kyutai), temp 1.1, NO
 # quantize (user prefs 2026-09-13), 24kHz mono WAV -> 96kbps MP3.
+# (Martin 2026-09-14: 1.2 a touch too loose, 1.1 safer for the TTS.)
 PODCAST_TTS_BIN = os.path.expanduser("~/pocket-tts-venv/bin/pocket-tts")
 PODCAST_HOST_VOICE = "paul"
 PODCAST_COHOST_VOICE = "michael"
-PODCAST_TEMPERATURE = "1.2"
+PODCAST_TEMPERATURE = "1.1"
 PODCAST_GAP_SECONDS = 0.8        # same-voice continuation (split long segment)
 PODCAST_GAP_HANDOFF_SECONDS = 0.3  # host handoff — tight back-and-forth
 PODCAST_MP3_BITRATE = "96k"
