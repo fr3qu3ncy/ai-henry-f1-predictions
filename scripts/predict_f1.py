@@ -50,16 +50,17 @@ RACE_START_BST = "14:00"
 
 # ── Podcast (Race Weekend Podcast) ────────────────────────────────────────
 # Two-host commentary episodes for the prediction types that get scored.
-# Voices: Paul (host, intro/outro) & Vera (co-host, news + deep-dive) — user
-# preference (2026-09-14). Engine: Pocket TTS (kyutai), temp 1.1, NO
+# Voices: Paul (host, intro/outro) & Michael (co-host, news + deep-dive) — user
+# preference (2026-09-14). Engine: Pocket TTS (kyutai), temp 1.2, NO
 # quantize (user prefs 2026-09-13), 24kHz mono WAV -> 96kbps MP3.
 PODCAST_TTS_BIN = os.path.expanduser("~/pocket-tts-venv/bin/pocket-tts")
 PODCAST_HOST_VOICE = "paul"
-PODCAST_COHOST_VOICE = "vera"
-PODCAST_TEMPERATURE = "1.1"
-PODCAST_GAP_SECONDS = 0.8
+PODCAST_COHOST_VOICE = "michael"
+PODCAST_TEMPERATURE = "1.2"
+PODCAST_GAP_SECONDS = 0.8        # same-voice continuation (split long segment)
+PODCAST_GAP_HANDOFF_SECONDS = 0.3  # host handoff — tight back-and-forth
 PODCAST_MP3_BITRATE = "96k"
-PODCAST_SCRIPT_MIN_CHARS = 3300   # ~3 min spoken (paul/vera speak ~19 chars/sec)
+PODCAST_SCRIPT_MIN_CHARS = 3300   # ~3 min spoken (~19 chars/sec)
 PODCAST_SCRIPT_MAX_CHARS = 4300   # ~3.5-4 min spoken
 PODCAST_AUDIO_MIN_SECONDS = 150
 PODCAST_AUDIO_MAX_SECONDS = 330
@@ -1984,7 +1985,7 @@ def generate_weekend_html(weekend_data):
                 pred_links += f"""        <div class="pred-card pred-card-podcast">
             <h3><span class="badge badge-podcast">&#127908; Podcast</span> The Race Weekend Podcast</h3>
             <p class="podcast-ep-title">{ep_title}</p>
-            <p class="podcast-ep-meta">Paul &amp; Vera break down the {badge_label.lower()} prediction{" &middot; " + dur_txt if dur_txt else ""}</p>
+            <p class="podcast-ep-meta">Paul &amp; Michael break down the {badge_label.lower()} prediction{" &middot; " + dur_txt if dur_txt else ""}</p>
             <audio class="podcast-player" controls preload="metadata" src="{mp3_url}">
                 Your browser does not support the audio element.
             </audio>
@@ -3140,7 +3141,7 @@ def save_history(repo_path, history):
         json.dump(history, f, indent=2)
 
 # ── Race Weekend Podcast ──────────────────────────────────────────────────
-# Generates a two-host (Paul & Vera) commentary episode for the scored
+# Generates a two-host (Paul & Michael) commentary episode for the scored
 # prediction types. Best-effort: any failure is logged and swallowed so it
 # never blocks a prediction from publishing.
 #
@@ -3152,7 +3153,7 @@ import html as _html
 
 PODCAST_VOICES = {
     "paul": PODCAST_HOST_VOICE,
-    "vera": PODCAST_COHOST_VOICE,
+    "michael": PODCAST_COHOST_VOICE,
 }
 
 def _podcast_split_text(text, max_chars):
@@ -3200,7 +3201,7 @@ def _podcast_driver_hist(historical_data, driver):
 def _build_podcast_prompt(prediction_type, predictions, news, race_name,
                           short_name, race_date, session_data=None,
                           fia_grid=None, historical_data=None):
-    """Build the LLM prompt for the Paul & Vera episode script."""
+    """Build the LLM prompt for the Paul & Michael episode script."""
     top = predictions[:10]
     top3 = predictions[:3]
 
@@ -3264,7 +3265,7 @@ def _build_podcast_prompt(prediction_type, predictions, news, race_name,
 
 The two hosts:
 - PAUL — the main host. Energetic, warm, sets the tone, does the intro and the final wrap.
-- VERA — the co-host. Sharp, funny, drives the news round-up and the deep-dive.
+- MICHAEL — the co-host. Sharp, funny, drives the news round-up and the deep-dive.
 
 They banter naturally like a real radio show. Keep it lively, confident and fun — this is a preview people look forward to. No dry reading of a table.
 
@@ -3286,10 +3287,17 @@ Prediction type: {prediction_type.upper()} — {type_blurb}
 
 === HOW TO STRUCTURE THE EPISODE ===
 1. PAUL opens with a punchy one-line welcome and teases why this race is interesting.
-2. VERA does a quick, snappy round-up of the 3-5 most relevant news items above (weave them in, don't read a list).
+2. MICHAEL does a quick, snappy round-up of the 3-5 most relevant news items above (weave them in, don't read a list).
 3. They debate the TOP 3 — one driver per host at a time. Give the real reason each made the top 3 (use the reasoning + history above). Let them disagree or riff a little.
 4. A "deep cut" moment: one surprising pick, a low-confidence gamble, a penalty, or a circuit-history quirk that's genuinely interesting.
 5. PAUL does the wrap: a one-breath run-through of the full top 10 (name all ten in order), then a short upbeat sign-off.
+
+=== DELIVERY STYLE (this is the difference between a great episode and a flat one) ===
+- SHORT LINES. Most lines are ONE sentence. At most two. Long lines kill the pace.
+- Constant back-and-forth: fire direct questions at each other ("How do you beat that?", "Are you serious?", "I'm not buying it") and answer in one line.
+- React out loud: "No way!", "Ha, we'll see about that", "Easy to say now", "That's the man!". Let them disagree or riff.
+- Vary the rhythm: quick-fire exchanges, then one longer beat for the deep cut.
+- Talk like you're at the pit wall on race morning — fast, warm, excited. Never read from a document.
 
 === RULES ===
 - Ground everything in the data above. Do NOT invent drivers, results, news, or stats.
@@ -3305,11 +3313,11 @@ Return ONLY a JSON object (no markdown, no code fences) with exactly this shape:
   "episode_title": "<catchy title>",
   "segments": [
     {{"speaker": "paul", "text": "<line>"}},
-    {{"speaker": "vera", "text": "<line>"}},
+    {{"speaker": "michael", "text": "<line>"}},
     {{"speaker": "paul", "text": "<line>"}}
   ]
 }}
-Use 16 to 22 segments. Alternate the hosts so it feels like a conversation."""
+Use 20 to 28 short segments. Alternate the hosts so it feels like a fast conversation."""
     return prompt
 
 def generate_podcast_script(prediction_type, predictions, news, race_name,
@@ -3372,15 +3380,21 @@ def render_podcast_audio(segments, out_mp3):
 
     workdir = tempfile.mkdtemp(prefix="f1pod_")
     try:
-        # 800ms silence gap at 24kHz (Pocket TTS sample rate)
-        gap_wav = Path(workdir) / "gap.wav"
-        subprocess.run(
-            ["ffmpeg", "-y", "-f", "lavfi", "-i",
-             f"anullsrc=r=24000:cl=mono", "-t", str(PODCAST_GAP_SECONDS),
-             "-codec:a", "pcm_s16le", str(gap_wav)],
-            capture_output=True, check=True)
+        # Two silence gaps at 24kHz (Pocket TTS sample rate):
+        # handoff gap between different hosts (tight), continuation gap when a
+        # single long line splits and the same voice carries on.
+        handoff_wav = Path(workdir) / "gap_handoff.wav"
+        cont_wav = Path(workdir) / "gap_cont.wav"
+        for gap_path, gap_s in ((handoff_wav, PODCAST_GAP_HANDOFF_SECONDS),
+                                (cont_wav, PODCAST_GAP_SECONDS)):
+            subprocess.run(
+                ["ffmpeg", "-y", "-f", "lavfi", "-i",
+                 "anullsrc=r=24000:cl=mono", "-t", str(gap_s),
+                 "-codec:a", "pcm_s16le", str(gap_path)],
+                capture_output=True, check=True)
 
         wavs = []
+        wav_speakers = []
         idx = 0
         for seg in segments:
             voice = PODCAST_VOICES[seg["speaker"]]
@@ -3400,14 +3414,17 @@ def render_podcast_audio(segments, out_mp3):
                           file=sys.stderr)
                     return None
                 wavs.append(wav)
+                wav_speakers.append(seg["speaker"])
 
-        # Build concat list: wav, gap, wav, gap, ... (no gap after the last)
+        # Build concat list: pick the gap by speaker — 0.3s on a host handoff,
+        # 0.8s only when the same voice continues a split line. No gap after last.
         list_file = Path(workdir) / "concat.txt"
         lines = []
         for i, w in enumerate(wavs):
             lines.append(f"file '{w}'")
             if i < len(wavs) - 1:
-                lines.append(f"file '{gap_wav}'")
+                gap = handoff_wav if wav_speakers[i] != wav_speakers[i + 1] else cont_wav
+                lines.append(f"file '{gap}'")
         list_file.write_text("\n".join(lines))
 
         Path(out_mp3).parent.mkdir(parents=True, exist_ok=True)
