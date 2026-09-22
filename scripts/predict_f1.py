@@ -1431,6 +1431,7 @@ _SHORT_NAME_MAP = {
     "yas-marina": "Abu Dhabi",
     "montreal": "Canada",
     "baku": "Azerbaijan",
+    "sepang": "Bahrain (Malaysia)",
     "paul-ricard": "France",
     "istanbul": "Turkey",
     "portimao": "Portugal",
