@@ -66,7 +66,7 @@ PODCAST_SCRIPT_MAX_CHARS = 4300   # ~3.5-4 min spoken
 PODCAST_AUDIO_MIN_SECONDS = 150
 PODCAST_AUDIO_MAX_SECONDS = 330
 PODCAST_SEGMENT_MAX_CHARS = 600
-PODCAST_TYPES = ["pre-practice", "post-qualifying"]
+PODCAST_TYPES = ["pre-practice", "post-qualifying"]  # pre-practice = weekend preview (past form/results + news)
 
 # ── F1DB Data fetching ────────────────────────────────────────────────────
 
@@ -3251,13 +3251,25 @@ def _build_podcast_prompt(prediction_type, predictions, news, race_name,
         grid_block = "\n## Official Grid Penalties (mention the ones that matter)\n" + "\n".join(pen_lines)
 
     type_blurb = {
-        "pre-practice": ("the first real look at this weekend — no free practice has "
-                         "run yet, so lean on season form, news and this circuit's "
-                         "history"),
+        "pre-practice": ("the WEEKEND PREVIEW — set the scene for the weekend ahead. "
+                         "No session has run yet, so everything comes from past form, "
+                         "past race results, this circuit's history and fresh news. "
+                         "Talk about the thoughts going into our predictions: what the "
+                         "data says, who's in form, what's at stake, and what to watch "
+                         "for over the weekend"),
         "post-qualifying": ("qualifying is DONE — the starting grid is set, so talk "
                             "about who starts where, any grid penalties, and who the "
                             "grid hands an advantage"),
     }.get(prediction_type, "the weekend build-up")
+
+    # Type-specific structure guidance (pre-practice = weekend preview)
+    extra_structure = ""
+    if prediction_type == "pre-practice":
+        extra_structure = """
+=== EXTRA: THIS IS THE WEEKEND PREVIEW ===
+- Open by setting the scene: where is this race, how far into the season we are, and what's at stake (championship, title, bragging rights, a team's best chance, etc.).
+- Frame the episode as "the thoughts going into our predictions" — they're explaining WHY the data points them where it does, not just reading out a list.
+- Weave in circuit history (past form at THIS track) as a natural part of the debate, not a stat dump."""
 
     min_c = PODCAST_SCRIPT_MIN_CHARS
     max_c = PODCAST_SCRIPT_MAX_CHARS
@@ -3284,7 +3296,7 @@ Prediction type: {prediction_type.upper()} — {type_blurb}
 
 === FRESH F1 NEWS (only use what is listed below — DO NOT invent news) ===
 {news_block}
-{grid_block}
+{grid_block}{extra_structure}
 
 === HOW TO STRUCTURE THE EPISODE ===
 1. PAUL opens with a punchy one-line welcome and teases why this race is interesting.

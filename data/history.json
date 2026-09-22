@@ -8,77 +8,77 @@
         "early": {
           "type": "early",
           "date": "2026-09-26",
-          "generated_at": "2026-09-13 21:14 ",
+          "generated_at": "2026-09-22 20:04 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant form with eight wins; Baku avg P4, championship leader"
+              "reasoning": "Dominant season leader with multiple wins; strong at Baku historically."
             },
             {
               "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Two wins, Baku podium history, strong Mercedes pace"
+              "reasoning": "Top Mercedes form and two Baku podiums; consistent top-five finisher."
             },
             {
               "position": 3,
-              "driver": "Charles Leclerc",
-              "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Ferrari in form, Baku avg P4.7 with two podiums"
-            },
-            {
-              "position": 4,
-              "driver": "Lando Norris",
-              "team": "McLaren",
-              "confidence": "medium",
-              "reasoning": "Pole form and wins, Baku top-4 history, McLaren pace"
-            },
-            {
-              "position": 5,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Best Baku history avg P2.7, Red Bull pace"
+              "reasoning": "Best Baku history and recent top-three form; Red Bull car strong."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Strong current form and Baku podium record; Ferrari competitive."
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Recent wins and top-five consistency; Baku best P4."
             },
             {
               "position": 6,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Top-three championship, Ferrari pace, but Baku weaker"
+              "reasoning": "Championship contender in good form, though Baku history weaker."
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
-              "team": "McLaren",
+              "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "McLaren pace, Baku win history, recent top-5s"
+              "reasoning": "Baku winner and consistent McLaren top-five threat."
             },
             {
               "position": 8,
               "driver": "Liam Lawson",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Strong Red Bull upgrade, Baku avg P5, recent top-8s"
+              "reasoning": "Consistent points finisher now in Red Bull; Baku best P5."
             },
             {
               "position": 9,
               "driver": "Pierre Gasly",
               "team": "Alpine",
-              "confidence": "medium",
-              "reasoning": "Consistent top-10s, 41 points, Alpine midfield pace"
+              "confidence": "low",
+              "reasoning": "Best midfield points total and frequent top-ten finishes."
             },
             {
               "position": 10,
               "driver": "Arvid Lindblad",
               "team": "Racing Bulls",
               "confidence": "low",
-              "reasoning": "Consistent top-10s, Racing Bulls strong, no Baku data"
+              "reasoning": "Recent top-ten consistency and solid Racing Bulls performance."
             }
           ],
           "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
