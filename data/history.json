@@ -86,80 +86,86 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-09-26",
-          "generated_at": "2026-09-23 10:30 ",
+          "generated_at": "2026-09-23 23:13 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Championship leader with multiple wins and good Baku record"
+              "reasoning": "Championship leader, eight wins and dominant recent form"
             },
             {
               "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Second in points, strong Mercedes pace and Baku podium history"
+              "reasoning": "Two wins, strong Baku history and Mercedes pace"
             },
             {
               "position": 3,
-              "driver": "Charles Leclerc",
-              "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Consistent top-5 form and better Baku average than teammate"
-            },
-            {
-              "position": 4,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
-              "confidence": "high",
-              "reasoning": "Recent race wins and strong McLaren package on street tracks"
-            },
-            {
-              "position": 5,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Third in points, very consistent top-5 finishes and racecraft"
-            },
-            {
-              "position": 6,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Best Baku history and recent top-3 form, but inconsistent season"
+              "reasoning": "Best Baku record and recent top-five form"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Good Baku history and strong Ferrari pace"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Two wins and strong recent street-circuit form"
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "High points total and Ferrari pace, though Baku weak"
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Baku podium history and strong McLaren car, recent top-8 form"
+              "reasoning": "McLaren pace and previous Baku win"
             },
             {
               "position": 8,
               "driver": "Liam Lawson",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull car, Baku P5 history, and recent top-10 consistency"
+              "reasoning": "Strong recent top-10s and good Baku history"
             },
             {
               "position": 9,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
-              "confidence": "medium",
-              "reasoning": "Midfield leader on points and consistent top-10 finishes lately"
-            },
-            {
-              "position": 10,
               "driver": "Arvid Lindblad",
               "team": "Racing Bulls",
               "confidence": "low",
-              "reasoning": "Recent top-10 consistency and strong Racing Bulls development"
+              "reasoning": "Consistent recent top-10 finishes"
+            },
+            {
+              "position": 10,
+              "driver": "Franco Colapinto",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Recent street-circuit top-10s and Alpine points"
             }
           ],
-          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
+          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-09-26_pre-practice.mp3",
+            "duration": 217,
+            "episode_title": "Baku: Antonelli's Title Gamble",
+            "generated_at": "2026-09-23 23:34"
+          }
         }
       },
       "standings": [
