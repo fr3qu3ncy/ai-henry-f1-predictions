@@ -82,6 +82,84 @@
             }
           ],
           "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-09-26",
+          "generated_at": "2026-09-23 10:30 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader with multiple wins and good Baku record"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Second in points, strong Mercedes pace and Baku podium history"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Consistent top-5 form and better Baku average than teammate"
+            },
+            {
+              "position": 4,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Recent race wins and strong McLaren package on street tracks"
+            },
+            {
+              "position": 5,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Third in points, very consistent top-5 finishes and racecraft"
+            },
+            {
+              "position": 6,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Best Baku history and recent top-3 form, but inconsistent season"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Baku podium history and strong McLaren car, recent top-8 form"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull car, Baku P5 history, and recent top-10 consistency"
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Midfield leader on points and consistent top-10 finishes lately"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Recent top-10 consistency and strong Racing Bulls development"
+            }
+          ],
+          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
         }
       },
       "standings": [
@@ -157,7 +235,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
