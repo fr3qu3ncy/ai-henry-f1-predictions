@@ -86,85 +86,85 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-09-26",
-          "generated_at": "2026-09-23 23:13 ",
+          "generated_at": "2026-09-24 09:48 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Championship leader, eight wins and dominant recent form"
+              "reasoning": "Championship leader, 8 wins, strong Baku P4 history"
             },
             {
               "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Two wins, strong Baku history and Mercedes pace"
+              "reasoning": "Second in title, multiple wins, Baku podiums"
             },
             {
               "position": 3,
               "driver": "Max Verstappen",
               "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Best Baku record and recent top-five form"
+              "confidence": "high",
+              "reasoning": "Baku specialist, recent podiums, strong pace"
             },
             {
               "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Good Baku history and strong Ferrari pace"
+              "confidence": "high",
+              "reasoning": "Recent top-3 form, Baku podium history"
             },
             {
               "position": 5,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
-              "confidence": "medium",
-              "reasoning": "Two wins and strong recent street-circuit form"
-            },
-            {
-              "position": 6,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "High points total and Ferrari pace, though Baku weak"
+              "reasoning": "Title contender, consistent top-5, Baku weaker"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Recent wins, strong McLaren, Baku average mid"
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
-              "team": "Mclaren",
+              "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "McLaren pace and previous Baku win"
+              "reasoning": "Podium capability, Baku win history"
             },
             {
               "position": 8,
               "driver": "Liam Lawson",
-              "team": "Red Bull",
+              "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Strong recent top-10s and good Baku history"
+              "reasoning": "Consistent top-10, Baku P5, strong RB car"
             },
             {
               "position": 9,
-              "driver": "Arvid Lindblad",
-              "team": "Racing Bulls",
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
               "confidence": "low",
-              "reasoning": "Consistent recent top-10 finishes"
+              "reasoning": "Returning from injury, Red Bull car, Baku P10"
             },
             {
               "position": 10,
-              "driver": "Franco Colapinto",
-              "team": "Alpine",
-              "confidence": "low",
-              "reasoning": "Recent street-circuit top-10s and Alpine points"
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Recent top-10 consistency, RB upgrade pace"
             }
           ],
           "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
           "podcast": {
             "path": "podcasts/2026-09-26_pre-practice.mp3",
-            "duration": 217,
-            "episode_title": "Baku: Antonelli's Title Gamble",
-            "generated_at": "2026-09-23 23:34"
+            "duration": 229,
+            "episode_title": "Baku's Title Tightrope",
+            "generated_at": "2026-09-24 10:00"
           }
         }
       },
