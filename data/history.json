@@ -86,86 +86,80 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-09-26",
-          "generated_at": "2026-09-24 09:48 ",
+          "generated_at": "2026-09-24 18:18 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Championship leader, 8 wins, strong Baku P4 history"
+              "reasoning": "Championship leader and dominant season; Mercedes strong at Baku"
             },
             {
               "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Second in title, multiple wins, Baku podiums"
+              "reasoning": "Strong Baku record and consistent Mercedes form"
             },
             {
               "position": 3,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
-              "confidence": "high",
-              "reasoning": "Baku specialist, recent podiums, strong pace"
-            },
-            {
-              "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Recent top-3 form, Baku podium history"
+              "reasoning": "Ferrari pace plus good Baku history"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Best recent Baku record; Red Bull competitiveness"
             },
             {
               "position": 5,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Title contender, consistent top-5, Baku weaker"
+              "reasoning": "Top Ferrari form, but weaker Baku history"
             },
             {
               "position": 6,
-              "driver": "Lando Norris",
-              "team": "McLaren",
-              "confidence": "medium",
-              "reasoning": "Recent wins, strong McLaren, Baku average mid"
-            },
-            {
-              "position": 7,
-              "driver": "Oscar Piastri",
-              "team": "McLaren",
-              "confidence": "medium",
-              "reasoning": "Podium capability, Baku win history"
-            },
-            {
-              "position": 8,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Consistent top-10, Baku P5, strong RB car"
+              "reasoning": "Good Baku average and consistent top-10 form"
+            },
+            {
+              "position": 7,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "low",
+              "reasoning": "Strong form but McLaren reported off pace at Baku"
+            },
+            {
+              "position": 8,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "low",
+              "reasoning": "Baku win history, but McLaren off pace this weekend"
             },
             {
               "position": 9,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "low",
-              "reasoning": "Returning from injury, Red Bull car, Baku P10"
+              "reasoning": "Returning from injury; Red Bull car but weak Baku record"
             },
             {
               "position": 10,
               "driver": "Arvid Lindblad",
               "team": "Racing Bulls",
-              "confidence": "medium",
-              "reasoning": "Recent top-10 consistency, RB upgrade pace"
+              "confidence": "low",
+              "reasoning": "Consistent points finisher in recent races"
             }
           ],
-          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
-          "podcast": {
-            "path": "podcasts/2026-09-26_pre-practice.mp3",
-            "duration": 229,
-            "episode_title": "Baku's Title Tightrope",
-            "generated_at": "2026-09-24 10:00"
-          }
+          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
         }
       },
       "standings": [
