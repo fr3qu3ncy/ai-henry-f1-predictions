@@ -160,6 +160,90 @@
             }
           ],
           "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-09-26",
+          "generated_at": "2026-09-26 12:51 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Pole, best practice, Mercedes pace and recent form"
+            },
+            {
+              "position": 2,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "P2, strong Ferrari and good Baku history"
+            },
+            {
+              "position": 3,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "P3, consistent McLaren form and good grid"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Baku specialist, strong practice, can pass"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "P5, recent wins and McLaren pace"
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P6, consistent Ferrari and championship form"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "low",
+              "reasoning": "P4 Red Bull, but returning and Baku history weak"
+            },
+            {
+              "position": 8,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "P7, solid Alpine and recent top-10 form"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "P11 but strong Baku history and good pace"
+            },
+            {
+              "position": 10,
+              "driver": "Franco Colapinto",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "P9, solid Alpine and recent top-10 form"
+            }
+          ],
+          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-09-26_post-qualifying.mp3",
+            "duration": 222,
+            "episode_title": "Baku Pole Party",
+            "generated_at": "2026-09-26 13:13"
+          }
         }
       },
       "standings": [
@@ -236,7 +320,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "post-qualifying"
       ]
     },
     {
