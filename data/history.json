@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-10-04",
+      "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026",
+      "circuit_id": "sepang",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-10-04",
+          "generated_at": "2026-09-26 19:41 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Last race winner, pole, strong form and solid circuit history"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Strong current form, excellent circuit history, Red Bull pace"
+            },
+            {
+              "position": 3,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Championship leader and dominant season, but weaker circuit form"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Top Ferrari form and good circuit history; consistent points"
+            },
+            {
+              "position": 5,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Consistent top-5 form and decent circuit history"
+            },
+            {
+              "position": 6,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Good circuit history and recent top-5 finishes"
+            },
+            {
+              "position": 7,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Recent wins and top form, but poor circuit history"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Red Bull",
+              "confidence": "low",
+              "reasoning": "Recent top-10 form in Red Bull car; no circuit data"
+            },
+            {
+              "position": 9,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Consistent top-10 recently; strong Racing Bulls form"
+            },
+            {
+              "position": 10,
+              "driver": "Carlos Sainz Jr.",
+              "team": "Williams",
+              "confidence": "low",
+              "reasoning": "Strong circuit history and recent top-10 finish"
+            }
+          ],
+          "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 302
+        },
+        {
+          "position": 2,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 236
+        },
+        {
+          "position": 3,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 199
+        },
+        {
+          "position": 4,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 186
+        },
+        {
+          "position": 5,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 179
+        },
+        {
+          "position": 6,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 163
+        },
+        {
+          "position": 7,
+          "name": "Oscar Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 120
+        },
+        {
+          "position": 8,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 86
+        },
+        {
+          "position": 9,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 59
+        },
+        {
+          "position": 10,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 41
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-09-26",
       "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
       "circuit_id": "baku",
