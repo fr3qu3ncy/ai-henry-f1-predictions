@@ -404,6 +404,84 @@
             "episode_title": "Baku Pole Party",
             "generated_at": "2026-09-26 13:13"
           }
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-09-26",
+          "generated_at": "2026-09-27 00:17 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Dominant Baku form, pole and strong circuit history"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Fast in P3, best historical Baku performance"
+            },
+            {
+              "position": 3,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Excellent Baku return and consistent top 10"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Consistent podium form and good Baku history"
+            },
+            {
+              "position": 5,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Championship lead, strong P2, can recover from grid"
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Strong recent form and fast in all practices"
+            },
+            {
+              "position": 7,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Solid practice pace and reliable points finisher"
+            },
+            {
+              "position": 8,
+              "driver": "Esteban Ocon",
+              "team": "Haas",
+              "confidence": "low",
+              "reasoning": "Fast in Baku practice, can capitalise on chaos"
+            },
+            {
+              "position": 9,
+              "driver": "Oliver Bearman",
+              "team": "Haas",
+              "confidence": "low",
+              "reasoning": "Consistent top 10 form and good Baku practice"
+            },
+            {
+              "position": 10,
+              "driver": "Carlos Sainz",
+              "team": "Williams",
+              "confidence": "low",
+              "reasoning": "Points scorer and historical Baku podium potential"
+            }
+          ],
+          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
         }
       },
       "standings": [
@@ -481,7 +559,8 @@
       "prediction_types": [
         "early",
         "pre-practice",
-        "post-qualifying"
+        "post-qualifying",
+        "pre-qualifying"
       ]
     },
     {
