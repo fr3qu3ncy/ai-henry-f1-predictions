@@ -561,7 +561,98 @@
         "pre-practice",
         "post-qualifying",
         "pre-qualifying"
-      ]
+      ],
+      "scores": {
+        "post-qualifying": {
+          "total_score": 4,
+          "position_score": 4,
+          "podium_score": 0,
+          "position_details": [
+            {
+              "position": 1,
+              "predicted": "George Russell",
+              "actual": 1,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 2,
+              "predicted": "Charles Leclerc",
+              "actual": 4,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 3,
+              "predicted": "Oscar Piastri",
+              "actual": 13,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 4,
+              "predicted": "Max Verstappen",
+              "actual": 2,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 5,
+              "predicted": "Lando Norris",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 6,
+              "predicted": "Lewis Hamilton",
+              "actual": 6,
+              "correct": true,
+              "points": 2
+            },
+            {
+              "position": 7,
+              "predicted": "Isack Hadjar",
+              "actual": 3,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 8,
+              "predicted": "Pierre Gasly",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 9,
+              "predicted": "Liam Lawson",
+              "actual": 12,
+              "correct": false,
+              "points": 0
+            },
+            {
+              "position": 10,
+              "predicted": "Franco Colapinto",
+              "actual": "DNF",
+              "correct": false,
+              "points": 0
+            }
+          ],
+          "predicted_podium": [
+            "George Russell",
+            "Charles Leclerc",
+            "Oscar Piastri"
+          ],
+          "actual_podium": [
+            "George Russell",
+            "Max Verstappen",
+            "Isack Hadjar"
+          ],
+          "podium_correct": false,
+          "scored_at": "2026-09-28 16:30 "
+        }
+      }
     },
     {
       "date": "2026-09-13",
