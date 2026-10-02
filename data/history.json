@@ -86,77 +86,77 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-10-04",
-          "generated_at": "2026-10-01 18:45 ",
+          "generated_at": "2026-10-02 01:18 ",
           "predictions": [
             {
               "position": 1,
-              "driver": "Kimi Antonelli",
-              "team": "Mercedes",
-              "confidence": "high",
-              "reasoning": "Championship leader with 8 wins; dominant season form"
-            },
-            {
-              "position": 2,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Recent dominant win, strong Bahrain history"
+              "reasoning": "Recent dominant win, confidence back, strong Bahrain history"
+            },
+            {
+              "position": 2,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, dominant season, weaker Bahrain history"
             },
             {
               "position": 3,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Consistent top5, good Bahrain record"
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Strong recent form, excellent Bahrain history, Red Bull pace"
             },
             {
               "position": 4,
-              "driver": "Charles Leclerc",
+              "driver": "Lewis Hamilton",
               "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Strong Bahrain history, recent win"
+              "confidence": "high",
+              "reasoning": "Consistent top-5 form, strong Ferrari season, solid Bahrain"
             },
             {
               "position": 5,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Best Bahrain average, consistent P2 form"
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Consistent top-5, strong Ferrari season, good Bahrain record"
             },
             {
               "position": 6,
               "driver": "Lando Norris",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Two wins, strong season but weaker Bahrain history"
+              "reasoning": "Strong recent results, McLaren pace, but weaker Bahrain avg"
             },
             {
               "position": 7,
-              "driver": "Oscar Piastri",
-              "team": "Mclaren",
+              "driver": "Liam Lawson",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Good Bahrain history, consistent points"
+              "reasoning": "Promoted to Red Bull, consistent top-10, strong season form"
             },
             {
               "position": 8,
-              "driver": "Liam Lawson",
-              "team": "Red Bull",
-              "confidence": "low",
-              "reasoning": "Red Bull entry, points consistency"
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "McLaren pace, Bahrain best P1, inconsistent recent form"
             },
             {
               "position": 9,
-              "driver": "Carlos Sainz Jr.",
-              "team": "Williams",
-              "confidence": "low",
-              "reasoning": "Strong Bahrain history, P9/10 consistency"
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Consistent top-10, strong recent form, no Bahrain history"
             },
             {
               "position": 10,
-              "driver": "Arvid Lindblad",
-              "team": "Racing Bulls",
+              "driver": "Sergio P\u00e9rez",
+              "team": "Cadillac",
               "confidence": "low",
-              "reasoning": "Recent top10 form in last three races"
+              "reasoning": "Historical Bahrain avg 2.0, wildcard with Cadillac"
             }
           ],
           "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
