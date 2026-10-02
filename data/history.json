@@ -86,77 +86,77 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-10-04",
-          "generated_at": "2026-10-02 01:18 ",
+          "generated_at": "2026-10-02 07:31 ",
           "predictions": [
             {
               "position": 1,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "high",
-              "reasoning": "Recent dominant win, confidence back, strong Bahrain history"
-            },
-            {
-              "position": 2,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Championship leader, dominant season, weaker Bahrain history"
+              "reasoning": "Championship leader, 8 wins, dominant Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Strong recent form, historical circuit best P2"
             },
             {
               "position": 3,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "Strong recent form, excellent Bahrain history, Red Bull pace"
+              "reasoning": "Historical circuit winner, strong Red Bull pace"
             },
             {
               "position": 4,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Consistent top-5 form, strong Ferrari season, solid Bahrain"
+              "reasoning": "Multiple wins this season, Ferrari strong"
             },
             {
               "position": 5,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Consistent top-5, strong Ferrari season, good Bahrain record"
+              "confidence": "medium",
+              "reasoning": "Consistent Ferrari form, historical circuit avg 4"
             },
             {
               "position": 6,
               "driver": "Lando Norris",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Strong recent results, McLaren pace, but weaker Bahrain avg"
+              "reasoning": "Recent wins, but poor historical circuit average"
             },
             {
               "position": 7,
-              "driver": "Liam Lawson",
-              "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Promoted to Red Bull, consistent top-10, strong season form"
-            },
-            {
-              "position": 8,
               "driver": "Oscar Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "McLaren pace, Bahrain best P1, inconsistent recent form"
+              "reasoning": "Historical circuit winner, solid McLaren pace"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Recent top-10, now in stronger Red Bull car"
             },
             {
               "position": 9,
               "driver": "Arvid Lindblad",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Consistent top-10, strong recent form, no Bahrain history"
+              "reasoning": "Consistent top-10, Racing Bulls midfield pace"
             },
             {
               "position": 10,
-              "driver": "Sergio P\u00e9rez",
-              "team": "Cadillac",
+              "driver": "Carlos Sainz Jr.",
+              "team": "Williams",
               "confidence": "low",
-              "reasoning": "Historical Bahrain avg 2.0, wildcard with Cadillac"
+              "reasoning": "Strong historical circuit form, recent top-10"
             }
           ],
           "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
