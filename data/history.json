@@ -159,7 +159,13 @@
               "reasoning": "Strong historical circuit form, recent top-10"
             }
           ],
-          "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
+          "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026",
+          "podcast": {
+            "path": "podcasts/2026-10-04_pre-practice.mp3",
+            "duration": 213,
+            "episode_title": "Bahrain Race In Malaysia",
+            "generated_at": "2026-10-03 17:09"
+          }
         },
         "pre-qualifying": {
           "type": "pre-qualifying",
