@@ -1222,13 +1222,13 @@ def call_llm(prompt):
                 "-H", "Content-Type: application/json",
                 "-d", json.dumps(payload)
             ],
-            capture_output=True, text=True, timeout=1200
+            capture_output=True, text=True, timeout=3600
         )
-        
+
         if result.returncode != 0:
             print(f"  curl error: {result.stderr}", file=sys.stderr)
             return None
-            
+
         response = json.loads(result.stdout)
         if "choices" in response:
             choice = response["choices"][0]
@@ -1245,7 +1245,7 @@ def call_llm(prompt):
             print(f"  LLM response error: {result.stdout[:200]}", file=sys.stderr)
             return None
     except subprocess.TimeoutExpired:
-        print("  LLM call timed out after 1200s", file=sys.stderr)
+        print("  LLM call timed out after 3600s", file=sys.stderr)
     except json.JSONDecodeError as e:
         print(f"  JSON parse error: {e}", file=sys.stderr)
     except Exception as e:
