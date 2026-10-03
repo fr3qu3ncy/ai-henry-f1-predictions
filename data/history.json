@@ -321,7 +321,13 @@
               "reasoning": "Consistent points, P11 grid, strong race form"
             }
           ],
-          "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
+          "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026",
+          "podcast": {
+            "path": "podcasts/2026-10-04_post-qualifying.mp3",
+            "duration": 259,
+            "episode_title": "Max Takes Malaysia Pole",
+            "generated_at": "2026-10-03 21:37"
+          }
         }
       },
       "standings": [
