@@ -160,6 +160,84 @@
             }
           ],
           "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-10-04",
+          "generated_at": "2026-10-03 12:25 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Pole position, Red Bull strongest, strong Bahrain history"
+            },
+            {
+              "position": 2,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, fastest P3, Mercedes strong"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Fastest P1, confidence back, good Bahrain history"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P2 grid, Ferrari strong, solid Bahrain record"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Fastest P2, Ferrari strong, good Bahrain record"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Recent wins and top-5 form, McLaren competitive"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Consistent Red Bull top-3, strong race pace"
+            },
+            {
+              "position": 8,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Solid McLaren form, Bahrain historical best P1"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Best lower-field form, frequent top-10 finishes"
+            },
+            {
+              "position": 10,
+              "driver": "Carlos Sainz Jr.",
+              "team": "Williams",
+              "confidence": "low",
+              "reasoning": "Bahrain historical best P3, recent P9/P10 consistency"
+            }
+          ],
+          "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026"
         }
       },
       "standings": [
@@ -236,7 +314,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "pre-qualifying"
       ]
     },
     {
