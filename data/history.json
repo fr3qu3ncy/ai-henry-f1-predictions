@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-10-09",
+      "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026",
+      "circuit_id": "marina-bay",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-10-09",
+          "generated_at": "2026-10-04 20:08 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, dominant street form"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Recent win, Red Bull upgrade, strong Singapore history"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Top Mercedes points, street pace, recent DNF"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari form, good street, recent P3"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari consistency, good Singapore avg"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Best Singapore history, Mclaren pace, recent P9"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "low",
+              "reasoning": "Red Bull upgrade, consistent top10s"
+            },
+            {
+              "position": 8,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "low",
+              "reasoning": "Mclaren points, recent top10s"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "RB form, recent top10s"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "RB consistency, recent top10s"
+            }
+          ],
+          "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 320
+        },
+        {
+          "position": 2,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 236
+        },
+        {
+          "position": 3,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 214
+        },
+        {
+          "position": 4,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 191
+        },
+        {
+          "position": 5,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 188
+        },
+        {
+          "position": 6,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 188
+        },
+        {
+          "position": 7,
+          "name": "Oscar Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 128
+        },
+        {
+          "position": 8,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 96
+        },
+        {
+          "position": 9,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 65
+        },
+        {
+          "position": 10,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 41
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-10-04",
       "race_name": "Formula 1 Gulf Air Bahrain Grand Prix in Malaysia 2026",
       "circuit_id": "sepang",
