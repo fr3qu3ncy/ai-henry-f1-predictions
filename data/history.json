@@ -819,7 +819,13 @@
               "reasoning": "Consistent points finisher in recent races"
             }
           ],
-          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026"
+          "race_name": "Formula 1 Qatar Airways Azerbaijan Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-09-26_pre-practice.mp3",
+            "duration": 229,
+            "episode_title": "Baku's Title Tightrope",
+            "generated_at": "2026-09-24 10:00"
+          }
         },
         "post-qualifying": {
           "type": "post-qualifying",
@@ -1156,7 +1162,7 @@
     },
     {
       "date": "2026-09-13",
-      "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026",
+      "race_name": "Formula 1 TAG Heuer Gran Premio de España 2026",
       "circuit_id": "madring",
       "predictions": {
         "early": {
@@ -1235,7 +1241,7 @@
               "reasoning": "Racing Bulls consistency, 9th in championship"
             }
           ],
-          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
+          "race_name": "Formula 1 TAG Heuer Gran Premio de España 2026"
         },
         "pre-practice": {
           "type": "pre-practice",
@@ -1313,7 +1319,7 @@
               "reasoning": "Consistent top-10 but practice crash flags Madrid risk"
             }
           ],
-          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026",
+          "race_name": "Formula 1 TAG Heuer Gran Premio de España 2026",
           "podcast": {
             "path": "podcasts/2026-09-13_pre-practice.mp3",
             "duration": 241,
@@ -1397,7 +1403,7 @@
               "reasoning": "P10 grid, points form, but crash risk"
             }
           ],
-          "race_name": "Formula 1 TAG Heuer Gran Premio de Espa\u00f1a 2026"
+          "race_name": "Formula 1 TAG Heuer Gran Premio de España 2026"
         }
       },
       "standings": [
@@ -3204,7 +3210,7 @@
     },
     {
       "date": "2026-07-19",
-      "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026",
+      "race_name": "Formula 1 Moët & Chandon Belgian Grand Prix 2026",
       "circuit_id": "spa-francorchamps",
       "predictions": {
         "early": {
@@ -3283,7 +3289,7 @@
               "reasoning": "Historical avg P9 at Spa, steady points scorer this season."
             }
           ],
-          "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
+          "race_name": "Formula 1 Moët & Chandon Belgian Grand Prix 2026"
         },
         "pre-practice": {
           "type": "pre-practice",
@@ -3361,7 +3367,7 @@
               "reasoning": "Reliable points finisher, good Spa history; consistently in top 10 this year."
             }
           ],
-          "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
+          "race_name": "Formula 1 Moët & Chandon Belgian Grand Prix 2026"
         },
         "pre-qualifying": {
           "type": "pre-qualifying",
@@ -3439,7 +3445,7 @@
               "reasoning": "Consistent points scorer, strong P1, RB reliability."
             }
           ],
-          "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
+          "race_name": "Formula 1 Moët & Chandon Belgian Grand Prix 2026"
         },
         "post-qualifying": {
           "type": "post-qualifying",
@@ -3517,7 +3523,7 @@
               "reasoning": "P11 grid, reliable race pace, strong recent top-10 finishes."
             }
           ],
-          "race_name": "Formula 1 Mo\u00ebt & Chandon Belgian Grand Prix 2026"
+          "race_name": "Formula 1 Moët & Chandon Belgian Grand Prix 2026"
         }
       },
       "standings": [
@@ -5223,7 +5229,7 @@
             },
             {
               "position": 10,
-              "driver": "Nico H\u00fclkenberg",
+              "driver": "Nico Hülkenberg",
               "team": "Audi",
               "confidence": "low",
               "reasoning": "P9 grid, Audi showing strong FP3 pace, veteran consistency"
@@ -5381,7 +5387,7 @@
             },
             {
               "position": 10,
-              "predicted": "Nico H\u00fclkenberg",
+              "predicted": "Nico Hülkenberg",
               "actual": "DNF",
               "correct": false,
               "points": 0
