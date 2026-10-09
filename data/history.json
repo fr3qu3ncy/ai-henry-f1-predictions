@@ -166,6 +166,84 @@
             "episode_title": "Singapore Night Lights Up",
             "generated_at": "2026-10-08 11:07"
           }
+        },
+        "pre-sprint-qualifying": {
+          "type": "pre-sprint-qualifying",
+          "date": "2026-10-09",
+          "generated_at": "2026-10-09 13:42 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Championship form, Mercedes pace, Russell penalty opens top spot"
+            },
+            {
+              "position": 2,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Best Singapore form, P1 third, McLaren pace"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P1 second, strong Ferrari, good street race form"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P1 fourth, championship form, consistent Ferrari"
+            },
+            {
+              "position": 5,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P1 sixth, recent winner, strong Red Bull, Singapore form"
+            },
+            {
+              "position": 6,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "P1 fifth, McLaren speed, consistent top-6 form"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P1 eighth, strong Red Bull, recent top-5 results"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "P1 tenth, consistent Racing Bulls, recent top-7"
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "P1 ninth, Alpine pace, regular top-10 scorer"
+            },
+            {
+              "position": 10,
+              "driver": "Oliver Bearman",
+              "team": "Haas",
+              "confidence": "low",
+              "reasoning": "P1 eleventh, Haas top-10 potential, Singapore history"
+            }
+          ],
+          "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026"
         }
       },
       "standings": [
@@ -242,7 +320,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "pre-sprint-qualifying"
       ]
     },
     {
