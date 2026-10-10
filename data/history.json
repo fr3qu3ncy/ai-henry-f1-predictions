@@ -248,77 +248,77 @@
         "post-sprint-qualifying": {
           "type": "post-sprint-qualifying",
           "date": "2026-10-09",
-          "generated_at": "2026-10-10 04:38 ",
+          "generated_at": "2026-10-10 10:56 ",
           "predictions": [
             {
               "position": 1,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Pole, strong Singapore history, Red Bull pace; settings issue"
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Season form, multiple wins, consistent points"
             },
             {
               "position": 2,
               "driver": "Lando Norris",
               "team": "McLaren",
               "confidence": "high",
-              "reasoning": "Best Singapore record, McLaren pace, front grid"
+              "reasoning": "Best Singapore record, recent podiums/wins"
             },
             {
               "position": 3,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "medium",
-              "reasoning": "Fastest in P1, season form; grid penalty hurts"
-            },
-            {
-              "position": 4,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Front grid, Ferrari strong, consistent points"
+              "reasoning": "Strong qualifying and Ferrari race pace"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Sprint pole and strong recent form"
             },
             {
               "position": 5,
               "driver": "Oscar Piastri",
               "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Top grid, good Singapore record, McLaren form"
+              "reasoning": "Top-4 qualifying and reliable McLaren pace"
             },
             {
               "position": 6,
-              "driver": "Kimi Antonelli",
+              "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "medium",
-              "reasoning": "Championship leader, Mercedes pace, strong form"
+              "reasoning": "Fast in FP1/Q but grid penalty hurts street start"
             },
             {
               "position": 7,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Strong recent form, Ferrari pace, front grid"
+              "reasoning": "Ferrari contender, strong recent results"
             },
             {
               "position": 8,
-              "driver": "Liam Lawson",
-              "team": "Racing Bulls",
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Racing Bulls consistency, strong points season"
+              "reasoning": "Red Bull pace, recent P3/P5, street risk"
             },
             {
               "position": 9,
-              "driver": "Isack Hadjar",
-              "team": "Red Bull",
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
               "confidence": "low",
-              "reasoning": "Strong form, Red Bull pace, lower grid"
+              "reasoning": "Q8 and consistent top-10 in recent races"
             },
             {
               "position": 10,
               "driver": "Pierre Gasly",
               "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Consistent top-10, Alpine pace, lower grid"
+              "reasoning": "Alpine midfield, consistent top-10 chances"
             }
           ],
           "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026"
