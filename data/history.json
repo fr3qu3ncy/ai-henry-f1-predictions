@@ -400,6 +400,90 @@
             }
           ],
           "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026"
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-10-09",
+          "generated_at": "2026-10-10 19:54 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Oracle Red Bull Racing",
+              "confidence": "high",
+              "reasoning": "Pole, sprint win and strong momentum heading into street race."
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "confidence": "medium",
+              "reasoning": "P2 grid, fastest practice and championship form, but sprint DNF."
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Scuderia Ferrari HP",
+              "confidence": "medium",
+              "reasoning": "Strong qualifying and sprint P2; Ferrari competitive from P6."
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Scuderia Ferrari HP",
+              "confidence": "medium",
+              "reasoning": "P3 grid and sprint P3, but no Singapore podium in history."
+            },
+            {
+              "position": 5,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "confidence": "medium",
+              "reasoning": "Championship leader and sprint P4, but starts P7 on street."
+            },
+            {
+              "position": 6,
+              "driver": "Oscar Piastri",
+              "team": "McLaren Mastercard F1 Team",
+              "confidence": "medium",
+              "reasoning": "P4 grid and good Singapore history, but sprint DNF and issues."
+            },
+            {
+              "position": 7,
+              "driver": "Lando Norris",
+              "team": "McLaren Mastercard F1 Team",
+              "confidence": "medium",
+              "reasoning": "Best Singapore history, P5 grid, but McLaren weekend struggles."
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Visa Cash App Racing Bulls F1 Team",
+              "confidence": "medium",
+              "reasoning": "P8 grid, sprint P5 and consistent Racing Bulls points form."
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "BWT Alpine F1 Team",
+              "confidence": "medium",
+              "reasoning": "P10 grid and steady points hauls with Alpine this season."
+            },
+            {
+              "position": 10,
+              "driver": "Isack Hadjar",
+              "team": "Oracle Red Bull Racing",
+              "confidence": "low",
+              "reasoning": "P9 grid and Red Bull pace, but sprint DNF and Singapore history."
+            }
+          ],
+          "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-10-09_post-qualifying.mp3",
+            "duration": 218,
+            "episode_title": "Singapore Street Showdown",
+            "generated_at": "2026-10-10 20:15"
+          }
         }
       },
       "standings": [
@@ -479,7 +563,8 @@
         "pre-practice",
         "pre-sprint-qualifying",
         "post-sprint-qualifying",
-        "pre-qualifying"
+        "pre-qualifying",
+        "post-qualifying"
       ]
     },
     {
