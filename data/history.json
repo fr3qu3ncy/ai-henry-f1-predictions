@@ -248,77 +248,77 @@
         "post-sprint-qualifying": {
           "type": "post-sprint-qualifying",
           "date": "2026-10-09",
-          "generated_at": "2026-10-09 17:57 ",
+          "generated_at": "2026-10-10 04:38 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Sprint pole and strong historical Singapore pace"
+              "reasoning": "Pole, strong Singapore history, Red Bull pace; settings issue"
             },
             {
               "position": 2,
-              "driver": "Kimi Antonelli",
-              "team": "Mercedes",
+              "driver": "Lando Norris",
+              "team": "McLaren",
               "confidence": "high",
-              "reasoning": "Championship leader with dominant season form"
+              "reasoning": "Best Singapore record, McLaren pace, front grid"
             },
             {
               "position": 3,
-              "driver": "Charles Leclerc",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Fast in practice and qualifying; strong Ferrari form"
-            },
-            {
-              "position": 4,
-              "driver": "Lando Norris",
-              "team": "McLaren",
-              "confidence": "medium",
-              "reasoning": "Past Singapore winner and consistent 2026 form"
-            },
-            {
-              "position": 5,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "medium",
-              "reasoning": "Fast car and P1 pace despite grid penalty"
+              "reasoning": "Fastest in P1, season form; grid penalty hurts"
             },
             {
-              "position": 6,
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Front grid, Ferrari strong, consistent points"
+            },
+            {
+              "position": 5,
               "driver": "Oscar Piastri",
               "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Good grid and recent podium form for McLaren"
+              "reasoning": "Top grid, good Singapore record, McLaren form"
+            },
+            {
+              "position": 6,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Championship leader, Mercedes pace, strong form"
             },
             {
               "position": 7,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Consistent points finisher with strong race craft"
+              "reasoning": "Strong recent form, Ferrari pace, front grid"
             },
             {
               "position": 8,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
-              "confidence": "low",
-              "reasoning": "Good RB form and top-10 grid position"
+              "confidence": "medium",
+              "reasoning": "Racing Bulls consistency, strong points season"
             },
             {
               "position": 9,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Strong Red Bull second driver in recent races"
+              "confidence": "low",
+              "reasoning": "Strong form, Red Bull pace, lower grid"
             },
             {
               "position": 10,
               "driver": "Pierre Gasly",
               "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Consistent 2026 top-10 scorer and P10 grid"
+              "reasoning": "Consistent top-10, Alpine pace, lower grid"
             }
           ],
           "race_name": "Formula 1 Singapore Airlines Singapore Grand Prix 2026"
