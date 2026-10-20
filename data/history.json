@@ -8,77 +8,77 @@
         "early": {
           "type": "early",
           "date": "2026-10-25",
-          "generated_at": "2026-10-14 16:28 ",
+          "generated_at": "2026-10-20 04:26 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Season-dominant, near title, recent wins and consistency"
+              "reasoning": "Championship leader with dominant form and many wins"
             },
             {
               "position": 2,
               "driver": "Max Verstappen",
               "team": "Red Bull",
-              "confidence": "high",
-              "reasoning": "Two straight wins and best historical COTA record"
+              "confidence": "medium",
+              "reasoning": "Circuit specialist with recent wins and strong Red Bull"
             },
             {
               "position": 3,
-              "driver": "Charles Leclerc",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Consistent podium threat and strong COTA history"
-            },
-            {
-              "position": 4,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Solid Ferrari form and good COTA best P4"
-            },
-            {
-              "position": 5,
               "driver": "George Russell",
               "team": "Mercedes",
               "confidence": "medium",
-              "reasoning": "Strong points haul but COTA history weaker"
+              "reasoning": "Second in championship, strong Mercedes pace"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Good circuit history and consistent Ferrari form"
+            },
+            {
+              "position": 5,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Top-3 championship and strong Ferrari package"
             },
             {
               "position": 6,
               "driver": "Lando Norris",
               "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Good recent form and strong COTA history"
+              "reasoning": "Good COTA history, recent wins, McLaren pace"
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
               "team": "McLaren",
-              "confidence": "medium",
-              "reasoning": "Consistent top-five and strong team"
+              "confidence": "low",
+              "reasoning": "McLaren depth and recent top-5 finishes"
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
-              "confidence": "medium",
-              "reasoning": "Strong points haul and Red Bull pace"
+              "confidence": "low",
+              "reasoning": "Consistent Red Bull runner, recent top-6 results"
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
-              "confidence": "medium",
-              "reasoning": "Consistent top-ten and recent top-five"
+              "confidence": "low",
+              "reasoning": "Consistent top-10, Racing Bulls pace"
             },
             {
               "position": 10,
               "driver": "Pierre Gasly",
               "team": "Alpine",
               "confidence": "low",
-              "reasoning": "10th in standings but recent form inconsistent"
+              "reasoning": "Alpine consistency and top-10 championship points"
             }
           ],
           "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026"
