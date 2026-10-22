@@ -82,6 +82,90 @@
             }
           ],
           "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-10-25",
+          "generated_at": "2026-10-22 19:39 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, dominant Mercedes form and most wins"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Strong US history and current Red Bull pace"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Second in standings, consistent Mercedes top-3 form"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Recent P2 and strong Austin historical record"
+            },
+            {
+              "position": 5,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Top-3 points, recent wins and good Austin history"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Strong recent form and good Austin results"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Consistent McLaren top-5, recent P5"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Strong Red Bull pace and recent top-5"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Consistent points and recent top-7"
+            },
+            {
+              "position": 10,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Recent top-8/7 and team momentum"
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-10-25_pre-practice.mp3",
+            "duration": 216,
+            "episode_title": "Austin USA Is Calling",
+            "generated_at": "2026-10-22 19:53"
+          }
         }
       },
       "standings": [
@@ -157,7 +241,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
