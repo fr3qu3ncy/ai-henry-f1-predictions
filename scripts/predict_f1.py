@@ -485,7 +485,7 @@ def fetch_fia_starting_grid(race_name):
     for href in pdf_hrefs:
         filename = href.split('/')[-1].lower()
         # Check if this PDF is for the current race
-        if race_slug in filename or any(word in filename for word in ['belgian', 'british', 'monaco', 'italian', 'spanish', 'french', 'hungarian', 'dutch', 'belgian', 'swiss', 'azerbaijan', 'singapore', 'japanese', 'qatari', 'american', 'mexican', 'brazilian', 'las_vegas', 'abu_dhabi', 'chinese', 'australian', 'saudi', 'emilia_romagna', 'miami', 'canadian', 'turkish']):
+        if race_slug in filename or any(word in filename for word in ['belgian', 'british', 'monaco', 'italian', 'spanish', 'french', 'hungarian', 'dutch', 'belgian', 'swiss', 'azerbaijan', 'singapore', 'japanese', 'qatari', 'american', 'united_states', 'malaysian', 'mexican', 'brazilian', 'las_vegas', 'abu_dhabi', 'chinese', 'australian', 'saudi', 'emilia_romagna', 'miami', 'canadian', 'turkish']):
             if 'starting_grid' in filename:
                 grid_pdf = FIA_PDF_BASE + href.split('/')[-1]
                 break
