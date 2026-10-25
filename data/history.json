@@ -166,6 +166,90 @@
             "episode_title": "Austin Title Fight",
             "generated_at": "2026-10-23 21:34"
           }
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-10-25",
+          "generated_at": "2026-10-25 19:20 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Pole, championship form, Mercedes strength at Austin"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P2 start, Austin winner historically, strong Red Bull pace"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Fastest Friday practice, Ferrari form, strong grid position"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari consistency, championship form, P5 start"
+            },
+            {
+              "position": 5,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Strong Mercedes pace, P6 start, title contender"
+            },
+            {
+              "position": 6,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P3 start, Red Bull second car in good form"
+            },
+            {
+              "position": 7,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "McLaren pace, Austin history, P8 start"
+            },
+            {
+              "position": 8,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "McLaren form, P7 start, strong season"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Racing Bulls consistency, P9 start, recent top-10 form"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Alpine recent points, P10 start"
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-10-25_post-qualifying.mp3",
+            "duration": 208,
+            "episode_title": "Pole To Title In Austin",
+            "generated_at": "2026-10-25 19:40"
+          }
         }
       },
       "standings": [
@@ -242,7 +326,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "post-qualifying"
       ]
     },
     {

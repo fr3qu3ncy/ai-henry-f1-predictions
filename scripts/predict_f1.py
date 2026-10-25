@@ -3712,7 +3712,18 @@ def main():
             if not check_session_exists(check_slug, "qualifying"):
                 missing.append("qualifying")
             if missing:
-                print(f"SESSION_MISSING:post-qualifying,{','.join(missing)}")
+                # F1DB qualifying file not published yet — fall back to the
+                # FIA provisional starting grid (authoritative, penalties
+                # applied). If the grid is available, post-Q can proceed;
+                # F1DB lap times are lost but the grid is the primary signal.
+                # (Martin's rule, 2026-10-25: no-partial-data still applies
+                # when NEITHER source is available.)
+                race_name = next((c.get("next_race", {}).get("name", "") for c in (schedule or []) if c.get("category") == "f1"), "")
+                grid = fetch_fia_starting_grid(race_name) if race_name else None
+                if grid and len(grid.get('grid', [])) >= 20:
+                    print(f"SESSION_READY:post-qualifying (FIA grid fallback, F1DB qualifying missing: {','.join(missing)})")
+                    sys.exit(0)
+                print(f"SESSION_MISSING:post-qualifying,{','.join(missing)} (FIA grid also unavailable)")
                 sys.exit(1)
             print("SESSION_READY:post-qualifying")
             sys.exit(0)
