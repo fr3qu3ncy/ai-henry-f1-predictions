@@ -334,9 +334,19 @@ _RACE_ALIASES = {
     "gran premio de espana": "spain",
 }
 
+def _strip_accents(text):
+    """Remove diacritics so e.g. 'México' matches F1DB slug 'mexico'.
+
+    F1DB slugs are ASCII; the schedule API sometimes returns accented names
+    (e.g. 'Ciudad de México'). Without this, keyword-overlap matching fails.
+    """
+    import unicodedata
+    return "".join(c for c in unicodedata.normalize("NFKD", text)
+                   if not unicodedata.combining(c))
+
 def _normalize_location(name):
     """Normalize F1 race location names for matching."""
-    name_lower = name.lower()
+    name_lower = _strip_accents(name.lower())
     for alias, normalized in _RACE_ALIASES.items():
         if alias in name_lower:
             return normalized
@@ -349,7 +359,7 @@ def find_race_slug(race_name):
         slugs = get_all_race_slugs()
         _race_slug_cache = slugs
 
-    race_name_lower = race_name.lower()
+    race_name_lower = _strip_accents(race_name.lower())
     race_normalized = _normalize_location(race_name)
 
     for slug in _race_slug_cache:
