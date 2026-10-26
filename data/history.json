@@ -410,6 +410,84 @@
             "episode_title": "Title Shot at Austin",
             "generated_at": "2026-10-25 20:08"
           }
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-10-25",
+          "generated_at": "2026-10-26 08:41 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Title form, dominant season wins and practice pace"
+            },
+            {
+              "position": 2,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Fastest practice, strong Austin history and Ferrari form"
+            },
+            {
+              "position": 3,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Historic Austin pace, fast practice, championship contender"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Top three practice, consistent Ferrari top 5 form"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Good Austin history and Mclaren top 10 form"
+            },
+            {
+              "position": 6,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Consistent Mercedes top 5 and championship form"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Consistent Mclaren top 10 and recent podiums"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Strong Red Bull consistency and recent top 10s"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Recent top 10 form and fast practice sessions"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Consistent points scorer and recent top 10 at Austin"
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises United States Grand Prix 2026"
         }
       },
       "standings": [
@@ -487,6 +565,7 @@
       "prediction_types": [
         "early",
         "pre-practice",
+        "pre-qualifying",
         "post-qualifying"
       ]
     },
