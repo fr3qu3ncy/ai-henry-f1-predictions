@@ -82,6 +82,90 @@
             }
           ],
           "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-11-01",
+          "generated_at": "2026-10-29 18:12 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, dominant season, 9 wins, strong Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Consistent podiums, 4 wins, strong Mercedes form"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Title contender, 1 win, Mexico best P2, strong Ferrari"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Two wins, Mexico historical best P1, strong Red Bull"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "One win, best Mexico history, 3 podiums, strong Ferrari"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Two wins, Mexico historical best P1, strong Mclaren"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Top-5 consistency, strong Mclaren, Mexico best P5"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Consistent points, strong Red Bull car, top-5 form"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Top-5 form, strong points, good Racing Bulls pace"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Most consistent midpack, regular points, Alpine"
+            }
+          ],
+          "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026",
+          "podcast": {
+            "path": "podcasts/2026-11-01_pre-practice.mp3",
+            "duration": 222,
+            "episode_title": "Mexico City Title Thrill",
+            "generated_at": "2026-10-29 18:33"
+          }
         }
       },
       "standings": [
@@ -157,7 +241,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
