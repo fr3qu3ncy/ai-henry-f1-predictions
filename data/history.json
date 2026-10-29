@@ -8,77 +8,77 @@
         "early": {
           "type": "early",
           "date": "2026-11-01",
-          "generated_at": "2026-10-26 02:02 ",
+          "generated_at": "2026-10-29 16:00 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Dominant form, title contender, needs points"
+              "reasoning": "Championship leader, dominant recent form; needs points to clinch title"
             },
             {
               "position": 2,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Strong current form and best Mexico history"
+              "confidence": "medium",
+              "reasoning": "Historically strong at Mexico, consistent top-3 form and Ferrari pace"
             },
             {
               "position": 3,
               "driver": "Max Verstappen",
               "team": "Red Bull",
-              "confidence": "high",
-              "reasoning": "Recent wins, strong Mexico record"
+              "confidence": "medium",
+              "reasoning": "Strong season, recent wins and good Mexico history"
             },
             {
               "position": 4,
               "driver": "George Russell",
               "team": "Mercedes",
-              "confidence": "high",
-              "reasoning": "Consistent top-5, strong Mercedes package"
+              "confidence": "medium",
+              "reasoning": "Mercedes teammate in form; strong season though Mexico history weaker"
             },
             {
               "position": 5,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Good Mexico history, recent top-6 form"
-            },
-            {
-              "position": 6,
               "driver": "Lando Norris",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Excellent Mexico record, solid current form"
+              "reasoning": "Top-5 consistency, McLaren pace and good Mexico history"
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari regularity plus strong Mexico history"
             },
             {
               "position": 7,
-              "driver": "Oscar Piastri",
-              "team": "Mclaren",
-              "confidence": "medium",
-              "reasoning": "Strong McLaren form, recent podiums"
-            },
-            {
-              "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Consistent Red Bull top-10, recent points"
+              "reasoning": "Red Bull reliability and steady points-scoring form"
             },
             {
-              "position": 9,
+              "position": 8,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Strong consistency, recent top-7 results"
+              "reasoning": "Racing Bulls strong season, frequent top-10 finishes"
+            },
+            {
+              "position": 9,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "McLaren second car competitive; recent top-7 finishes"
             },
             {
               "position": 10,
-              "driver": "Arvid Lindblad",
-              "team": "Racing Bulls",
+              "driver": "Oliver Bearman",
+              "team": "Haas",
               "confidence": "low",
-              "reasoning": "Recent top-10 consistency, strong midfield pace"
+              "reasoning": "Haas early-season strength and best P4 Mexico history"
             }
           ],
           "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026"
