@@ -86,85 +86,85 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-11-01",
-          "generated_at": "2026-10-30 00:58 ",
+          "generated_at": "2026-10-30 11:30 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Season dominant, title frontrunner; illness only media day"
+              "reasoning": "Season-dominant, many wins; title contender despite altitude history"
             },
             {
               "position": 2,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
+              "driver": "George Russell",
+              "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Strong form, Mexico history, Red Bull pace"
+              "reasoning": "Mercedes strength, consistent top-3 and wins"
             },
             {
               "position": 3,
-              "driver": "Charles Leclerc",
+              "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "high",
-              "reasoning": "Best Mexico history, recent top-3 consistency"
+              "reasoning": "Top Ferrari form, wins and circuit history"
             },
             {
               "position": 4,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "McLaren pace and strong Mexico record"
+              "reasoning": "Strong recent wins; Mexico history favorable"
             },
             {
               "position": 5,
-              "driver": "Lewis Hamilton",
+              "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Consistent Ferrari form and good circuit history"
+              "confidence": "high",
+              "reasoning": "Ferrari pace; best Mexico history and recent podiums"
             },
             {
               "position": 6,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "medium",
-              "reasoning": "Mercedes car, recent top-8, though weaker Mexico"
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "McLaren strong; excellent Mexico history"
             },
             {
               "position": 7,
-              "driver": "Isack Hadjar",
-              "team": "Red Bull",
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Red Bull consistency, regular top-10"
+              "reasoning": "McLaren pace; regular top-5s this season"
             },
             {
               "position": 8,
-              "driver": "Liam Lawson",
-              "team": "Racing Bulls",
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Racing Bulls strong form, recent top-10"
+              "reasoning": "Red Bull consistency; many top-6 finishes"
             },
             {
               "position": 9,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Alpine consistency and frequent top-10"
+              "reasoning": "Racing Bulls form; frequent top-10 and points"
             },
             {
               "position": 10,
-              "driver": "Oliver Bearman",
-              "team": "Haas",
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Haas circuit history and recent points"
+              "reasoning": "Alpine best mid-field, consistent points scorer"
             }
           ],
           "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026",
           "podcast": {
             "path": "podcasts/2026-11-01_pre-practice.mp3",
-            "duration": 220,
-            "episode_title": "Mexico City Title Clash",
-            "generated_at": "2026-10-30 01:11"
+            "duration": 230,
+            "episode_title": "Mexico City Title Decider",
+            "generated_at": "2026-10-30 11:48"
           }
         }
       },
