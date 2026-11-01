@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-11-08",
+      "race_name": "Formula 1 MSC Cruises Grande Pr\u00eamio de S\u00e3o Paulo 2026",
+      "circuit_id": "interlagos",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-11-08",
+          "generated_at": "2026-11-01 22:02 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader and dominant recent form, strong Interlagos history"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Strong runner-up form, multiple wins and Interlagos consistency"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "First Ferrari pole, recent momentum and strong top-five form"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Circuit specialist, strong form and reliable points"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Strong recent form and competitive Ferrari car"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "high",
+              "reasoning": "Recent wins and Interlagos podium history"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Consistent Red Bull mid-pack points and top-10 form"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Strong Racing Bulls form and recent top-8 finishes"
+            },
+            {
+              "position": 9,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Good McLaren package but less consistent than Norris"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Best mid-field option and Interlagos podium history"
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises Grande Pr\u00eamio de S\u00e3o Paulo 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 365
+        },
+        {
+          "position": 2,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 242
+        },
+        {
+          "position": 3,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 241
+        },
+        {
+          "position": 4,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 236
+        },
+        {
+          "position": 5,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 233
+        },
+        {
+          "position": 6,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 211
+        },
+        {
+          "position": 7,
+          "name": "Oscar Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 144
+        },
+        {
+          "position": 8,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 105
+        },
+        {
+          "position": 9,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 77
+        },
+        {
+          "position": 10,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 42
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-11-01",
       "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026",
       "circuit_id": "mexico-city",
