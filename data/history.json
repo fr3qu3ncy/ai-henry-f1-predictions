@@ -166,6 +166,90 @@
             "episode_title": "Mexico City Title Decider",
             "generated_at": "2026-10-30 11:48"
           }
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-11-01",
+          "generated_at": "2026-11-01 02:37 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Pole, strong Ferrari, good Mexico history"
+            },
+            {
+              "position": 2,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Fastest practice, Ferrari strong at Mexico"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "P2, strong Mercedes pace, but weaker Mexico history"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Red Bull pace, Mexico wins, championship form"
+            },
+            {
+              "position": 5,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Title leader, strong Mercedes, starts P4"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P6, McLaren pace, Mexico win, FP2 P2"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P7, Red Bull consistency, recent top-6 form"
+            },
+            {
+              "position": 8,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "P8, strong Racing Bulls form, regular points"
+            },
+            {
+              "position": 9,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "P9, Alpine consistency, recent top-10 form"
+            },
+            {
+              "position": 10,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "P12 but strong McLaren, recent top-6, can overtake"
+            }
+          ],
+          "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026",
+          "podcast": {
+            "path": "podcasts/2026-11-01_post-qualifying.mp3",
+            "duration": 214,
+            "episode_title": "Hamilton's Mexico City Pole",
+            "generated_at": "2026-11-01 02:56"
+          }
         }
       },
       "standings": [
@@ -242,7 +326,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "post-qualifying"
       ]
     },
     {
