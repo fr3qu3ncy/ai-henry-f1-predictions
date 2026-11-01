@@ -254,77 +254,77 @@
         "pre-qualifying": {
           "type": "pre-qualifying",
           "date": "2026-11-01",
-          "generated_at": "2026-11-01 11:39 ",
+          "generated_at": "2026-11-01 17:50 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Season dominant, fastest P3, championship leader"
+              "reasoning": "Season-dominant Mercedes driver, championship leader and recent US winner"
             },
             {
               "position": 2,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
-              "confidence": "high",
-              "reasoning": "Best Mexico record, fastest P1/P2, Ferrari form"
+              "confidence": "medium",
+              "reasoning": "Fastest practice, strong Mexico history and recent podiums"
             },
             {
               "position": 3,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
-              "confidence": "high",
-              "reasoning": "P3 fastest, strong Mexico history, McLaren pace"
-            },
-            {
-              "position": 4,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Reported pole, strong Ferrari form, circuit history"
+              "reasoning": "Pole position and strong Ferrari form at high altitude circuit"
+            },
+            {
+              "position": 4,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Historically strong at Mexico and fastest in P3"
             },
             {
               "position": 5,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "medium",
-              "reasoning": "Mercedes pace, championship form, solid P2/P3"
-            },
-            {
-              "position": 6,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull pace, Mexico podium history, P2/P3 top"
+              "reasoning": "Top Red Bull, consistent top-5 despite grid penalty"
+            },
+            {
+              "position": 6,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Strong season and Mercedes pace, but weaker Mexico history"
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "McLaren consistency, P3 P4, strong recent form"
+              "reasoning": "Mclaren pace and recent podiums, slightly less Mexico form"
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Consistent Red Bull top 10, good P2/P3"
+              "reasoning": "Red Bull consistency and recent top-six finishes"
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
-              "confidence": "medium",
-              "reasoning": "Racing Bulls consistency, 9th in P3, 77 points"
+              "confidence": "low",
+              "reasoning": "Racing Bulls form, but collision penalty may hurt start"
             },
             {
               "position": 10,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
-              "confidence": "medium",
-              "reasoning": "Alpine points lead, recent top 10, P2 strong"
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Consistent top-10 Racing Bulls driver and P10 practice"
             }
           ],
           "race_name": "Formula 1 Gran Premio de la Ciudad de M\u00e9xico 2026"
