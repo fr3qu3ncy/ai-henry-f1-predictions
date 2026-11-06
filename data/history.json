@@ -86,85 +86,85 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-11-08",
-          "generated_at": "2026-11-06 04:49 ",
+          "generated_at": "2026-11-06 23:26 ",
           "predictions": [
             {
               "position": 1,
-              "driver": "Max Verstappen",
-              "team": "Red Bull",
-              "confidence": "high",
-              "reasoning": "Circuit specialist with wins and current form"
-            },
-            {
-              "position": 2,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Champion with dominant season, strong here"
+              "reasoning": "Championship leader, dominant season, solid Interlagos history"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Best historical result at circuit, strong form and Red Bull pace"
             },
             {
               "position": 3,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
-              "confidence": "medium",
-              "reasoning": "Good Interlagos history and recent wins"
-            },
-            {
-              "position": 4,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "medium",
-              "reasoning": "Mercedes pace and solid circuit average"
-            },
-            {
-              "position": 5,
-              "driver": "Charles Leclerc",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Ferrari consistency, good circuit average"
-            },
-            {
-              "position": 6,
               "driver": "Lewis Hamilton",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Recent P2 and Ferrari pace, but weak history"
+              "reasoning": "Strong recent form and Ferrari pace, but team chaos adds risk"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Consistent podium contender and strong race car"
+            },
+            {
+              "position": 5,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Mercedes pace and recent Baku win, though less consistent"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Good historical form and strong McLaren package"
             },
             {
               "position": 7,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull reliability and consistent top 10"
+              "reasoning": "Red Bull pace and recent top-five consistency"
             },
             {
               "position": 8,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Consistent Racing Bulls points finishes"
+              "reasoning": "Consistent points finisher in strong Racing Bulls car"
             },
             {
               "position": 9,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
-              "confidence": "low",
-              "reasoning": "Best Alpine form and historical Interlagos"
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "McLaren strength and recent top-five results"
             },
             {
               "position": 10,
-              "driver": "Oscar Piastri",
-              "team": "Mclaren",
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
               "confidence": "low",
-              "reasoning": "McLaren pace can recover from poor history"
+              "reasoning": "Alpine top-10 form and best recent circuit history"
             }
           ],
           "race_name": "Formula 1 MSC Cruises Grande Pr\u00eamio de S\u00e3o Paulo 2026",
           "podcast": {
             "path": "podcasts/2026-11-08_pre-practice.mp3",
-            "duration": 203,
-            "episode_title": "Interlagos Weekend Preview",
-            "generated_at": "2026-11-06 05:08"
+            "duration": 216,
+            "episode_title": "Interlagos, Antonelli's Moment",
+            "generated_at": "2026-11-06 23:49"
           }
         }
       },
