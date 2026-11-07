@@ -166,6 +166,84 @@
             "episode_title": "S\u00e3o Paulo Title Spark",
             "generated_at": "2026-11-07 10:23"
           }
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-11-08",
+          "generated_at": "2026-11-07 21:02 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, dominant Mercedes form, strong at Interlagos"
+            },
+            {
+              "position": 2,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Pole in wet qualifying, McLaren pace, good historical results"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Mercedes consistency, recent wins, strong practice times"
+            },
+            {
+              "position": 4,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Historical Interlagos ace and recent wins, but grid penalty"
+            },
+            {
+              "position": 5,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Strong Ferrari form and recent wins, but starts from back"
+            },
+            {
+              "position": 6,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari pace, recent podiums, grid penalty may limit grid"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull development, consistent top-5 form, good practice"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Racing Bulls strong recent points, good race consistency"
+            },
+            {
+              "position": 9,
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "McLaren pace, recent top-5 finishes, strong P2/P3 times"
+            },
+            {
+              "position": 10,
+              "driver": "Gabriel Bortoleto",
+              "team": "Audi",
+              "confidence": "low",
+              "reasoning": "Audi mid-pack pace, recent P8 finishes, good practice"
+            }
+          ],
+          "race_name": "Formula 1 MSC Cruises Grande Pr\u00eamio de S\u00e3o Paulo 2026"
         }
       },
       "standings": [
@@ -242,7 +320,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "pre-qualifying"
       ]
     },
     {
