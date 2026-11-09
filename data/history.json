@@ -1,6 +1,166 @@
 {
   "weekends": [
     {
+      "date": "2026-11-22",
+      "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026",
+      "circuit_id": "las-vegas",
+      "predictions": {
+        "early": {
+          "type": "early",
+          "date": "2026-11-22",
+          "generated_at": "2026-11-09 00:12 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Fresh win and pole in Brazil; McLaren form suits low-runoff street."
+            },
+            {
+              "position": 2,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Champion and season leader; Mercedes strongest package."
+            },
+            {
+              "position": 3,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Historical Vegas specialist; strong recent top finishes."
+            },
+            {
+              "position": 4,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Mercedes speed and good Vegas history; slight Brazil errors."
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari consistency and strong Las Vegas record."
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Ferrari form and good Vegas record."
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull backup in strong form; consistent top-10."
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Racing Bulls consistency; frequent points finishes."
+            },
+            {
+              "position": 9,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Racing Bulls second car; steady top-10 form."
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Alpine points haul and regular top-10 consistency."
+            }
+          ],
+          "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026"
+        }
+      },
+      "standings": [
+        {
+          "position": 1,
+          "name": "Kimi Antonelli",
+          "driverId": "kimi-antonelli",
+          "team": "Mercedes",
+          "points": 380
+        },
+        {
+          "position": 2,
+          "name": "Max Verstappen",
+          "driverId": "max-verstappen",
+          "team": "Red Bull",
+          "points": 261
+        },
+        {
+          "position": 3,
+          "name": "Lewis Hamilton",
+          "driverId": "lewis-hamilton",
+          "team": "Ferrari",
+          "points": 259
+        },
+        {
+          "position": 4,
+          "name": "George Russell",
+          "driverId": "george-russell",
+          "team": "Mercedes",
+          "points": 250
+        },
+        {
+          "position": 5,
+          "name": "Charles Leclerc",
+          "driverId": "charles-leclerc",
+          "team": "Ferrari",
+          "points": 245
+        },
+        {
+          "position": 6,
+          "name": "Lando Norris",
+          "driverId": "lando-norris",
+          "team": "Mclaren",
+          "points": 221
+        },
+        {
+          "position": 7,
+          "name": "Oscar Piastri",
+          "driverId": "oscar-piastri",
+          "team": "Mclaren",
+          "points": 144
+        },
+        {
+          "position": 8,
+          "name": "Isack Hadjar",
+          "driverId": "isack-hadjar",
+          "team": "Red Bull",
+          "points": 107
+        },
+        {
+          "position": 9,
+          "name": "Liam Lawson",
+          "driverId": "liam-lawson",
+          "team": "Racing Bulls",
+          "points": 83
+        },
+        {
+          "position": 10,
+          "name": "Pierre Gasly",
+          "driverId": "pierre-gasly",
+          "team": "Alpine",
+          "points": 42
+        }
+      ],
+      "prediction_types": [
+        "early"
+      ]
+    },
+    {
       "date": "2026-11-08",
       "race_name": "Formula 1 MSC Cruises Grande Pr\u00eamio de S\u00e3o Paulo 2026",
       "circuit_id": "interlagos",
