@@ -14,6 +14,7 @@ Usage:
 """
 
 import argparse
+import base64
 import json
 import os
 import re
@@ -50,14 +51,24 @@ RACE_START_BST = "14:00"
 
 # ── Podcast (Race Weekend Podcast) ────────────────────────────────────────
 # Two-host commentary episodes for the prediction types that get scored.
-# Voices: Paul (host, intro/outro) & Michael (co-host, news + deep-dive) — user
-# preference (2026-09-14). Engine: Pocket TTS (kyutai), temp 1.1, NO
-# quantize (user prefs 2026-09-13), 24kHz mono WAV -> 96kbps MP3.
-# (Martin 2026-09-14: 1.2 a touch too loose, 1.1 safer for the TTS.)
-PODCAST_TTS_BIN = os.path.expanduser("~/pocket-tts-venv/bin/pocket-tts")
-PODCAST_HOST_VOICE = "paul"
-PODCAST_COHOST_VOICE = "michael"
-PODCAST_TEMPERATURE = "1.1"
+# Voices: Tom (British host, intro/outro) & Jake (American co-host, news +
+# deep-dive) — user preference (2026-11-15, replaces Paul & Michael).
+# Engine: TTS API (ml01.dmz:8100) + Chatterbox-Turbo clone from designed
+# reference voices — better quality and energy than Pocket TTS (Martin
+# approved the Tom/Jake pair + chatterbox clone after an A/B test).
+PODCAST_API_BASE = os.environ.get("TTS_API", "http://ml01.dmz:8100")
+PODCAST_TTS = {
+    # British host — "Tom British F1 host" (omnivoice:design) in the TTS API library
+    "tom": {
+        "library_id": "20261115-142831-b689be",
+        "clone_model": "chatterbox:turbo-clone",
+    },
+    # American co-host — "Jake American F1 co-host"
+    "jake": {
+        "library_id": "20261115-142832-079c1a",
+        "clone_model": "chatterbox:turbo-clone",
+    },
+}
 PODCAST_GAP_SECONDS = 0.8        # same-voice continuation (split long segment)
 PODCAST_GAP_HANDOFF_SECONDS = 0.3  # host handoff — tight back-and-forth
 PODCAST_MP3_BITRATE = "96k"
@@ -1998,7 +2009,7 @@ def generate_weekend_html(weekend_data):
                 pred_links += f"""        <div class="pred-card pred-card-podcast">
             <h3><span class="badge badge-podcast">&#127908; Podcast</span> The Race Weekend Podcast</h3>
             <p class="podcast-ep-title">{ep_title}</p>
-            <p class="podcast-ep-meta">Paul &amp; Michael break down the {badge_label.lower()} prediction{" &middot; " + dur_txt if dur_txt else ""}</p>
+            <p class="podcast-ep-meta">Tom &amp; Jake break down the {badge_label.lower()} prediction{" &middot; " + dur_txt if dur_txt else ""}</p>
             <audio class="podcast-player" controls preload="metadata" src="{mp3_url}">
                 Your browser does not support the audio element.
             </audio>
@@ -3154,7 +3165,7 @@ def save_history(repo_path, history):
         json.dump(history, f, indent=2)
 
 # ── Race Weekend Podcast ──────────────────────────────────────────────────
-# Generates a two-host (Paul & Michael) commentary episode for the scored
+# Generates a two-host (Tom & Jake) commentary episode for the scored
 # prediction types. Best-effort: any failure is logged and swallowed so it
 # never blocks a prediction from publishing.
 #
@@ -3165,8 +3176,8 @@ import tempfile
 import html as _html
 
 PODCAST_VOICES = {
-    "paul": PODCAST_HOST_VOICE,
-    "michael": PODCAST_COHOST_VOICE,
+    "tom": "tom",
+    "jake": "jake",
 }
 
 def _podcast_split_text(text, max_chars):
@@ -3214,7 +3225,7 @@ def _podcast_driver_hist(historical_data, driver):
 def _build_podcast_prompt(prediction_type, predictions, news, race_name,
                           short_name, race_date, session_data=None,
                           fia_grid=None, historical_data=None):
-    """Build the LLM prompt for the Paul & Michael episode script."""
+    """Build the LLM prompt for the Tom & Jake episode script."""
     top = predictions[:10]
     top3 = predictions[:3]
 
@@ -3289,8 +3300,8 @@ def _build_podcast_prompt(prediction_type, predictions, news, race_name,
     prompt = f"""You are writing the script for "The Race Weekend Podcast", a short, UPBEAT and EXCITING two-host F1 commentary show.
 
 The two hosts:
-- PAUL — the main host. Energetic, warm, sets the tone, does the intro and the final wrap.
-- MICHAEL — the co-host. Sharp, funny, drives the news round-up and the deep-dive.
+- TOM — the main host (British). Energetic, warm, sets the tone, does the intro and the final wrap.
+- JAKE — the co-host (American). Sharp, funny, drives the news round-up and the deep-dive.
 
 They banter naturally like a real radio show. Keep it lively, confident and fun — this is a preview people look forward to. No dry reading of a table.
 
@@ -3311,11 +3322,11 @@ Prediction type: {prediction_type.upper()} — {type_blurb}
 {grid_block}{extra_structure}
 
 === HOW TO STRUCTURE THE EPISODE ===
-1. PAUL opens with a punchy one-line welcome and teases why this race is interesting.
-2. MICHAEL does a quick, snappy round-up of the 3-5 most relevant news items above (weave them in, don't read a list).
+1. TOM opens with a punchy one-line welcome and teases why this race is interesting.
+2. JAKE does a quick, snappy round-up of the 3-5 most relevant news items above (weave them in, don't read a list).
 3. They debate the TOP 3 — one driver per host at a time. Give the real reason each made the top 3 (use the reasoning + history above). Let them disagree or riff a little.
 4. A "deep cut" moment: one surprising pick, a low-confidence gamble, a penalty, or a circuit-history quirk that's genuinely interesting.
-5. PAUL does the wrap: a one-breath run-through of the full top 10 (name all ten in order), then a short upbeat sign-off.
+5. TOM does the wrap: a one-breath run-through of the full top 10 (name all ten in order), then a short upbeat sign-off.
 
 === DELIVERY STYLE (this is the difference between a great episode and a flat one) ===
 - SHORT LINES. Most lines are ONE sentence. At most two. Long lines kill the pace.
@@ -3337,9 +3348,9 @@ Return ONLY a JSON object (no markdown, no code fences) with exactly this shape:
 {{
   "episode_title": "<catchy title>",
   "segments": [
-    {{"speaker": "paul", "text": "<line>"}},
-    {{"speaker": "michael", "text": "<line>"}},
-    {{"speaker": "paul", "text": "<line>"}}
+    {{"speaker": "tom", "text": "<line>"}},
+    {{"speaker": "jake", "text": "<line>"}},
+    {{"speaker": "tom", "text": "<line>"}}
   ]
 }}
 Use 20 to 28 short segments. Alternate the hosts so it feels like a fast conversation."""
@@ -3397,17 +3408,71 @@ def _podcast_check_grounding(segments, predictions):
             return False
     return True
 
+def _tts_api_speech(model, text, params, fmt="wav", retries=3):
+    """POST /v1/speech with backoff on 429/5xx. Returns audio bytes or None."""
+    import urllib.request
+    import urllib.error
+    body = json.dumps({
+        "model": model, "input": text,
+        "response_format": fmt, "parameters": params,
+    }).encode("utf-8")
+    for attempt in range(retries):
+        req = urllib.request.Request(
+            PODCAST_API_BASE + "/v1/speech", data=body, method="POST",
+            headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500) and attempt < retries - 1:
+                time.sleep(10 * (attempt + 1))
+                continue
+            print(f"  Podcast: TTS API {e.code} for {model}: "
+                  f"{e.read()[:200]!r}", file=sys.stderr)
+            return None
+        except Exception as e:
+            if attempt < retries - 1:
+                time.sleep(10 * (attempt + 1))
+                continue
+            print(f"  Podcast: TTS API error for {model}: {e}", file=sys.stderr)
+            return None
+    return None
+
+def _tts_library_ref(library_id):
+    """Fetch a library entry's reference audio bytes (base64-ready). None on failure."""
+    import urllib.request
+    try:
+        with urllib.request.urlopen(
+                PODCAST_API_BASE + f"/api/library/{library_id}/audio", timeout=60) as r:
+            if r.status == 200:
+                return r.read()
+    except Exception:
+        pass
+    print(f"  Podcast: could not fetch library audio {library_id}",
+          file=sys.stderr)
+    return None
+
 def render_podcast_audio(segments, out_mp3):
-    """TTS each segment to WAV, stitch with 800ms gaps, write MP3. Returns duration (s) or None."""
-    if not shutil.which("ffmpeg") or not Path(PODCAST_TTS_BIN).exists():
-        print("  Podcast: ffmpeg or pocket-tts binary not found", file=sys.stderr)
+    """TTS each segment via the TTS API (Chatterbox clone of the reference
+    voice per speaker), stitch with speaker-aware gaps, write MP3.
+    Returns duration (s) or None."""
+    if not shutil.which("ffmpeg"):
+        print("  Podcast: ffmpeg not found", file=sys.stderr)
         return None
 
     workdir = tempfile.mkdtemp(prefix="f1pod_")
     try:
-        # Two silence gaps at 24kHz (Pocket TTS sample rate):
-        # handoff gap between different hosts (tight), continuation gap when a
-        # single long line splits and the same voice carries on.
+        # Pre-fetch reference audio per speaker (done once, reused per chunk).
+        refs = {}
+        for name in {seg["speaker"] for seg in segments}:
+            voice = PODCAST_TTS[name]
+            wav = _tts_library_ref(voice["library_id"])
+            if not wav:
+                return None
+            refs[name] = wav
+
+        # Two silence gaps at 24kHz: tight handoff between hosts, longer gap
+        # when a split line continues in the same voice.
         handoff_wav = Path(workdir) / "gap_handoff.wav"
         cont_wav = Path(workdir) / "gap_cont.wav"
         for gap_path, gap_s in ((handoff_wav, PODCAST_GAP_HANDOFF_SECONDS),
@@ -3422,27 +3487,26 @@ def render_podcast_audio(segments, out_mp3):
         wav_speakers = []
         idx = 0
         for seg in segments:
-            voice = PODCAST_VOICES[seg["speaker"]]
+            voice = PODCAST_TTS[seg["speaker"]]
+            ref_b64 = base64.b64encode(refs[seg["speaker"]]).decode("ascii")
             # Split oversized segments at sentence boundaries for clean prosody.
             parts = _podcast_split_text(seg["text"], PODCAST_SEGMENT_MAX_CHARS)
             for part in parts:
                 wav = Path(workdir) / f"seg_{idx:02d}.wav"
                 idx += 1
-                r = subprocess.run(
-                    [PODCAST_TTS_BIN, "generate", "--text", part,
-                     "--voice", voice, "--language", "english",
-                     "--temperature", PODCAST_TEMPERATURE,
-                     "--output-path", str(wav), "-q"],
-                    capture_output=True, timeout=300)
-                if r.returncode != 0 or not wav.exists():
-                    print(f"  Podcast: TTS failed on segment {idx}: {r.stderr.decode('utf-8','ignore')[:200]}",
+                audio = _tts_api_speech(
+                    voice["clone_model"], part,
+                    {"ref_audio": ref_b64})
+                if not audio:
+                    print(f"  Podcast: TTS failed on segment {idx}",
                           file=sys.stderr)
                     return None
+                wav.write_bytes(audio)
                 wavs.append(wav)
                 wav_speakers.append(seg["speaker"])
 
-        # Build concat list: pick the gap by speaker — 0.3s on a host handoff,
-        # 0.8s only when the same voice continues a split line. No gap after last.
+        # Build concat list: 0.3s on a host handoff, 0.8s same-voice
+        # continuation. No gap after the last segment.
         list_file = Path(workdir) / "concat.txt"
         lines = []
         for i, w in enumerate(wavs):
