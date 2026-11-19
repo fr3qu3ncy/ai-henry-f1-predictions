@@ -86,85 +86,85 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-11-22",
-          "generated_at": "2026-11-19 00:43 ",
+          "generated_at": "2026-11-19 03:03 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Season dominant, strong Vegas history and Mercedes pace"
+              "reasoning": "Championship leader, multiple wins and strong recent form"
             },
             {
               "position": 2,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "Best Las Vegas record and strong recent form"
+              "reasoning": "Strong recent wins and best historical Las Vegas record"
             },
             {
               "position": 3,
-              "driver": "George Russell",
-              "team": "Mercedes",
-              "confidence": "medium",
-              "reasoning": "Mercedes pace, historical Las Vegas winner"
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Consistent podiums, strong Ferrari form and street experience"
             },
             {
               "position": 4,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
-              "confidence": "medium",
-              "reasoning": "Recent form strong, McLaren competitive"
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "high",
+              "reasoning": "Podium contender, strong at Las Vegas historically"
             },
             {
               "position": 5,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Ferrari strength, good Vegas history"
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Mercedes pace, past Las Vegas wins and strong form"
             },
             {
               "position": 6,
-              "driver": "Charles Leclerc",
-              "team": "Ferrari",
+              "driver": "Lando Norris",
+              "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "Ferrari pace, solid Las Vegas record"
+              "reasoning": "Recent wins and strong McLaren performance"
             },
             {
               "position": 7,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull second car, consistent recent top 10"
+              "reasoning": "Consistent Red Bull points and recent top-5"
             },
             {
               "position": 8,
               "driver": "Oscar Piastri",
               "team": "Mclaren",
               "confidence": "medium",
-              "reasoning": "McLaren consistency, decent street results"
+              "reasoning": "Recent top-5 and strong team performance"
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Consistent top 10 and street form"
+              "reasoning": "Consistent points and top-10 finisher"
             },
             {
               "position": 10,
-              "driver": "Arvid Lindblad",
-              "team": "Racing Bulls",
-              "confidence": "low",
-              "reasoning": "Racing Bulls consistency, points and street results"
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "medium",
+              "reasoning": "Consistent points and recent top-10 in US"
             }
           ],
           "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026",
           "podcast": {
             "path": "podcasts/2026-11-22_pre-practice.mp3",
-            "duration": 210,
-            "episode_title": "Lights, Camera, Las Vegas",
-            "generated_at": "2026-11-19 00:58"
+            "duration": 249,
+            "episode_title": "Las Vegas Title Fight",
+            "generated_at": "2026-11-19 03:19"
           }
         }
       },
