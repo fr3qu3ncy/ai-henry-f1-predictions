@@ -166,6 +166,90 @@
             "episode_title": "Las Vegas Title Fight",
             "generated_at": "2026-11-19 03:19"
           }
+        },
+        "post-qualifying": {
+          "type": "post-qualifying",
+          "date": "2026-11-22",
+          "generated_at": "2026-11-21 07:51 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Pole, Vegas form, recent wins and championship momentum"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "P2, fastest P2, strong season and good Vegas history"
+            },
+            {
+              "position": 3,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Season form and car pace, can recover from P6 on street"
+            },
+            {
+              "position": 4,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "P3 grid and strong McLaren form this season"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P10 but strong Ferrari pace and Vegas history"
+            },
+            {
+              "position": 6,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "P11 but championship form and Ferrari car"
+            },
+            {
+              "position": 7,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "P4 grid, Red Bull car and recent points form"
+            },
+            {
+              "position": 8,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "P7 grid and consistent points-scoring season"
+            },
+            {
+              "position": 9,
+              "driver": "Arvid Lindblad",
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "P5 grid and steady RB form for top-10"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "P8 grid, P2 speed and Alpine points form"
+            }
+          ],
+          "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-11-22_post-qualifying.mp3",
+            "duration": 256,
+            "episode_title": "Vegas Pole Drama",
+            "generated_at": "2026-11-21 08:11"
+          }
         }
       },
       "standings": [
@@ -242,7 +326,8 @@
       ],
       "prediction_types": [
         "early",
-        "pre-practice"
+        "pre-practice",
+        "post-qualifying"
       ]
     },
     {
