@@ -250,6 +250,84 @@
             "episode_title": "Las Vegas Pole Drama",
             "generated_at": "2026-11-21 08:18"
           }
+        },
+        "pre-qualifying": {
+          "type": "pre-qualifying",
+          "date": "2026-11-22",
+          "generated_at": "2026-11-21 10:36 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Oracle Red Bull Racing",
+              "confidence": "high",
+              "reasoning": "Pole via penalty, best Vegas history, recent wins"
+            },
+            {
+              "position": 2,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "confidence": "high",
+              "reasoning": "Title lead, fastest qualifying, strong at Vegas"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "confidence": "high",
+              "reasoning": "Fastest practice, front row, street circuit strength"
+            },
+            {
+              "position": 4,
+              "driver": "Charles Leclerc",
+              "team": "Scuderia Ferrari HP",
+              "confidence": "medium",
+              "reasoning": "Top-5 practice, good Vegas history, Ferrari pace"
+            },
+            {
+              "position": 5,
+              "driver": "Lewis Hamilton",
+              "team": "Scuderia Ferrari HP",
+              "confidence": "medium",
+              "reasoning": "Consistent top-6, Ferrari pace, good Vegas record"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "McLaren Mastercard F1 Team",
+              "confidence": "medium",
+              "reasoning": "P3 third, recent wins, McLaren pace"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "McLaren Mastercard F1 Team",
+              "confidence": "medium",
+              "reasoning": "McLaren pace, consistent top-10, P2 P5"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Oracle Red Bull Racing",
+              "confidence": "medium",
+              "reasoning": "Red Bull pace, recent top-5, 8th in title"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Visa Cash App Racing Bulls F1 Team",
+              "confidence": "medium",
+              "reasoning": "P3 seventh, consistent top-10, Racing Bulls form"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "BWT Alpine F1 Team",
+              "confidence": "medium",
+              "reasoning": "P3 ninth, consistent top-10, Alpine pace"
+            }
+          ],
+          "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026"
         }
       },
       "standings": [
@@ -327,7 +405,8 @@
       "prediction_types": [
         "early",
         "pre-practice",
-        "post-qualifying"
+        "post-qualifying",
+        "pre-qualifying"
       ]
     },
     {
