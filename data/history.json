@@ -254,77 +254,77 @@
         "pre-qualifying": {
           "type": "pre-qualifying",
           "date": "2026-11-22",
-          "generated_at": "2026-11-21 10:36 ",
+          "generated_at": "2026-11-22 02:55 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Max Verstappen",
-              "team": "Oracle Red Bull Racing",
+              "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "Pole via penalty, best Vegas history, recent wins"
+              "reasoning": "Pole plus best Vegas history and strong recent wins; street front-row advantage"
             },
             {
               "position": 2,
               "driver": "Kimi Antonelli",
-              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Title lead, fastest qualifying, strong at Vegas"
+              "reasoning": "Season-best form and fastest raw pace; penalty likely limits start but wins race"
             },
             {
               "position": 3,
               "driver": "George Russell",
-              "team": "Mercedes-AMG PETRONAS F1 Team",
-              "confidence": "high",
-              "reasoning": "Fastest practice, front row, street circuit strength"
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Practice fastest, front-row, and two Vegas wins; Mercedes reliability"
             },
             {
               "position": 4,
-              "driver": "Charles Leclerc",
-              "team": "Scuderia Ferrari HP",
+              "driver": "Lando Norris",
+              "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Top-5 practice, good Vegas history, Ferrari pace"
+              "reasoning": "P3 pace, recent wins, and McLaren strong at high-speed street circuit"
             },
             {
               "position": 5,
-              "driver": "Lewis Hamilton",
-              "team": "Scuderia Ferrari HP",
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Consistent top-6, Ferrari pace, good Vegas record"
+              "reasoning": "Ferrari form, good Vegas history, and consistent P3 pace"
             },
             {
               "position": 6,
-              "driver": "Lando Norris",
-              "team": "McLaren Mastercard F1 Team",
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "P3 third, recent wins, McLaren pace"
+              "reasoning": "Ferrari consistency and recent top-five pace; experienced street racer"
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
-              "team": "McLaren Mastercard F1 Team",
-              "confidence": "medium",
-              "reasoning": "McLaren pace, consistent top-10, P2 P5"
+              "team": "McLaren",
+              "confidence": "low",
+              "reasoning": "McLaren pace and points form, though weaker Vegas history"
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
-              "team": "Oracle Red Bull Racing",
-              "confidence": "medium",
-              "reasoning": "Red Bull pace, recent top-5, 8th in title"
+              "team": "Red Bull",
+              "confidence": "low",
+              "reasoning": "Red Bull pace, P2 speed, and consistent points this season"
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
-              "team": "Visa Cash App Racing Bulls F1 Team",
-              "confidence": "medium",
-              "reasoning": "P3 seventh, consistent top-10, Racing Bulls form"
+              "team": "Racing Bulls",
+              "confidence": "low",
+              "reasoning": "Racing Bulls top 10 consistency and strong P3 pace"
             },
             {
               "position": 10,
               "driver": "Pierre Gasly",
-              "team": "BWT Alpine F1 Team",
-              "confidence": "medium",
-              "reasoning": "P3 ninth, consistent top-10, Alpine pace"
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "P2 speed, 10th in points, and reliable top-10 consistency"
             }
           ],
           "race_name": "Formula 1 Heineken Las Vegas Grand Prix 2026"
