@@ -8,77 +8,77 @@
         "early": {
           "type": "early",
           "date": "2026-11-29",
-          "generated_at": "2026-11-22 07:06 ",
+          "generated_at": "2026-11-22 13:21 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Max Verstappen",
-              "team": "Oracle Red Bull Racing",
+              "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "Circuit specialist and recent winner; strong Red Bull form"
+              "reasoning": "Qatar track record, dominant late-season form, won Las Vegas"
             },
             {
               "position": 2,
               "driver": "Kimi Antonelli",
-              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Championship leader and season-best consistency"
+              "reasoning": "Championship leader, multiple wins, strong Mercedes package"
             },
             {
               "position": 3,
-              "driver": "George Russell",
-              "team": "Mercedes-AMG PETRONAS F1 Team",
+              "driver": "Lando Norris",
+              "team": "McLaren",
               "confidence": "high",
-              "reasoning": "Strong recent form and Mercedes pace"
+              "reasoning": "Recent wins and Vegas P2, strong McLaren form"
             },
             {
               "position": 4,
-              "driver": "Lando Norris",
-              "team": "McLaren Mastercard F1 Team",
-              "confidence": "medium",
-              "reasoning": "Recent winner and front-row potential"
+              "driver": "Oscar Piastri",
+              "team": "McLaren",
+              "confidence": "high",
+              "reasoning": "Historical Qatar podiums and consistent recent top finishes"
             },
             {
               "position": 5,
-              "driver": "Charles Leclerc",
-              "team": "Scuderia Ferrari HP",
+              "driver": "George Russell",
+              "team": "Mercedes",
               "confidence": "medium",
-              "reasoning": "Podium form and Qatar historical strength"
+              "reasoning": "Strong street form and Mercedes pace despite Vegas error"
             },
             {
               "position": 6,
-              "driver": "Lewis Hamilton",
-              "team": "Scuderia Ferrari HP",
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Consistent points and Ferrari competitiveness"
+              "reasoning": "Good Qatar history and strong Ferrari, avoid team collision"
             },
             {
               "position": 7,
               "driver": "Isack Hadjar",
-              "team": "Oracle Red Bull Racing",
+              "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Strong points haul and recent podiums"
+              "reasoning": "Red Bull pace, P3 in Sao Paulo and consistent mid-pack"
             },
             {
               "position": 8,
-              "driver": "Liam Lawson",
-              "team": "Visa Cash App Racing Bulls F1 Team",
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Consistent top-10 in mid-field"
+              "reasoning": "Championship form, but Qatar historically weak"
             },
             {
               "position": 9,
-              "driver": "Oscar Piastri",
-              "team": "McLaren Mastercard F1 Team",
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Qatar specialist and McLaren speed"
+              "reasoning": "Best mid-field driver, consistent top-10 finishes"
             },
             {
               "position": 10,
-              "driver": "Arvid Lindblad",
-              "team": "Visa Cash App Racing Bulls F1 Team",
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
               "confidence": "low",
-              "reasoning": "Consistent points and good mid-field form"
+              "reasoning": "Vegas P5 shows Alpine can score on street circuits"
             }
           ],
           "race_name": "Formula 1 Qatar Airways Qatar Grand Prix 2026"
