@@ -82,6 +82,90 @@
             }
           ],
           "race_name": "Formula 1 Qatar Airways Qatar Grand Prix 2026"
+        },
+        "pre-practice": {
+          "type": "pre-practice",
+          "date": "2026-11-29",
+          "generated_at": "2026-11-26 13:25 ",
+          "predictions": [
+            {
+              "position": 1,
+              "driver": "Kimi Antonelli",
+              "team": "Mercedes",
+              "confidence": "high",
+              "reasoning": "Championship leader, dominant recent wins and consistency"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull",
+              "confidence": "high",
+              "reasoning": "Strong late form, wins and excellent Qatar record"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes",
+              "confidence": "medium",
+              "reasoning": "Fast car, good Qatar history, but recent P9 adds uncertainty"
+            },
+            {
+              "position": 4,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Top Ferrari contender, recent P7, but collision risk with Leclerc"
+            },
+            {
+              "position": 5,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari",
+              "confidence": "medium",
+              "reasoning": "Strong Ferrari pace and Qatar history, but recent P10"
+            },
+            {
+              "position": 6,
+              "driver": "Lando Norris",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Recent P2 and championship pressure, decent Qatar results"
+            },
+            {
+              "position": 7,
+              "driver": "Oscar Piastri",
+              "team": "Mclaren",
+              "confidence": "medium",
+              "reasoning": "Great Qatar history and recent P3, strong late-season form"
+            },
+            {
+              "position": 8,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull",
+              "confidence": "medium",
+              "reasoning": "Red Bull second car, recent P3 and consistent top 10"
+            },
+            {
+              "position": 9,
+              "driver": "Liam Lawson",
+              "team": "Racing Bulls",
+              "confidence": "medium",
+              "reasoning": "Regular top 10, points leader in midfield"
+            },
+            {
+              "position": 10,
+              "driver": "Pierre Gasly",
+              "team": "Alpine",
+              "confidence": "low",
+              "reasoning": "Recent P5 and points, Alpine midfield pace at Qatar"
+            }
+          ],
+          "race_name": "Formula 1 Qatar Airways Qatar Grand Prix 2026",
+          "podcast": {
+            "path": "podcasts/2026-11-29_pre-practice.mp3",
+            "duration": 207,
+            "episode_title": "Qatar Title Fight Heats Up",
+            "generated_at": "2026-11-26 13:34"
+          }
         }
       },
       "standings": [
@@ -157,7 +241,8 @@
         }
       ],
       "prediction_types": [
-        "early"
+        "early",
+        "pre-practice"
       ]
     },
     {
