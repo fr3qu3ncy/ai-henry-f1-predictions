@@ -86,85 +86,85 @@
         "pre-practice": {
           "type": "pre-practice",
           "date": "2026-11-29",
-          "generated_at": "2026-11-26 13:25 ",
+          "generated_at": "2026-11-27 22:11 ",
           "predictions": [
             {
               "position": 1,
               "driver": "Kimi Antonelli",
               "team": "Mercedes",
               "confidence": "high",
-              "reasoning": "Championship leader, dominant recent wins and consistency"
+              "reasoning": "Championship leader, Mercedes set Qatar pace, dominant season"
             },
             {
               "position": 2,
               "driver": "Max Verstappen",
               "team": "Red Bull",
               "confidence": "high",
-              "reasoning": "Strong late form, wins and excellent Qatar record"
+              "reasoning": "Qatar specialist, strong current form, recent wins"
             },
             {
               "position": 3,
               "driver": "George Russell",
               "team": "Mercedes",
-              "confidence": "medium",
-              "reasoning": "Fast car, good Qatar history, but recent P9 adds uncertainty"
+              "confidence": "high",
+              "reasoning": "Mercedes pace, Qatar history, consistent top-3"
             },
             {
               "position": 4,
-              "driver": "Lewis Hamilton",
-              "team": "Ferrari",
-              "confidence": "medium",
-              "reasoning": "Top Ferrari contender, recent P7, but collision risk with Leclerc"
-            },
-            {
-              "position": 5,
               "driver": "Charles Leclerc",
               "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Strong Ferrari pace and Qatar history, but recent P10"
+              "reasoning": "Ferrari strong, Qatar best P2, recent podiums"
+            },
+            {
+              "position": 5,
+              "driver": "Lando Norris",
+              "team": "McLaren",
+              "confidence": "medium",
+              "reasoning": "Strong recent McLaren form, Qatar history"
             },
             {
               "position": 6,
-              "driver": "Lando Norris",
-              "team": "Mclaren",
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari",
               "confidence": "medium",
-              "reasoning": "Recent P2 and championship pressure, decent Qatar results"
+              "reasoning": "Top-3 championship, strong form, but circuit historically tricky"
             },
             {
               "position": 7,
               "driver": "Oscar Piastri",
-              "team": "Mclaren",
+              "team": "McLaren",
               "confidence": "medium",
-              "reasoning": "Great Qatar history and recent P3, strong late-season form"
+              "reasoning": "Qatar best P2, McLaren pace, recent top-5"
             },
             {
               "position": 8,
               "driver": "Isack Hadjar",
               "team": "Red Bull",
               "confidence": "medium",
-              "reasoning": "Red Bull second car, recent P3 and consistent top 10"
+              "reasoning": "Strong Red Bull form, consistent top-10"
             },
             {
               "position": 9,
               "driver": "Liam Lawson",
               "team": "Racing Bulls",
               "confidence": "medium",
-              "reasoning": "Regular top 10, points leader in midfield"
+              "reasoning": "Consistent Racing Bulls top-10, strong points"
             },
             {
               "position": 10,
-              "driver": "Pierre Gasly",
-              "team": "Alpine",
+              "driver": "Carlos Sainz",
+              "team": "Williams",
               "confidence": "low",
-              "reasoning": "Recent P5 and points, Alpine midfield pace at Qatar"
+              "reasoning": "Qatar specialist, best P3, can score at this circuit"
             }
           ],
           "race_name": "Formula 1 Qatar Airways Qatar Grand Prix 2026",
           "podcast": {
             "path": "podcasts/2026-11-29_pre-practice.mp3",
-            "duration": 207,
-            "episode_title": "Qatar Title Fight Heats Up",
-            "generated_at": "2026-11-26 13:34"
+            "duration": 205,
+            "episode_title": "Qatar's Championship Showdown",
+            "generated_at": "2026-11-27 22:19"
           }
         }
       },
